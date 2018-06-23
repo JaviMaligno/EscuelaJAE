@@ -1,0 +1,158 @@
+\documentclass[twoside, 11pt]{article}
+\usepackage{../estilo-apuntes}
+%\usepackage{amsmath,amssymb}
+%\usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+%\usepackage{caption}
+%\usepackage[]{graphicx}
+%\usepackage{enumerate}
+%\usepackage{amsthm}
+%\usepackage{tikz-cd}
+%\usetikzlibrary{babel}
+%\usepackage{pgf,tikz}
+%\usepackage{mathrsfs}
+%\usepackage{bm}  
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{cd}
+%\usepackage[spanish]{babel}
+%\usepackage{fancyhdr}
+%\usepackage{titlesec}
+%\usepackage{floatrow}
+%\usepackage{makeidx}
+%\usepackage[tocflat]{tocstyle}
+%\usetocstyle{standard}
+%\usepackage{subfiles}
+%\usepackage{color}  
+%\usepackage{hyperref}
+%\hypersetup{colorlinks=true,citecolor=red, linkcolor=blue}
+%\usepackage{eurosym}
+%%\usepackage{ntheorem}
+%
+%
+%\renewcommand{\baselinestretch}{1,4}
+%\setlength{\oddsidemargin}{0.25in}
+%\setlength{\evensidemargin}{0.25in}
+%\setlength{\textwidth}{6in}
+%\setlength{\topmargin}{0.1in}
+%\setlength{\headheight}{0.1in}
+%\setlength{\headsep}{0.1in}
+%\setlength{\textheight}{8in}
+%\setlength{\footskip}{0.75in}
+%
+%\theoremstyle{definition}
+%
+%\newtheorem{teorema}{Teorema}[section]
+%\newtheorem{defi}[teorema]{Definición}
+%\newtheorem{coro}[teorema]{Corolario}
+%\newtheorem{lemma}[teorema]{Lema}
+%\newtheorem{ej}[teorema]{Ejemplo}
+%\newtheorem{ejs}[teorema]{Ejemplos}
+%\newtheorem{observacion}[teorema]{Observación}
+%\newtheorem{observaciones}[teorema]{Observaciones}
+%\newtheorem{prop}[teorema]{Proposición}
+%\newtheorem{propi}[teorema]{Propiedades}
+%\newtheorem{nota}[teorema]{Nota}
+%\newtheorem{notas}[teorema]{Notas}
+%\newtheorem*{dem}{Demostración}
+%\newtheorem{ejer}[teorema]{Ejercicio}
+%\newtheorem{problem}[teorema]{Problema}
+%\newtheorem{concl}[teorema]{Conclusión}
+%
+%\providecommand{\abs}[1]{\lvert#1\rvert}
+%\providecommand{\sen}[1]{sen #1}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\ninf}[1]{\norm{#1}_\infty}
+%\providecommand{\numn}[1]{\norm{#1}_1}
+%\providecommand{\gabs}[1]{\left|{#1}\right|}
+%\newcommand{\bor}[1]{\mathcal{B}(#1)}
+%\newcommand{\R}{\mathbb{R}}
+%\newcommand{\Z}{\mathbb{Z}}
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\Q}{\mathbb{Q}}
+%\newcommand{\C}{\mathbb{C}}
+%\newcommand{\Pro}{\mathbb{P}}
+%\newcommand{\Tau}{\mathcal{T}}
+%\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+%\newcommand{\vertequiv}{\rotatebox{110}{$\,\equiv$}}
+%\providecommand{\lrg}{\longrightarrow}
+%\providecommand{\func}[2]{\colon{#1}\longrightarrow{#2}}
+%\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}
+%\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+%            \node[shape=circle,draw,inner sep=1.5pt] (char) {#1};}}
+%\newcommand*{\longhookarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+
+
+\begin{document}
+%\title{Topología de Superficies}
+%\author{Antonio Rafael Quintero Toscano\\ Javier Aguilar Martín}
+%\date{Curso 2016/2017}
+%\maketitle
+
+\author{Javier Aguilar Martín }
+\date{\today}
+\title{Teoría Geométrica de Grupos}
+
+\maketitle
+
+
+\begin{abstract}
+Estos apuntes están basados en las clases de Yago Antolín en la Escuela JAE de 2018. Sus notas originales pueden ser encontradas en el siguiente enlace: \url{https://sites.google.com/site/yagoanpi/curso-escuela-jae}
+\end{abstract}
+
+
+	\vfill
+	Esta obra está licenciada bajo la Licencia Creative Commons Atribución 3.0 España. Para ver una copia de esta licencia, visite \url{http://creativecommons.org/licenses/by/3.0/es/} o envíe una carta a Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+
+\newpage
+\tableofcontents
+
+\newpage
+
+\section{Grupos finitamente generados como espacios métricos}
+\subsection{Grafos de Cayley}
+\begin{teorema}[Cayley]
+Todo subgrupo es isomorfo a un subgrupo de un grupo simétrico.
+\end{teorema}
+\begin{dem}
+Dado un grupo $G$ definimos $\sigma:G\to Biy(G)=Sym_{|G|}$ como $x\mapsto \sigma_x:G\to G$, siendo $\sigma_x(g)=gx^{-1}$. Tenemos que $\sigma$ es un homomorfismo pues
+$$
+\sigma_{xy}(g)=g(xy)^{-1}=gy^{-1}x^{-1}=(gy^{-1})x^{-1})=\sigma_y(g)x^{-1}=\sigma_x(\sigma_y(g)).
+$$
+Además es inyectiva pues 
+$$
+\sigma_x(g)=g\Leftrightarrow gx^{-1}=g\Leftrightarrow x^{-1}=1_G\Leftrightarrow x=1_G.
+$$
+\QED
+\end{dem}
+
+\begin{ej}
+Vamos a cómo se interpreta la demostración anterior en un ejemplo concreto. Sea $G=(\Z/3\Z)^3$ y sean $x=(1,0,0)$, $y=(0,1,)$, $z=(0,0,1)$. Tenemos 
+\[
+\sigma_x\equiv (000,\ 100)(010,\ 110)(001,\ 101)(011,\ 111)
+\]
+expresada como producto de ciclos en los que los grupos de tres números se corresponden a su vez a ciclos. Análogamente se definirían $\sigma_y$ y $\sigma_z$. Podemos interpretar geométricamente estas aplicaciones como la acción que intercambia los vértices de un cubo como en la figura siguiente:
+\end{ej}
+
+\subsection{Grupos como espacios métricos}
+
+
+\section{Invariantes de quasi-isométría: Crecimiento}
+\subsection{Función de crecimiento}
+
+\section{Invariantes de quasi-isométría: Finales}
+\subsection{$k$-rayos}
+\subsection{Finales}
+
+\section{Grupos finitamente presentados}
+\subsection{Grupos libres}
+\subsection{Transformaciones de Tietze}
+\subsection{El problema de la palabra}
+
+\section{Lenguas formales}
+\subsection{Autómatas finitos (Finite State Automata)}
+\subsection{Push-down Automata}
+
+\section{Miscelánea. Para saber más}
+
+\end{document}
