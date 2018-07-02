@@ -110,10 +110,10 @@ Un guion que no pretende ser totalmente detallado ni riguroso sobre la prueba de
 \newpage
 
 \section{Introducción y enunciado equivalente}
-\subsection{Introduccion}
+\subsection{Introducción}
 
 
-\subsection{Enunciado equivalente}
+\subsection{Enunciados equivalentes}
 Es conocido que $Diff(S^n)\simeq O(n+1)\times Diff(D^n\ rel\ \partial D^n)$ para todo $n$. Por tanto, la conjetura de Smale $Diff(S^4)\simeq O(4)$ es equivalente a $Diff(D^3\ rel\ \partial D^3)\simeq *$. El teorema puede ser reenunciado como como que para los espacios de smooth embeddings $Emb(D^3,\R^3)$ y $Emb(S^2,\R^n)$, la restricción $\rho:Emb(D^3,\R^3)\to Emb(S^2,\R^n)$ induce sobreyección en $\pi_k$ para todo $k$, pues $\rho$ es una fibración cuyas fibra es precisamente $Diff(D^3\ rel\ \partial D^3)$ (se usa la sucesión exacta larga de homotopía de una fibración). Consideremos ahora el diagrama
 \[
 \begin{tikzcd}
@@ -134,6 +134,37 @@ Una superficie orientada $S$ de $\R^3$ se dice \emph{elemental} si verifica las 
 \item Si denotamos por $S^+$ (respectivamente $S^-$) a la adherencia del conjunto de puntos donde la normal tiene coordenaza $z$ estrictamente positiva (respectivamente negativa), $S^+$ y $S^-$ están aisladas la una de la otra. 
 \end{enumerate}
 \end{defi}
+
+\begin{prop}[de normalización]
+Dada una familia de esferas $\Sigma_t$, $t\in S^k$, existe un recubrimiento de $S^k$ por bolas abiertas $B_i$, existen planos horizontales $P_{ij}$ (todos distintos) y una deformación de $\Sigma_t$ a una familia $\Sigma'_t$ tal que:
+\begin{enumerate}
+\item Para todo $t\in B_i$ y para todo $j$, la parte de $\Sigma'_t$ comprendida entre $P_{ij}$ y $P_{ij+1}$ es una superficie elemental
+\item $\Sigma'_t$ es la unión de las partes anteriores. 
+\end{enumerate}
+\end{prop}
+\begin{dem}
+Sea $U_i^{\pm}\subseteq\Sigma_t$ el conjunto de puntos donde la normal exterior forma un ángulo $\leq\frac{\pi}{4}$ con el vector $\pm(0,0,1)$. Sea $\rho_t:\Sigma_t\to [0,1]$ una familia de funciones con soporte en $U_i^+\cup U_i^-$ con $\rho_t>0$ en los puntos que tienen plano tangente horizontal. Definimos el campo de vectores $v_t$ sobre $\Sigma_t$ como $grad(h_t)+\rho_t\cdot(0,0,1)$, donde $h_t$ es la función altura de $\Sigma_t$. Por definición, $v_t$ tiene coordenada $z$ positiva en $\Sigma_t$ y puede ser extendido a un campo de vectores en $\R^3$ con la misma propiedad. Sea $f_t$ una familia de difeomorfismos que preserven la altura en $\R^3$ llevando las trayectorias de $v_t$ a líneas verticales de $\R^3$. 
+
+Existe $\delta\geq 0$, independiente de $t$, tal que todo segmento vertical en $\R^3$ de longitud menor o igual que $\delta$ interseca con $\Sigma'_t=f_t(\Sigma_t)$ en un conjunto conexo. Esto se sigue porque el campo de vectores $(0,0,1)$ sobre $\Sigma'_t$ solo puede apuntar a un lado de $\Sigma'_t$ localmente. Esto es, $(0,0,1)$ apunta hacia fuera en $f_t(U_i^+)$ y hacia dentro en $f_t(U_i^-)$, estando estos conjuntos separados por una distancia $d>0$ independiente de $t$. Podemos suponer que $\delta<\frac{1}{2}d$. 
+
+Para cada $t$ podemos elegir un número finito de planos horizontales $P_{ij}$ transversales a $\Sigma'_t$ de modo que planos adyacentes estén a distancia estrictamente menor que $\delta$ y que $\Sigma'_t$ se encuentre entre los $P_{ij}$ extremos. Estos planos se mantienen transversales a $\Sigma'_t$ en alguna bola abierta $B_i\subseteq S^k$. Por compacidad de $S^k$, podemos recubir $S^k$ con un número finito de estas bolas. Podemos suponer que los $P_{ij}$ son distintos sin problema pues se escogen de un conjunto abierto de planos horizontales. 
+
+Por construcción, para cada $i$ y $t\in B_i$, la parte de $\Sigma'_t$ entre planos adyacentes son superficies elementales ya que hemos tomado $\delta<\frac{1}{2}d$ y $\Sigma'_t$ es la unión de estas superficies
+\QED
+\end{dem}
+
+A partir de ahora nos referiremos a $\Sigma'_t$ como $\Sigma_t$. 
+
+\subsection{Función de Hatcher}
+Sea $C_t$ la unión de las curvas $\Sigma_t\cap P_{ij}$ y $C=\cup_t C_t$. La unión $C$ tiene una topología natural: podemos seguir continuamente la deformación de $c_t$, componente de $\Sigma_t\cap P_{ij}$, a medida que $t$ recorre $B_i$. Podemos definir un orden parcial $c_t>c'_t$ si $c_t$ y $c'_t$ están en el mismo $P_{ij}$ y $c_t$ rodea a $c'_t$. 
+
+\begin{prop}
+Existe una función (de Hatcher) $\lambda:\pi_0(C)\to (0,1)$ inyectiva y monónota decreciente, es decir, $c_t>c'_t$ implica $\lambda(c_t)<\lambda(c'_t)$.
+\end{prop}
+\begin{dem}
+CON LOS DIBUJOS DE LOS CÍRCULOS ALGUNOS METIDOS EN OTROS HACER EL GRAFO Y DEFINIR PARA UN T FIJO LA FUNCION COGIENDO INTERVALOS PARA CADA NIVEL, YA QUE HAY UNA CANTIDAD FINITA. COMO TAMBIÉN HAY UNA CANTIDAD FINITA DE BOLAS Y PARA LOS DE UNA MISMA BOLA LOS GRAFOS SON IGUALES Y SOLO CAMBIAN AL CAMBIAR LA BOLA PORQUE LOS PLANOS SON DISTINTOS ENTONCES SIGUE HABIENDO UNA CANTIDAD FINITA Y SE PUEDE APAÑAR
+\QED
+\end{dem}
 \subsection{Partición de la unidad}
 \subsection{Cirugía}
 
