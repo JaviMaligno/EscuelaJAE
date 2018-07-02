@@ -1,0 +1,153 @@
+\documentclass[twoside, 11pt]{article}
+\usepackage{../estilo-apuntes}
+%\usepackage{amsmath,amssymb}
+%\usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+%\usepackage{caption}
+%\usepackage[]{graphicx}
+%\usepackage{enumerate}
+%\usepackage{amsthm}
+%\usepackage{tikz-cd}
+%\usetikzlibrary{babel}
+%\usepackage{pgf,tikz}
+%\usepackage{mathrsfs}
+%\usepackage{bm}  
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{cd}
+%\usepackage[spanish]{babel}
+%\usepackage{fancyhdr}
+%\usepackage{titlesec}
+%\usepackage{floatrow}
+%\usepackage{makeidx}
+%\usepackage[tocflat]{tocstyle}
+%\usetocstyle{standard}
+%\usepackage{subfiles}
+%\usepackage{color}  
+%\usepackage{hyperref}
+%\hypersetup{colorlinks=true,citecolor=red, linkcolor=blue}
+%\usepackage{eurosym}
+%%\usepackage{ntheorem}
+%
+%
+%\renewcommand{\baselinestretch}{1,4}
+%\setlength{\oddsidemargin}{0.25in}
+%\setlength{\evensidemargin}{0.25in}
+%\setlength{\textwidth}{6in}
+%\setlength{\topmargin}{0.1in}
+%\setlength{\headheight}{0.1in}
+%\setlength{\headsep}{0.1in}
+%\setlength{\textheight}{8in}
+%\setlength{\footskip}{0.75in}
+%
+%\theoremstyle{definition}
+%
+%\newtheorem{teorema}{Teorema}[section]
+%\newtheorem{defi}[teorema]{Definición}
+%\newtheorem{coro}[teorema]{Corolario}
+%\newtheorem{lemma}[teorema]{Lema}
+%\newtheorem{ej}[teorema]{Ejemplo}
+%\newtheorem{ejs}[teorema]{Ejemplos}
+%\newtheorem{observacion}[teorema]{Observación}
+%\newtheorem{observaciones}[teorema]{Observaciones}
+%\newtheorem{prop}[teorema]{Proposición}
+%\newtheorem{propi}[teorema]{Propiedades}
+%\newtheorem{nota}[teorema]{Nota}
+%\newtheorem{notas}[teorema]{Notas}
+%\newtheorem*{dem}{Demostración}
+%\newtheorem{ejer}[teorema]{Ejercicio}
+%\newtheorem{problem}[teorema]{Problema}
+%\newtheorem{concl}[teorema]{Conclusión}
+%
+%\providecommand{\abs}[1]{\lvert#1\rvert}
+%\providecommand{\sen}[1]{sen #1}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\ninf}[1]{\norm{#1}_\infty}
+%\providecommand{\numn}[1]{\norm{#1}_1}
+%\providecommand{\gabs}[1]{\left|{#1}\right|}
+%\newcommand{\bor}[1]{\mathcal{B}(#1)}
+%\newcommand{\R}{\mathbb{R}}
+%\newcommand{\Z}{\mathbb{Z}}
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\Q}{\mathbb{Q}}
+%\newcommand{\C}{\mathbb{C}}
+%\newcommand{\Pro}{\mathbb{P}}
+%\newcommand{\Tau}{\mathcal{T}}
+%\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+%\newcommand{\vertequiv}{\rotatebox{110}{$\,\equiv$}}
+%\providecommand{\lrg}{\longrightarrow}
+%\providecommand{\func}[2]{\colon{#1}\longrightarrow{#2}}
+%\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}
+%\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+%            \node[shape=circle,draw,inner sep=1.5pt] (char) {#1};}}
+%\newcommand*{\longhookarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+
+
+\begin{document}
+%\title{Topología de Superficies}
+%\author{Antonio Rafael Quintero Toscano\\ Javier Aguilar Martín}
+%\date{Curso 2016/2017}
+%\maketitle
+
+\author{Javier Aguilar Martín }
+\date{\today}
+\title{La conjetura de Smale:\\ $Diff(S^3)\simeq O(4)$}
+
+\maketitle
+
+
+\begin{abstract}
+Un guion que no pretende ser totalmente detallado ni riguroso sobre la prueba de Hatcher de la conjetura de Smale. RECUERDA PONER LAS DOS COSAS COMO BIBLIOGRAFÍA
+\end{abstract}
+
+
+	\vfill
+	Esta obra está licenciada bajo la Licencia Creative Commons Atribución 3.0 España. Para ver una copia de esta licencia, visite \url{http://creativecommons.org/licenses/by/3.0/es/} o envíe una carta a Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+
+\newpage
+\tableofcontents
+
+\newpage
+
+\section{Introducción y enunciado equivalente}
+\subsection{Introduccion}
+
+
+\subsection{Enunciado equivalente}
+Es conocido que $Diff(S^n)\simeq O(n+1)\times Diff(D^n\ rel\ \partial D^n)$ para todo $n$. Por tanto, la conjetura de Smale $Diff(S^4)\simeq O(4)$ es equivalente a $Diff(D^3\ rel\ \partial D^3)\simeq *$. El teorema puede ser reenunciado como como que para los espacios de smooth embeddings $Emb(D^3,\R^3)$ y $Emb(S^2,\R^n)$, la restricción $\rho:Emb(D^3,\R^3)\to Emb(S^2,\R^n)$ induce sobreyección en $\pi_k$ para todo $k$, pues $\rho$ es una fibración cuyas fibra es precisamente $Diff(D^3\ rel\ \partial D^3)$ (se usa la sucesión exacta larga de homotopía de una fibración). Consideremos ahora el diagrama
+\[
+\begin{tikzcd}
+Emb(D^3,\R^3)\arrow[rr, "\rho"] \arrow[dr, "\simeq"]& & Emb(S^2,\R^n)\arrow[dl]\\
+&GL(n,\R)&
+\end{tikzcd}
+\]
+donde la equivalencia de homotopía consiste en evaluar la derivada en un punto. A partir de esto podemos enunciar equivalentemente el teorema como ``el espacio de smoothly embedded 2-esferas en $\R^3$ es contráctil''. Este espacio es el espacio de órbitas $Emb(S^2,\R^3)/Diff(S^2)$. Como $Diff(S^2)\simeq O(3)$, la contractibilidad del espacio es equivalente a que $\rho$ sea equivalencia de homotopía, pues $GL(n,\R)\simeq O(n)$ mediante Gram-Schmidt. Esta última versión será la que se probará.
+
+
+\section{Normalización, partición de la unidad y cirugía}
+\subsection{Normalización}
+\begin{defi}
+Una superficie orientada $S$ de $\R^3$ se dice \emph{elemental} si verifica las siguientes condiciones:
+\begin{enumerate}
+\item Cada curva del borde está en un plano horizontal, siendo $S$ vertical en un entorno de cada curva. 
+\item La intersección de $S$ con una línea vertical es conexa (posiblemente vacía).
+\item Si denotamos por $S^+$ (respectivamente $S^-$) a la adherencia del conjunto de puntos donde la normal tiene coordenaza $z$ estrictamente positiva (respectivamente negativa), $S^+$ y $S^-$ están aisladas la una de la otra. 
+\end{enumerate}
+\end{defi}
+\subsection{Partición de la unidad}
+\subsection{Cirugía}
+
+\section{Contornos}
+\subsection{Compatibilidad con la suma}
+\subsection{Compatibilidad con la diferencia}
+
+\section{Cómo hace continua la familia $\Sigma_{to}$}
+\subsection{Orden en las caras}
+\subsection{Conclusión}
+
+
+\section{Prueba de la conjetura de Smale}
+
+
+
+\end{document}
