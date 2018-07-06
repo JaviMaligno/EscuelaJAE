@@ -156,7 +156,7 @@ Por construcción, para cada $i$ y $t\in B_i$, la parte de $\Sigma'_t$ entre pla
 A partir de ahora nos referiremos a $\Sigma'_t$ como $\Sigma_t$. 
 
 \subsection{Función de Hatcher}
-Sea $C_t$ la unión de las curvas $\Sigma_t\cap P_{ij}$ y $C=\cup_t C_t$. La unión $C$ tiene una topología natural: podemos seguir continuamente la deformación de $c_t$, componente de $\Sigma_t\cap P_{ij}$, a medida que $t$ recorre $B_i$. Podemos definir un orden parcial $c_t>c'_t$ si $c_t$ y $c'_t$ están en el mismo $P_{ij}$ y $c_t$ rodea a $c'_t$. 
+Sea $C_t$ la unión de las curvas $\Sigma_t\cap P_{ij}$ y $C=\bigcup_t C_t$. La unión $C$ tiene una topología natural: podemos seguir continuamente la deformación de $c_t$, componente de $\Sigma_t\cap P_{ij}$, a medida que $t$ recorre $B_i$. Podemos definir un orden parcial $c_t>c'_t$ si $c_t$ y $c'_t$ están en el mismo $P_{ij}$ y $c_t$ rodea a $c'_t$. 
 
 \begin{prop}
 Existe una función (de Hatcher) $\lambda:\pi_0(C)\to (0,1)$ inyectiva y monónota decreciente, es decir, $c_t>c'_t$ implica $\lambda(c_t)<\lambda(c'_t)$.
@@ -173,13 +173,21 @@ HACER EL DIBUJO ROTADO EN LA IZQUIERDA Bi CON B'i DENTRO, RECORDAR QUE HE DEFINI
 Podemos decir que $E=\bigcup E_i$ juega el papel de una partición de la unidad, pues $\partial E$ induce una partición de $t\times [0,1]$ variando continuamente con $t$. Sea $X_i$ la proyección sobre $S^k$ de $\Gamma_i\cap T_i$; $X_i=\bigcup X_{il}$, donde $X_{il}$ es el alma de $Z_{il}\cong X_{il}\times [-1,1]$. La coordenada transversal $t_{il}$ crece en el sentido que va de $B'_i$ a $B_i$. 
 
 Nótese que, para $i$ fijo, los $Z_{il}$ son disjuntos dos a dos por el $\varepsilon$ que se ha elegido. Se tomará un recubrimiento $\{B_i\}$ tal que cada $t$ pertenezca a lo sumo a $k+1$ bolas. Se puedeN elegir los $B'_i$ de forma que la unión de los $t$ que pertenece exactamente a $q$ $Z_{il}$, $1\leq q\leq k$, sea una unión disjunta de \emph{cubos} que tengan por alma una componente de la intersección de $q$ $X_{il}$, con los $t_{il}$ respectivas como coordenadas transversales, y que ningún $t$ pertenezca a $k+1$ $Z_{il}$. 
+
 \subsection{Cirugía}
+Para cada $t$ fijo, construimos los objetos $\Sigma_{tu}$. Los valores $\lambda(c_t)$ se ordenan en $u^1=\lambda(c_t^1)>u^2=\lambda(c_t^2)>\cdots$. Sea $\Delta(c_t)$ el disco horizontal bordeado por $c_t$. Para $u>u^1$, $\Sigma_{tu}=\Sigma_t$. Para $u=u^1$, $\Sigma_{tu}=\Sigma_t\cup \Delta(c_t^1)$ (aparición de un disco de cirugía). Si $u\in[u^1, u^1-\varepsilon]$, ejecutamos la cirugía: $\Delta(c_t^1)$ es reemplazado por dos discos $\Delta^+$ y $\Delta^-$ que se separan progresivamente, uno hacia arriba y otro hacia abajo hasta una distancia de $\Delta(c_t^1)$ igual a $\lambda(c_t)\cdot\delta$; al mismo tiempo retiramos el anillo vertical entre $\partial\Delta^+$ y $\partial\Delta^-$. Después de esto no añadimos ninguna cirugía hasta $u=u^2$ y repetimos. 
+
+PONER POR AQUÍ EL DIBUJO DE HATCHER Y ALOMEJOR TAMBIÉN EL DE BOURBAKI
+
+Hay una manera de describir $\Sigma_{tu}$ de modo único como unión de esferas que tienen solamente un disco horizontal en común dos a dos. Cada una de ellas es un \emph{factor} y sus discos horizontales se llaman \emph{caras}. Una esfera que es unión de superficies elementales con discos horizontales se dice \emph{primitiva}. Cada componente de $\Sigma_{t0}$ es una esfera primitiva a la que se le han añadido discos de cirugía. Si $\Delta$ es una cara común a dos factores $\Sigma_1$ y $\Sigma_2$, se dice que $\Delta$ es una cara \emph{suma} si $\overline{\Sigma}_1$ y $\overline{\Sigma}_2$ son bolas que intersecan solo en $\Delta$, o \emph{diferencia} si hay una relación de inclusión entre estas bolas. 
+
+PONER EL DIBUJO 
 
 \section{Contornos}
 \subsection{Compatibilidad con la suma}
 \subsection{Compatibilidad con la diferencia}
 
-\section{Cómo hace continua la familia $\Sigma_{to}$}
+\section{Cómo hacer continua la familia $\Sigma_{to}$}
 \subsection{Orden en las caras}
 \subsection{Conclusión}
 
