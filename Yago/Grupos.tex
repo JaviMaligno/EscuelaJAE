@@ -141,13 +141,40 @@ Dado un grupo $G$ y un conjunto $X\subseteq G$ definimos el \textbf{grafo de Cay
 
 \begin{observaciones}\
 \begin{enumerate}
-\item 
+\item Por comodida hemos cambiado $g\xrightarrow{\sigma_x}gx^{-1}$ por $g\xrightarrow{x}gx$. Si hubiésemos hecho la prueba del teorema de Cayley con la acción por la derecha no habría sido necesario el inverso.
 \item $\Gamma(G,X)$ es conexo si y solo si $\gene{X}=G$.
-\item En cada arista de $\Gamma(G,X)$ entra y sale exactamente una arista por cada elemento de $G$. 
-\item 
+\item En cada arista de $\Gamma(G,X)$ entra y sale exactamente una arista por cada elemento de $G$. En particular $\Gamma(G,X)$ recubre el grafo con vértices $G$ y ciclos por cada elemento de $x$ en todos los vértices. DIBUJO
+\item La acción de $G$ en $G=V(\Gamma)$ por la izquierda induce una acción de $G$ en $\Gamma(G,X)$ por automorfismos de grafos etiquetados
+\[
+g\cdot (a\xrightarrow{x}ax)=ga\xrightarrow{x}gax
+\]
 \end{enumerate}
 \end{observaciones}
 
+\begin{ej}
+$\Z^2=\gene{a,b\mid ab=ba}=\{a^nb^m\mid n,m\in\Z\}$. DIBUJO
+\end{ej}
+
+\begin{defi}
+Una \textbf{palabra} $w$ en $X\cup X^{-1}$ (o por simplicidad en $X$) es una sucesión fintia de elementos de $X\cup X^{-1}$.
+\end{defi}
+
+Dado un conjunto $Y$, $Y^*$ es el monoide generado por $Y$, formado por las palabras en $Y$ con la operación de concatenación.
+
+\begin{defi}
+Un \textbf{camino} $p$ en un grafo $\Gamma$ es una sucesión $v_0,e_1^{\varepsilon_1}, v_1,e_2^{\varepsilon_2},\dots, e_n^{\varepsilon_n},v_n$, donde $v_i\in V(\Gamma)$, $e_i\in E(\Gamma)$, $\varepsilon_i\in\{\pm 1\}$, de modo que si $\varepsilon_i=1$ entonces la arista es de la forma $v_{i-1}\xrightarrow{e_i}v_{i}$ y si $\varepsilon_i=-1$ la arista es de la forma $v_{i-1}\xleftarrow{e_i}v_i$. 
+
+En particular, dado $p$ de $v_0$ a $v_n$ podemos definir el camino $p^{-1}\equiv v_n,e_n^{-\varepsilon_n}, \dots, e_1^{-\varepsilon_1},v_0$ que va de $v_n$ a $v_0$. 
+\end{defi}
+
+Una palabra $w$ en $X\cup X^{-1}$ codifica un único camino $p$ en $\Gamma(G,X)$ (módulo vértice inicial) de longitud $l(p)$ igual a $l(w)$, la longitud de la palabra. 
+
+\begin{ej}
+En $\Z^2$ consideramos la palabra $w=ababa^{-1}ab^{-2}=_G aa$. DIBUJOS
+
+Si dos palabras empiezan y acaban en los mismos vértices entonces describen una relación en el grupo. 
+\end{ej}
+  
 \subsection{Grupos como espacios métricos}
 
 
