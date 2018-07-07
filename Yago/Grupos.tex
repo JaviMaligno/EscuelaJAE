@@ -177,6 +177,30 @@ Si dos palabras empiezan y acaban en los mismos vértices entonces describen una
   
 \subsection{Grupos como espacios métricos}
 
+Sea $G$ un grupo finitamente generado y $X$ un conjunto finito de generadores. Definimos
+\[
+d_X:G\times G\to\Z_{\geq 0}
+\]
+\[
+(g,h)\mapsto\min\{l(p)\mid p\text{ es un camino de }g\text{ a }h\}
+\]
+\begin{prop}
+La aplicación $d_X$ es una métrica.
+\end{prop}
+\begin{dem}\
+\begin{itemize}
+\item Trivialmente $d_X\geq 0$ porque los caminos tienen longitud no negativa y $d_X(g,h)=0\Leftrightarrow g=h$ pues el camino constante tiene longitud 0.
+\item Se tiene $d_X(g,h)=d_X(h,g)$ tomando el camino inverso.
+\item Por último, $d_X(h,g)\leq d_X(h,k)+d_X(k,g)$ al ser la concatenación de los caminos de $h$ a $k$ y de $k$ a $g$ un camino válido aunque no sea el que dé necesariamente la longitud mínima. 
+\end{itemize}
+\QED
+\end{dem}
+
+La acción de $G \curvearrowright G$ por la izquierda preserva la métrica, esto es, para todo $a,g,h\in G$, $d_X(ag,ah)=d_X(g,h)$. En efecto, si $gx_1\cdots x_n=h$, entonces $agx_1\cdots x_n=ah$. En particular, $d_X(g,h)=d_X(1_G,g^{-1}h)$. Definimos pues, $|g|_X=d(1_G,g)$. 
+
+\begin{observacion}
+La métrica no es única, sino que depende de los generadores. DIBUJO
+\end{observacion}
 
 \section{Invariantes de quasi-isométría: Crecimiento}
 \subsection{Función de crecimiento}
