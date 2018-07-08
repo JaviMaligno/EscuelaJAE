@@ -202,6 +202,92 @@ La acción de $G \curvearrowright G$ por la izquierda preserva la métrica, esto
 La métrica no es única, sino que depende de los generadores. DIBUJO
 \end{observacion}
 
+\begin{defi}
+Sean $(A,d_A)$ y $(B,d_B)$ espacios métricos. Sean $\lambda\geq 1$ y $c\geq 0$. Una función $f:A\to B$ es un \textbf{encaje $(\lambda,c)$-quasi-isométrico} si
+\[
+\frac{1}{\lambda}d_A(x,y)-c\leq d_B(f(x),f(y))\leq \lambda d_A(x,y)+c.
+\]
+Diremos que $f$ es una \textbf{$(\lambda,c)$-quasi-isometría} si además para todo $b\in B$ existe $a\in A$ tal que $d_B(f(a),b)\leq c$ (a esta propiedad se la conoce como \textbf{quasi-sobreyectividad}). Cuando no sea necesario especificar los parámetros hablaremos de encajes quasi-isométricos y quasi-isometrías. En caso de existir una quasi-isometría entre $A$ y $B$ diremos que $A$ es quasi-isométrico a $B$.
+\end{defi}
+
+\begin{ejs}\
+\begin{enumerate}
+\item $\Z\hookrightarrow\R$ es un encaje $(1,0)$-quasi-isométrico y una $(1,1)$-quasi-isometría para la distancia usual.
+\item $f:\R\to\Z:x\mapsto\lfloor x\rfloor$ es una $(1,1)$-quasi-isometría.
+\item 
+\end{enumerate}
+\end{ejs}
+
+\begin{observacion}
+Los encajes quasi-isométricos son funciones de Lipschitz y por tanto continuas.
+\end{observacion}
+
+\begin{prop}\
+\begin{enumerate}
+\item Si $f:A\to B$ y $g:B\to C$ son quasi-isometrías entonces $g\circ f:A\to C$ también lo es.
+\item Si $f:A\to B$ es una quasi-isometría, entonces existe una quasi-isometría $g:B\to A$ y una constante $k\geq 0$ tales que
+\begin{align*}
+d_A(a,g\circ f(a))\leq k \ \forall a\in A\\
+d_B(b,f\circ g(b))\leq k \ \forall b\in B
+\end{align*}
+\end{enumerate}
+\end{prop}
+\begin{dem}
+HACER
+\QED
+\end{dem}
+
+\begin{coro}
+Ser quasi-isométricos es una relación de equivalencia de espacios métricos.
+\end{coro}
+
+\begin{lemma}
+Sea $G$ un grupo finitamente generado y supongamos que $X\subseteq G$ e $Y\subseteq G$ son dos conjuntos finitos de generadores. Entonces
+\[
+Id:(G,d_X)\to (G,d_Y)
+\]
+es una quasi-isometría.
+\end{lemma}
+\begin{proof}
+Sea $M_x=\max_{x\in X} |x|_Y$. Entonces, para todo $x\in X$, existe $w_x\in Y^*$ con $l(w_x)\leq M$. Ahora, 
+\begin{align*}
+d_X(a,b)=n &\Rightarrow a^{-1}b=x_1\cdots x_n, x_i\in X\\
+& \Rightarrow a^{-1}b=w_{x_1}\cdots w_{x_n}\in Y^*\\
+& \Rightarrow d_Y(a,b)\leq M_x\cdot d_X(a,b).
+\end{align*}
+Similarlmente, $d_X(a,b)\leq M_Y d_Y(a,b)$, por lo que
+\[
+\frac{1}{M_Y}d_X(a,b)\leq d_Y(a,b)\leq M_xd(a,b)
+\]
+\end{proof}
+
+\begin{coro}
+El grafo de Cayley de un grupo finitamente generado es único salvo quasi-isometrías.
+\end{coro}
+
+\begin{defi}
+Un espacio métrico $(M,d)$ se llama \textbf{geodésico} si para todo $x,y\in M$ existe $p:[0,d(x,y)]\to M$ continua con $p(0)=x$, $p(d(x,y))=y$ y $d(p(t),p(t'))=|t-t'|$ para todo $t,t'\in [0,d(x,y)]$. 
+\end{defi}
+
+\begin{ejs}\
+\begin{enumerate}
+\item $\R^n$ es un espacio métrico geodésico con la métrica euclídea.
+\item Un grafo $\Gamma$ puede dotarse de estructura de espacio métrico geodésico identificando las aristas con copias del intervalo $[0,1]$. 
+\item El espacio hiperbólico $\mathbb{H}^n$. 
+\item Cualquier variedad Riemanniana completa.
+\item $\R^n-\{0\}$ no es geodésico. 
+\end{enumerate}
+\end{ejs}
+
+\begin{defi}
+Una acción $G\curvearrowright (M,d)$ es:
+\begin{itemize}
+\item \textbf{por isometrías} si $d(x,y)=d(gx,gy)$ para todo $x,y\in M$ y para todo $g\in G$. 
+\item \textbf{métricamente propia} si para todo $x\in M$ y para todo $r>0$ el conjunto $\{g\in G\mid d(x,gx)<r\}$ es finito.
+\item \textbf{co-acotada} si existe $R$ tal que $\bigcup_{g\in G} gB(x,R)=M$ para algún $x\in M$ (esto implica que se cumple para todo $x\in M$).
+\end{itemize}
+\end{defi}
+
 \section{Invariantes de quasi-isométría: Crecimiento}
 \subsection{Función de crecimiento}
 
