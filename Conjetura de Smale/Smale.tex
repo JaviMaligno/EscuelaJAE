@@ -113,7 +113,7 @@ Un guion que no pretende ser totalmente detallado ni riguroso sobre la prueba de
 \subsection{Introducción}
 
 
-\subsection{Enunciados equivalentes}
+\subsection{Enunciados equivalentes}\label{equivalentes}
 Es conocido que $Diff(S^n)\simeq O(n+1)\times Diff(D^n\ rel\ \partial D^n)$ para todo $n$. Por tanto, la conjetura de Smale $Diff(S^4)\simeq O(4)$ es equivalente a $Diff(D^3\ rel\ \partial D^3)\simeq *$. El teorema puede ser reenunciado como como que para los espacios de smooth embeddings $Emb(D^3,\R^3)$ y $Emb(S^2,\R^n)$, la restricción $\rho:Emb(D^3,\R^3)\to Emb(S^2,\R^n)$ induce sobreyección en $\pi_k$ para todo $k$, pues $\rho$ es una fibración cuyas fibra es precisamente $Diff(D^3\ rel\ \partial D^3)$ (se usa la sucesión exacta larga de homotopía de una fibración). Consideremos ahora el diagrama
 \[
 \begin{tikzcd}
@@ -184,6 +184,59 @@ Hay una manera de describir $\Sigma_{tu}$ de modo único como unión de esferas 
 PONER EL DIBUJO 
 
 \section{Contornos}
+
+ Si $\Sigma\subset\R^3$ es una esfera encerrando una bola cerrada $\overline{\Sigma}$. Definimos su \emph{contorno} como $C(\Sigma)$, el espacio cociente $\overline{\Sigma}/\sim$ de la relación $x\sim y$ si hay un segmento vertical contenido en $\overline{\Sigma}$ uniendo $x$ e $y$. En otras palabras, $C(\Sigma)$ es el espacio de hojas de la foliación de $\overline{\Sigma}$ mediante líneas verticales. La aplicación cociente se denotará $C:\overline{\Sigma}\to C(\Sigma)$. Nótese que $C$ restringida a $\Sigma$ es sobreyectiva. 
+ 
+ EJEMPLO 5.1 DE HATCHER
+ 
+ Motivados por esta construcción damos las siguientes definiciones.
+ 
+ \begin{defi}
+ Sean $n$ funciones de clase $C^1$, $f_1,\dots, f_n:[0,1]\to\R$ nulas en el borde y verificando que si $f_i(x)=f_j(x)$ para algún $x\in [0,1]$ entonces $f_i'(x)=f_j'(x)$. La figura formada por sus grafos se llamará \emph{bloque de bigones}. Un \emph{sistema de bigones} es una unión finita de bloques disjuntos. Para $n=2$, la adherencia de la unión de las componentes acotadas se llama una \emph{lengua}. 
+ \end{defi}
+
+\begin{defi}\label{lenguas}
+Una \emph{estructura de lenguas} $\mathcal{L}$ es una superficie con borde $L$, dotada de una proyección $\pi:L\to\R^2$, un disco inicial $D_0$ y una colección finita de lenguas $T_1,\dots, T_n$ sobre $L$ con las condiciones siguientes:
+\begin{enumerate}
+\item $L$ es unión de discos lisos $D_1,\dots, D_n$ con $D_0$, tales que sobre cada interior de los cuales $\pi$ es una sumersión. 
+\item $\pi(D_i)\cap\pi\left(\bigcup_{j<i}D_j\right)$ es un subdisco $d_i$ de $\pi(D_i)$ tal que $d_i\cap\pi(D_i)$ contiene al menos un arco. 
+\item $T_i=adh(\pi(D_i)-d_i)$, $int(T_i)\cap int(T_j)=\emptyset$ y $D_0\cap int(T_i)=\emptyset$. El lado de unión de $T_i$ es $T_i\cap d_i$ y su lado libre es $adh(\partial T_i-\partial d_i)$. 
+\item Todo punto del lado de unión pertenece al lado libre de alguna otra lengua o a $\partial D_0$.  
+\end{enumerate}
+\end{defi}
+
+Una lengua no tiene por qué ser conexa, por ello podemos hablar de \emph{subdivisión} de una estructura de lenguas, en la que se eligen como lenguas distintas algunas de las componentes de una lengua existente. 
+
+\begin{teorema}
+Si $\Sigma$ es una esfera primitiva, el contorno $C(\Sigma)$ admite una estructura de lenguas. PONER LA REFERENCIA (ES LA PROPOSICIÓN 5.1)
+\end{teorema}
+
+DIBUJO 3.1 DE BOURBAKI
+
+\begin{nota}\
+\begin{enumerate}
+\item La definición \ref{lenguas} se extiende a familias de esferas.
+\item El orden de unión de las lenguas no forma parte de la estructura, pero para una familia se puede dar un orden localmente en el espacio de parámetros.  
+\end{enumerate}
+\end{nota}
+
+Sea $\Sigma$ una esfera primitiva y $\Delta_1,\dots, \Delta_n$ una colección de discos de cirugía en planos horizontales distintos, con $int(\Delta_i)\cap\Sigma=\emptyset$. Tenemos $\Sigma\cup\Delta_1\cup\cdots\cup\Delta_n$ como unión de factores $\Sigma_0\cup\cdots\cup \Sigma_n$ con $\Delta_k$ cara de $\Sigma_k$ para $k\geq 1$. Suponemos que $\Sigma_0$ es \emph{grande}, esto es, que $\pi(\Sigma_0)\cap\partial\Sigma$ contiene un arco. Para una familia $\Sigma_t$ pedimos que $\pi(\Sigma_{0t})\cap\partial\Sigma_t$ contenga localmente arcos que varíen suavemente con $t$.
+
+\begin{teorema}[de compatibilidad]PONER REFERENCIA (ESTÁ EN BOURBAKI) 
+Existe una estructura de lenguas $\mathcal{L}$ (resp. $\mathcal{L}_i$) sobre $C(\Sigma)$ (resp. $\Sigma_i$) verificando las condiciones siguientes:
+\begin{enumerate}
+\item Para $k\geq 1$, $C(\Delta_k)$ es el disco inicial de $\mathcal{L}_k$. El disco inicial $D_0$ de $\mathcal{L}_0$ es también disco inicial de $\mathcal{L}$.
+\item La unión de los $\pi(\partial T_i)$ es un sistema de bigones.
+\item Para $j\neq j'$, $int(T_j)\cap int(T_{j'})=\emptyset$ o bien hay una relación de contención. 
+\end{enumerate}
+\end{teorema}
+
+En presencia de un parámetro el enunciado es el mismo salvo que el factor inicial $\Sigma_{0t}$ no puede ser seguido continuamente en general. Por ejemplo si tomamos como factor inicial uno tal que la proyección tenga la forma de la FIGURA DE LA LENGUA QUE SOBRE SALE y hacemos que varíe hasta que deje de sobresalir. Para arreglarlo cambiamos de factor a lo largo de una subvariedad $V$ de codimensión 1 del espacio de parámetros; a un lado el punto crítico elegimos $\Sigma_{0t}=\Sigma'_t$ y al otro lado elegimos $\Sigma_{0t}=\Sigma''_t$. Se verifica que $\Sigma'_t$ y $\Sigma''_t$ tienen una cara común de tipo suma $\Delta_t$. Si para $t\in V$ tomamos $C(\Delta_t)$ como disco inicial de $\mathcal{L}$, entonces el teorema de compatibilidad se preserva en presencia de un parámetro. 
+
+Antes de seguir avanzando enunciamos un hecho esencial: una familia de esferas primitivas es homótopa a cero dentro del espacio de todas las esferas. Esto será establecido en la siguiente sección gracias a la estructura de contorno. En cierta forma, el problema se vuelve 2-dimensional y admite solución gracias al ``pequeño teorema de Smale'' REFERENCIA: $Diff(D^2\ rel\ \partial D^2)$ es contráctil. Finalmente, el teorema en dimensión 3 aparece como consecuencia del teorema en dimensión 2.
+
+\section{Aplastamientos}
+
 \subsection{Compatibilidad con la suma}
 \subsection{Compatibilidad con la diferencia}
 
