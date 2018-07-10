@@ -233,8 +233,7 @@ Existe una estructura de lenguas $\mathcal{L}$ (resp. $\mathcal{L}_i$) sobre $C(
 
 En presencia de un parámetro el enunciado es el mismo salvo que el factor inicial $\Sigma_{0t}$ no puede ser seguido continuamente en general. Por ejemplo si tomamos como factor inicial uno tal que la proyección tenga la forma de la FIGURA DE LA LENGUA QUE SOBRE SALE y hacemos que varíe hasta que deje de sobresalir. Para arreglarlo cambiamos de factor a lo largo de una subvariedad $V$ de codimensión 1 del espacio de parámetros; a un lado el punto crítico elegimos $\Sigma_{0t}=\Sigma'_t$ y al otro lado elegimos $\Sigma_{0t}=\Sigma''_t$. Se verifica que $\Sigma'_t$ y $\Sigma''_t$ tienen una cara común de tipo suma $\Delta_t$. Si para $t\in V$ tomamos $C(\Delta_t)$ como disco inicial de $\mathcal{L}$, entonces el teorema de compatibilidad se preserva en presencia de un parámetro. 
 
-Antes de seguir avanzando enunciamos un hecho esencial: una familia de esferas primitivas es homótopa a cero dentro del espacio de todas las esferas. Esto será establecido en la siguiente sección gracias a la estructura de contorno. En cierta forma, el problema se vuelve 2-dimensional y admite solución gracias al ``pequeño teorema de Smale'' REFERENCIA: $Diff(D^2\ rel\ \partial D^2)$ es contráctil. Finalmente, el teorema en dimensión 3 aparece como consecuencia del teorema en dimensión 2. La equivalencia entre el primer hecho y el pequeño teorema de Smale se tiene con equivalencias similares a las de la sección \ref{equivalentes}. 
-
+Antes de seguir avanzando enunciamos un hecho esencial: una familia de esferas primitivas es homótopa a cero dentro del espacio de todas las esferas. Esto será establecido en la siguiente sección gracias a la estructura de contorno. En cierta forma, el problema se vuelve 2-dimensional y admite solución gracias al ``pequeño teorema de Smale'' REFERENCIA: $Diff(D^2\ rel\ \partial D^2)$ es contráctil. Finalmente, el teorema en dimensión 3 aparece como consecuencia del teorema en dimensión 2. 
 \section{Aplastamientos}
 
 \begin{defi}
@@ -252,9 +251,9 @@ El espacio de aplastamientos de una estructura de lenguas tiene el tipo de homot
 
 Para explicar esta proposición, en primer lugar tengamos en cuenta que una familia de esferas primitiva da lugar a un grafo en el que los vértices se tienen puntos críticos de la función altura y las aristas conectan dos consecutivos. Se sabe que estos grafos siempre dan lugar a un árbol, por lo que la contracción de aristas se traduce en un aplastamiento de la estructura de lenguas de los contornos. 
 
-Por otra parte, tenemos el siguiente resultado REFERENCIA (BOURBAKI LA TIENE)
+Por otra parte, tenemos el siguiente resultado 
 
-\begin{prop}
+\begin{prop}\label{monotono}
 Si $\Sigma$ es una 2-esfera cuyo contorno admite una estructura de lenguas, entonces, para todo aplastamiento $C(\Sigma)_s$, existe una familia $\Sigma_s$ con $\Sigma_0=\Sigma$ tal que:
 \begin{enumerate}
 \item $C(\Sigma_s)=C(\Sigma)_s$,
@@ -262,6 +261,34 @@ Si $\Sigma$ es una 2-esfera cuyo contorno admite una estructura de lenguas, ento
 \end{enumerate} 
 Además, dado el aplastamiento, el conjunto de caminos $\{\Sigma_s\}$ es contráctil. 
 \end{prop}
+\begin{dem}
+Denotamos $C=C(\Sigma)$. Sean $T_1,\dots, T_n$ lenguas de $C$ pegadas en el orden de escritura, y sea $D$ el disco inicial de $C$. A partir del aplastamiento $C_s$ definimos una familia de discos con lenguas $C(s_0,\dots, s_n)\subset C$, para $0\leq s_0\leq\cdots\leq s_n\leq 1$, con las condiciones $C(s_0,\dots, s_n)\cap T_i=C_{s_i}\cap T_i$ y $C(s_0,\dots, s_n)\cap D=C_{s_0}\cap D$. Vemos $C(0,\dots, 0,s_i,s_{i+1},\dots, s_n)$ para $s_i\in[0,s_{i+1}]$ como un aplastamiento de $C(0,\dots, 0,s_{i+1},\dots, s_n)$. Si asumimos inductivamente que hemos construido una familia $\Sigma(0,\dots, 0, s_{i+1},\dots, s_n)$ con contorno igual a $C(0,\dots, 0,s_{i+1},\dots, s_n)$, será suficiente elevar el aplastamiento $C(0,\dots, 0,s_i,s_{i+1},\dots, s_n)$ a una isotopía de aplastamientos $\Sigma(0,\dots, 0, s_i, s_{i+1},\dots, s_n)$. Para el aplastamiento buscado, $\Sigma_s=\Sigma(s,\dots, s)$. 
+
+Por tanto, nos reducimos a dos casos: o bien una sola lengua $T=T_i-C_{s_{i+1}}$ se está aplastando, o bien se está aplastando el disco inicial. Consideramos el primer caso, ya que el segundo es similar. Como paso previo a elevar el aplastamiento $C_s$, construimos una pequeña isotopía de aplastamientos $\Sigma'_s$ de $\Sigma=\Sigma'_0$ tal que:
+\begin{enumerate}[a)]
+\item $\Sigma'_s$ es suave para $s>0$. 
+\item $\Sigma'_s$ no tiene tangentes verticales en puntos que se proyecten sobre $int(T)$. 
+\item $C(\Sigma'_s)=C(\Sigma)$. 
+\end{enumerate}
+FIGURA 1.6 DE HATCHER PARA CONSEGUIR a)
+
+Para conseguir b), sea $V$ el conjunto de puntos de $\Sigma$ que tienen plano tangente vertical y se proyectan a los puntos de $int(T)$. Sea $V_+$ (resp. $V_-$) el subconjunto de puntos donde una línea vertical hacia arriba (resp. abajo) pasa del interior de $\Sigma$ al exterior, como en la figura FIGURA 6.2 DE HATCHER INDICANDO QUE LOS VECTORES ESOS SON EL CAMPO V. Nótese que $V_+$ y $V_-$ son disjuntos y cerrados relativos en $C^{1-}(int(T))$. Así que podemos encontrar un campo de vectores suave $v$ en $\R^3$ tal que:
+\begin{enumerate}[i)]
+\item $v|_{\Sigma}$ es no nulo solamente en $C^{-1}(int(T))$.
+\item $v|_{\Sigma}$ es ortogonal a $\Sigma$, apuntando al interior cuando no es nulo. 
+\item $\parcial{|v|}{z}>0$ en $V_+$ y $\parcial{|v|}{z}<0$ en $V_-$.
+\end{enumerate}
+Teniendo $v$, obtenemos $\Sigma'_s$ fluyendo con $v$ en un intervalo $[0,\varepsilon]$ lo bastante pequeño y luego permaneciendo quieto en $[\varepsilon,1]$. 
+
+El aplastamiento de deseado $\Sigma_s$ se obtiene definiento $\overline{\Sigma}_s=C^{-1}(C_s)$.
+\QED
+\end{dem}
+
+El resultado anterior también es válido en presencia de un parámetro CASO GENERAL REFERENCIA (BOURBAKI LA TIENE), luego combinándolo con el pequeño teorema de Smale, asociamos a $\Sigma$, para una estructura de lenguas fija $\mathcal{L}$ sobre $C(\Sigma)$, un conjunto contráctil de caminos monótonos (en el sentido de la proposición \ref{monotono}) $\mathcal{C}(\Sigma,\mathcal{L})$, relacionando $\Sigma$ con una esfera estándar. Esto prueba que cualquier familia de esferas primitivas es contráctil en el espacio de todas las esferas (pues admiten una estructura de lenguas). 
+
+Si $\mathcal{L}'$ es una subdivisión de $\mathcal{L}$, entonces $\mathcal{C}(\Sigma,\mathcal{L}')\subset\mathcal{C}(\Sigma,\mathcal{L})$ como retracto de deformación, ya que ambos términos son contráctiles. 
+
+Dada $\Delta$ una cara de $\Sigma$, denotamos $\Delta'=adh(\Sigma-\Delta)$. Supongamos que $C(\Delta)$ es el disco inicial de la estructura $\mathcal{L}$. Entonces un aplastamiento $C(\Sigma)$ sobre $C(\Delta)$ se eleva a una isotopía monónota de $\Sigma-int(\Delta)$ relativa a $\partial \Delta$, a través de $\overline{\Sigma}$ hasta $\Delta$. Lo mismo es cierto con la aparición de un parámetro. Esta isotopía se puede considerar como un conjunto de caminos de discos $\Delta_s$, $\mathcal{C}(\Sigma,\mathcal{L},\Delta)$, que se inyecta en $\mathcal{C}(\Sigma,\mathcal{L})$ como retracto de deformación mediante $\Delta_s\mapsto \Sigma_s$.
 
 \subsection{Compatibilidad con la suma}
 \subsection{Compatibilidad con la diferencia}
