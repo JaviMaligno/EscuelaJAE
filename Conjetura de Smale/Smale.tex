@@ -70,7 +70,7 @@
 %\newcommand{\N}{\mathbb{N}}
 %\newcommand{\Q}{\mathbb{Q}}
 %\newcommand{\C}{\mathbb{C}}
-%\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\LL}{\mathcal{L}}
 %\newcommand{\Tau}{\mathcal{T}}
 %\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
 %\newcommand{\vertequiv}{\rotatebox{110}{$\,\equiv$}}
@@ -291,7 +291,22 @@ Si $\mathcal{L}'$ es una subdivisión de $\mathcal{L}$, entonces $\mathcal{C}(\S
 Dada $\Delta$ una cara de $\Sigma$, denotamos $\Delta'=adh(\Sigma-\Delta)$. Supongamos que $C(\Delta)$ es el disco inicial de la estructura $\mathcal{L}$. Entonces un aplastamiento $C(\Sigma)$ sobre $C(\Delta)$ se eleva a una isotopía monónota de $\Sigma-int(\Delta)$ relativa a $\partial \Delta$, a través de $\overline{\Sigma}$ hasta $\Delta$. Lo mismo es cierto con la aparición de un parámetro. Esta isotopía se puede considerar como un conjunto de caminos de discos $\Delta_s$, $\mathcal{C}(\Sigma,\mathcal{L},\Delta)$, que se inyecta en $\mathcal{C}(\Sigma,\mathcal{L})$ como retracto de deformación mediante $\Delta_s\mapsto \Sigma_s$.
 
 \subsection{Compatibilidad con la suma}
+
+Sea $\Sigma$ una esfera primitiva y $\Delta$ un disco de cirugía de tipo suma, de modo que $\overline{\Sigma}=\overline{\Sigma}_0\cup\overline{\Sigma}_1$. Se tienen aplicaciones naturales $C(\Sigma_i)\to C(\Sigma)$ gracias a que $\Sigma_0$ es grande. Las estructuras de lenguas son $\LL,$ $\LL_0$ y $\LL_1$. El aplastamiento de $C(\Sigma_1)$ sobre $C(\Delta)$ da un aplastamiento parcial de $C(\Sigma)$ que se eleva a un camino monótono entre $\Sigma$ y $\Sigma_0$. Por tanto:
+\begin{prop}
+A todo camino $\gamma\in\mathcal{C}(\Sigma_1,\mathcal{L}_1,\Delta)$ se le puede asociar continuamente una deformación de $\CC(\Sigma_0,\LL_0)$ hasta un retracto de deformación de $\CC(\Sigma,\LL)$. 
+\end{prop}
+
 \subsection{Compatibilidad con la diferencia}
+
+Ahora, $\overline{\Sigma}_0$ contiene a $\overline{\Sigma}_1$ y a $\overline{\Sigma}=adh(\overline{\Sigma}_0-\overline{\Sigma}_1)$. El aplastamiento de $C(\Sigma_1)$ no tiene en general el efecto de aplasta $C(\Sigma)$, sino que pueden surgir más lenguas. Incluso puede ocurrir que $C(\Sigma)$ no tenga una estructura de lenguas REFERENCIA DE HATCHER COMO BOURBAKI. Para una subdivisión adecuada $\LL_1'$ de $\LL_1$ se demuestra los iguiente REFERENCIA DE HATCHER COMO BOURBAKI: sea $\Delta'=adh(\Sigma_1-\Delta)$ y sea $\{\Delta'(s)\}\in\CC(\Sigma_1,\LL_1',\Delta)$. Nótese que $\Sigma(s)=(\Sigma-\Delta')\cup\Delta'(s)$. Entonces $C(\Sigma(s))$ posee una estructura de lenguas. MIRAR LA PRUEBA EN HATCHER A VER SI SE PUEDE Por tanto podemos obtener:
+  \begin{prop}
+  A todo camino $\gamma\in\CC(\Sigma_1,\LL_1,\Delta)$ se le puede asociar una deformación de $\CC(\Sigma,\LL)$ hasta un retracto de deformación de $\CC(\Sigma_0,\LL_0)$. 
+  \end{prop}
+  
+  PONER EL DIBUJO DEL EJEMPLO DE LA SECCIÓN 7 DE HATCHER COMO EJEMPLO DONDE PASA LO DE LA DIFERENCIA
+  
+En presencia de un parámetro, $\LL_1'$ no puede ser seguido de forma continua en general, pues ocurre una bifurcación donde $\LL_1'$ debe ser subdividida. 
 
 \section{Cómo hacer continua la familia $\Sigma_{to}$}
 \subsection{Orden en las caras}
