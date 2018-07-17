@@ -306,10 +306,84 @@ CREO QUE ESTÁ EN LOS APUNTES
 \QED
 \end{dem}
 
-AQUÍ HAY EJERCICIOS QUE TENGO QUE PONER APARTE
-
 \section{Invariantes de quasi-isométría: Crecimiento}
+Con las herramientas de esta sección podremos responder de forma sencilla a la pregunta de si $\Z$ es quasi-isométrico a $\Z^2$.
 \subsection{Función de crecimiento}
+\begin{defi}
+Dado un grupo finitamente generado $G$ y un conjunto finito de generadores $X\subseteq G$, definimos
+\begin{enumerate}[a)]
+\item la \textbf{función de crecimiento por bolas} 
+\[
+\beta_{(G,X)}(n)=\#\{g\in G\mid |g|_X\leq n\}
+\]
+\item la \textbf{función de crecimiento por esferas}
+\[
+\sigma_{(G,X)}(n)=\#\{g\in G\mid |g|_X=n\}
+\]
+\end{enumerate}
+\end{defi}
+
+\begin{observacion}
+$\sigma_{(G,X)}(n)=\beta_{(G,X)}(n)-\beta_{(G,X)}(n-1)$
+\end{observacion}
+
+\begin{ejs}\
+\begin{enumerate}
+\item $G=\Z$, $X=\{1\}$: $\beta(n)=1+2n$, $\sigma(n)=\begin{cases}
+1 & n=0\\
+2 & n>0
+\end{cases}$
+\item $G=\Z^2$, $X=\{(1,0),(0,1)\}$: $\beta(n)=1+2n(n+1)$, $\sigma(n)=4n$. 
+\item GRUPO DEL FAROLERO
+\end{enumerate}
+\end{ejs}
+
+\begin{observacion}
+$\beta(n)\leq (2|X|)^n$
+\end{observacion}
+
+\begin{defi}
+Diremos que $\alpha:\R_{\geq 0}\to\R_{\geq }$ es \textbf{de crecimiento} si es no decreciente. Si $\alpha_1$ y $\alpha_2$ son funciones de crecimiento, diremos que $\alpha_1$ \textbf{domina débilmente} a $\alpha_2$ ($\alpha_2\prec \alpha_1$) si existen $\lambda\geq 1$ y $c\geq 0$ tales que
+\[
+\alpha_2(n)\leq \lambda\alpha_1(\lambda n+c)+c, \forall n\in\R_{\geq 0}.
+\]
+Si $\alpha_1\prec\alpha_2$ y $\alpha_2\prec\alpha_1$ decimos que $\alpha_1$ y $\alpha_2$ son \textbf{débilmente equivalentes} y escribimos $\alpha_1\sim\alpha_2$.
+\end{defi}
+
+\begin{lemma}
+La relación $\sim$ es de equivalencia.
+\end{lemma}
+La demostración es trivial, así que se deja como ejercicio.
+
+\begin{ejs}\
+\begin{enumerate}
+\item Sean $a,b\in\R_{\geq 0}$, entonces $\alpha_1(n)=n^a\prec n^n=\alpha_2(n)\Leftrightarrow a\leq b$ PROBARLO
+\item $e^{an}\sim a^{bn}$ PROBARLO
+\end{enumerate}
+\end{ejs}
+
+\begin{lemma}
+Si $(G,X)\sim_{QI} (H,Y)$ entonces $\beta_{(G,X)}\sim\beta_{(H,Y)}$.
+\end{lemma}
+\begin{proof}
+Sea $f:(G,d_X)\to (H,d_Y)$ una $(\lambda,c)$-quasi-isometría, es decir,
+\[
+\frac{1}{\lambda}d_X(a,b)-c\leq d_Y(f(a),f(b))\leq \lambda d_X(a,b)+c.
+\]
+Entonces, $f(B_X(1_G,n))\subseteq B_Y(f(1_G),\lambda n+c)$ y $|f^{-1}(b)|\leq \beta_{(G,X)}(\lambda c)=k$. Así que $\beta_{(G,X)}(n)\leq k\beta_{(H,Y)}(\lambda n+c)$, luego $\beta_{(G,X)}\prec \beta_{(H,Y)}$. De forma simétrica obtenemos $\beta_{(H,Y)}\prec \beta_{(G,X)}$.
+\end{proof}
+
+\begin{coro}
+$\Z\not\sim_{QI}\Z^2$.
+\end{coro}
+
+Sea $G=\gene{X}$ con $X$ finito. Escribimos $\beta_G$ para denotar una función equivalente a $\beta_{(G,X)}$.
+
+\begin{defi}
+Diremos que $G$ es de crecimiento \textbf{exponencial} si $\beta_G\sim 2^n$ y que es de crecimiento \textbf{polinomial} si $\beta_G\prec cn^d$. En este segundo caso definimos $d(G)=\inf\{s\mid \exists c:\beta_{(G,X)}(n)\leq cn^s\}$. Por último, se dirá que $G$ es de crecimiento \textbf{subexponencial} o \textbf{intermedio} si no es exponencial ni polinomial. 
+\end{defi}
+Grigorchuk probó en 1981 que para todo $0<\alpha_1<\alpha_2<1$ existe un grupo $G$ con $2^{n\alpha_1}\prec \beta_G\prec 2^{n\alpha_2}$, es decir, que existen grupos de crecimiento subexponencial. 
+
 
 \section{Invariantes de quasi-isométría: Finales}
 \subsection{$k$-rayos}
