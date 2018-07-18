@@ -75,8 +75,8 @@ SE PUEDE HACER FÁCIL CON EL SIGUIENTE TEMA, PERO INTENTAR CON LO DE ESTE
 
 \section{Invariantes de quasi-isometría: crecimiento}
 
-\begin{ejercicio}{1.6}
-
+\begin{ejercicio}{2.1}
+Probar que $\beta_{\Z^k}\sim n^k$.
 \end{ejercicio}
 \begin{solucion}
 
@@ -84,8 +84,24 @@ SE PUEDE HACER FÁCIL CON EL SIGUIENTE TEMA, PERO INTENTAR CON LO DE ESTE
 
 \newpage
 
-\begin{ejercicio}{1.7}
-
+\begin{ejercicio}{2.2}
+Calcular el crecimiento de $\left\{\begin{pmatrix}
+1 & x & z\\
+0 & 1 & y\\
+0 & 0 & 1
+\end{pmatrix}\middle\vert x,y,z\in\Z\right\}$. Ayuda: $a=\begin{pmatrix}
+1 & 1 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}$ y $b=\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{pmatrix}$ generan el grupo, pero es más fácil si se considera también $c=\begin{pmatrix}
+1 & 0 & 1\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}$ como generador. 
 \end{ejercicio}
 \begin{solucion}
 
@@ -93,8 +109,13 @@ SE PUEDE HACER FÁCIL CON EL SIGUIENTE TEMA, PERO INTENTAR CON LO DE ESTE
 
 \newpage
 
-\begin{ejercicio}{1.8}
-
+\begin{ejercicio}{2.3}
+Probar las siguientes afirmaciones:
+\begin{enumerate}
+\item $\beta_{(G,X)}(n+m)\leq \beta_{(G,X)}(n)\beta_{(G,X)}(m)$.
+\item $w(G,X)=\limsup_{n\to \infty}\sqrt[n]{\beta(G,X)(n)}$ es un límite. 
+\item $G$ es de crecimiento exponencial si y solo si $w(G,X)>1$.
+\end{enumerate}
 \end{ejercicio}
 \begin{solucion}
 
@@ -102,8 +123,10 @@ SE PUEDE HACER FÁCIL CON EL SIGUIENTE TEMA, PERO INTENTAR CON LO DE ESTE
 
 \newpage
 
-\begin{ejercicio}{1.9}
+\begin{ejercicio}{2.4}
+Un grupo finitamente generado es \textbf{promediable} si existe una sucesión $\{F_n\}_{n\in\N}$ de conjuntos finitos tal que $\lim_{n\to\infty}\frac{|\partial F_n|}{|F_n|}=0$, donde $\partial F_n=\{x\in G\mid x\notin F, d(x,F)=1\}$.
 
+Probar que si el crecimiento de $G$ no es exponencial, entonces $G$ es promediable. 
 \end{ejercicio}
 \begin{solucion}
 
@@ -111,6 +134,7 @@ SE PUEDE HACER FÁCIL CON EL SIGUIENTE TEMA, PERO INTENTAR CON LO DE ESTE
 
 \newpage
 
+\section{Invariantes de quasi-isometría: finales}
 \begin{ejercicio}{1.10}
 
 

@@ -384,6 +384,68 @@ Diremos que $G$ es de crecimiento \textbf{exponencial} si $\beta_G\sim 2^n$ y qu
 \end{defi}
 Grigorchuk probó en 1981 que para todo $0<\alpha_1<\alpha_2<1$ existe un grupo $G$ con $2^{n\alpha_1}\prec \beta_G\prec 2^{n\alpha_2}$, es decir, que existen grupos de crecimiento subexponencial. 
 
+\begin{prop}
+Sean $H\leq G$ ambos finitamente generados y sea $N\trianglelefteq G$.
+\begin{enumerate}
+\item Si $[G:H]<\infty$, entonces $\beta_G\sim\beta_H$.
+\item Si $G$ es de crecimiento polinómico entonces también lo son $H$ y $G/N$. Además, $d(H),d(G/N)\leq d(G)$.
+\item Si $G$ es de crecimiento polinómico y $[G:H]=\infty$, entonces $d(H)\leq d(G)-1$.
+\end{enumerate}
+\end{prop}
+\begin{dem}\
+\begin{enumerate}
+\item Si $[G:H]<\infty$, entonces $G\sim_{QI} H$, luego $\beta_G\sim\beta_H$.
+\item Sean $Y\subseteq H$ y $X\subseteq G$ conjuntos finitos de generadores respectivamente. Definimos $M_Y=\max_{y\in Y}|y|_X$. Entonces, $\beta_{(H,Y)}(n)\leq \beta_{(G,X)}(M_Y n)$, con lo que $H$ es de crecimiento polinómico.
+
+Sea ahora $\overline{X}=\{xN\mid x\in X\}$, entonces $G/N=\gene{\overline{X}}$ y $\beta_{(G,X)}(n)\geq \beta_{(G/N,\overline{X})}(n)$. 
+
+\item Sean $Y\subseteq X\subseteq G$ finitos tales que $G=\gene{X}$ y $H=\gene{Y}$. Sean $Hg_1,\dots, Hg_n$ distintas clases laterales de $H$. Pongamos $K=Hg_1\cup\cdots\cup Hg_n$. Por ser $H$ de índice infinito, existe $x\in X\cup X^{-1}$ tal que $Kx\neq K$, ya que si no $K=G$. Por tanto, existe $i$ tal que $Hg_ix$ es una clase lateral nueva. Empezando con $\{H\}$, para todo $n$ podemos encontrar $Hg_1,\dots, Hg_n$ con $|g_i|_X\leq i$. Entonces $\beta_{(G,X)}(n)\leq n\beta_{(H,Y)}(n)$.\QED
+\end{enumerate}
+\end{dem}
+
+\begin{teorema}
+Sea $G$ un grupo infinito finitamente generado. Las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+\item $G$ contiene un subgrupo cíclico infinito de índice finito.
+\item $G\sim_{QI}\Z$.
+\item $\beta_G\sim n$.
+\end{enumerate}
+\end{teorema}
+\begin{dem}
+Las implicaciones $1\Rightarrow 2\Rightarrow 3$ ya están probadas. Para probar $3\Rightarrow 1$ necesitamos encontrar un elemento de orden infinito $a$, ya que entonces, si $[G:\gene{a}]=\infty$, la proposición anterior nos daría $\beta_G(n)>n^2$, lo que sería una contradicción.
+
+Sea $X$ un conjunto finito de generadores. Ponemos un orden (alfabético) en $X\cup X^{-1}$ y lo extendemos a $(X\cup X^{-1})^*$ de forma long-lex, es decir, $w<w'\Leftrightarrow l(w)<l(w')$ o $l(w)=l(w')$ pero $w$ precede alfabéticamente a $w'$. 
+
+Para todo $g\in G$, existe un único $w_g=\min_{long-lex}\{w\in(X\cup X^{-1})^*\mid w=_G g\}$. Llamaremos a estos $w_g$ \textbf{palabras distinguidas} y observamos que toda subpalabra de una palabra distinguida es distinguida. Llamamos a una palabra $w=x_1\cdots x_n$ \textbf{$p$-periódica} si $x_i=x_{i+p}$ para $1\leq i\leq n-p$. 
+
+Necesitamos el siguiente lema cuya demostración postponemos.
+
+\begin{lemma}
+Si una palabra $p$-periódica contiene una subpalabra $q$-periódica de longitud al menos $p+q-1$, entonces $w$ es $d$-periódica con $d=\gcd(p,q)$.
+\end{lemma}
+
+Como $\beta_{(G,X)}\leq cn$, existe $m$ tal que el número de elementos $g\in G$ con $|g|_X=m$ es menor que $m$, ya que de lo contrario $\beta_{(G,X)}(n)\leq \sum_{i=1}^n i\sim n^2$.
+
+Vamos a probar el siguiente enunciado:
+
+``Dado $g\in G$ con $|g|_X\geq 2m$, existen palabras $u_g, s_g,v_g$ tal que $l(u_g),l(v_g)\leq m$, $s_g$ $p$-periódica con $p\leq m$ y $w_g=u_gs_gv_g$.''
+
+Observamos que este enunciado implica la existencia de elementos de órdenes arbitrariamente grandes, ya que $l(s_g)\geq |g|_X-2m$ y podemos escribir $s_g=t_g^ks_g'$, donde $t_g\in G$ con $|t_g|_X=p\leq m$ y $t_g$ tiene orden mayor que $k$, ya que si fuera menor o igual, podríamos reducir $s_g$ y $w_g$ no sería de longitud mínima. Como $w_g$ puede tener longitud arbitraria y una cantidad finita de $t_g$ para elegir, debe de existir alguno de orden infinito. TENGO UNA PREGUNTA EN MSE SOBRE ESTO
+
+CONTINUAR
+
+\QED
+\end{dem}
+
+\begin{proof}[Demostración del lema]
+Sea $w=y_1\cdots y_n$ con $y_i=y_{i+p}$ y $u=y_i\cdots y_j$ con $y_k=y_{k+q}$ y $j-i+1\geq p+q-1$. Se tiene que $p=tq+r$ con $0\leq r<q$. Si $r=0$, 
+\[
+y_{i-1}=y_{i-1+p}=y_{i-1+p+(t+1)q}=y_{i-1+q}
+\]
+por lo que $y_{i-1}\cdots y_j$ es $q$-periódica. Repitiendo obtenemos que $w$ es $q$-periódica, luego de hecho tiene periodo $\gcd(p,q)$. 
+
+Si $r>0$, para $i\leq k\leq j-p$, $y_k=y_{k+p}=y_{k+p-tq}=y_{k+r}$, así que $y_i\cdots y_{j-p+r}$ es una subpalabra $r$-periódica de $y_i\cdots y_j$ de longitud $j-p+r-1+1\geq q+r-1$ y por inducción $y_i\cdots y_j$ tiene periodo $\gcd(q,r)=\gcd(p,q)|p$, por lo que estamos en el caso $r=0$. 
+\end{proof}
 
 \section{Invariantes de quasi-isométría: Finales}
 \subsection{$k$-rayos}
