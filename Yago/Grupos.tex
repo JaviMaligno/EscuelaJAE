@@ -430,9 +430,18 @@ Vamos a probar el siguiente enunciado:
 
 ``Dado $g\in G$ con $|g|_X\geq 2m$, existen palabras $u_g, s_g,v_g$ tal que $l(u_g),l(v_g)\leq m$, $s_g$ $p$-periódica con $p\leq m$ y $w_g=u_gs_gv_g$.''
 
-Observamos que este enunciado implica la existencia de elementos de órdenes arbitrariamente grandes, ya que $l(s_g)\geq |g|_X-2m$ y podemos escribir $s_g=t_g^ks_g'$, donde $t_g\in G$ con $|t_g|_X=p\leq m$ y $t_g$ tiene orden mayor que $k$, ya que si fuera menor o igual, podríamos reducir $s_g$ y $w_g$ no sería de longitud mínima. Como $w_g$ puede tener longitud arbitraria y una cantidad finita de $t_g$ para elegir, debe de existir alguno de orden infinito. TENGO UNA PREGUNTA EN MSE SOBRE ESTO
+Observamos que este enunciado implica la existencia de elementos de órdenes arbitrariamente grandes, ya que $l(s_g)\geq |g|_X-2m$ y podemos escribir $s_g=t_g^ks_g'$, donde $t_g\in G$ con $|t_g|_X=p\leq m$ y $t_g$ tiene orden mayor que $k$, ya que si fuera menor o igual, podríamos reducir $s_g$ y $w_g$ no sería de longitud mínima. Como $w_g$ puede tener longitud arbitraria y una cantidad finita de $t_g$ para elegir, debe de existir alguno de orden infinito. 
 
-CONTINUAR
+Si $w_g=y_1\cdots y_n$, $n\geq 2m$, ponemos $v_i=y_i\cdots y_{i+m-1}$. Tenemos que $l(v_i)=m$ y como $n\geq 2m$ existen $v_1,\dots, v_{m+1}$. Como no hay más de $m$ palabras distinguidas de longitud $m$, existen $i,j$ tales que $v_i=v_j$ y tenemos que $y_i\cdots y_j\cdots y_{j+m-1}$ es $p$-periódica con $p\leq j-i\leq m$.
+
+Ahora ponemos $w_g=vsu$ y asumimos que $s=y_i\cdots y_j$ tiene longitud máxima siendo $p$-periódica con $p\leq m$ ($p$ mínimo). Tenemos que probar que $l(v)\leq m$ y $l(u)\leq m$. Ambos casos son análogos así que probamos el primero. Supongamos que $l(v)>m$, esto es, $i-1>m$. Vamos a obtener una contradicción. 
+
+Como $i-1>m-p$ y $l(s)\geq m+p$, existen $v_{i+p-m-1},\dots, v_{i+p-1}$ subpalabras de longitud $m$ y por el razonamiento de antes existen dos iguales, digamos $v_k$ y $v_l$. Tenemos $s=y_i\cdots y_j$ $p$-periódica, $p\leq m$, $l(s)\geq m+p$; $b=y_k\cdots y_l\cdots y_{l+m-1}$ $q$-periódica, $q\leq k-1\leq m$, $l(q)=m+q$ (asumimos $q$ mínimo). 
+
+\begin{itemize}
+\item si $i<k$: $s$ y $b$ intersecan en $y_i\cdots y_{k+m+q-1}$ de longitud $(k+q+m-1)-(i-1)\geq p+q-1$. Por tanto, por el lema: si $p<q$, $q$ no es periodo mínimo de $b$; si $q<p$, $p$ no es periodo mínimo de $s$; si $p=q$, $s$ no es de longitud máxima.
+\item si $i\geq k$: $s$ y $b$ intersecan en $y_k\cdots y_l\cdots y_{l+m-1}$ de longitud $q\leq l-k\leq l-i<p$, así que por el lema $p$ no es periodo mínimo de $s$. 
+\end{itemize}
 
 \QED
 \end{dem}
@@ -448,7 +457,27 @@ Si $r>0$, para $i\leq k\leq j-p$, $y_k=y_{k+p}=y_{k+p-tq}=y_{k+r}$, así que $y_
 \end{proof}
 
 \section{Invariantes de quasi-isométría: Finales}
+Hemos visto que $\Z\not\sim_{QI}\Z^2$ usando el crecimiento. Ahora usaremos otro invariante. Para ello introduciremos una variante de los caminos que comporte bien con las quasi-isometrías. 
 \subsection{$k$-rayos}
+\begin{defi}
+Dado una grafo $\Gamma$ y $k\geq 1$:
+\begin{itemize}
+\item Un \textbf{$k$-camino} es una sucesión de vértices $\{v_i\}_{i=1}^n$ tal que $d_\Gamma(v_i,v_{i+1})\leq k$. En particular, los caminos son $1$-caminos.
+\item Un \textbf{$k$-rayo propio} es una sucesión infinita de vértices $\gamma=\{v_i\}_{i\in\N}$ tal que para todo $v\in \Gamma$ y para todo $r\geq 0$, existen $N_\gamma$, $v$ y $R$ tales que para todo $i\geq N_\gamma$, $v_i\notin B(v,R)$.  
+\end{itemize}
+Dos $k$-rayos propios $\alpha=\{a_i\}_{i\in \N}$ y $\beta=\{b_i\}_{i\in\N}$ se dicen equivalentes si para todo $v\in\Gamma$ y para algún $k\geq 1$ existe un $k$-camino $\{v_i\}_{i=1}^n$ tal que $v_i\notin B(v,R)$, $v_0=a_j$ con $j\geq N_\alpha$ y $v_n=b_l$ con $l\geq N_\beta$. REVISAR ESTA DEFINICIÓN CON LOS APUNTES POR EL K
+\end{defi}
+\begin{ejs}
+DIBUJOS
+\end{ejs}
+
+\begin{prop}
+La relación entre $k$-rayos propios de ser equivalentes es una relación de equivalencia.
+\end{prop}
+\begin{dem}
+DEMOSTRAR 
+\QED
+\end{dem}
 \subsection{Finales}
 
 \section{Grupos finitamente presentados}
