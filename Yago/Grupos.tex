@@ -418,7 +418,7 @@ Sea $X$ un conjunto finito de generadores. Ponemos un orden (alfabético) en $X\
 
 Para todo $g\in G$, existe un único $w_g=\min_{long-lex}\{w\in(X\cup X^{-1})^*\mid w=_G g\}$. Llamaremos a estos $w_g$ \textbf{palabras distinguidas} y observamos que toda subpalabra de una palabra distinguida es distinguida. Llamamos a una palabra $w=x_1\cdots x_n$ \textbf{$p$-periódica} si $x_i=x_{i+p}$ para $1\leq i\leq n-p$. 
 
-Necesitamos el siguiente lema cuya demostración postponemos.
+Necesitamos el siguiente lema cuya demostración posponemos.
 
 \begin{lemma}
 Si una palabra $p$-periódica contiene una subpalabra $q$-periódica de longitud al menos $p+q-1$, entonces $w$ es $d$-periódica con $d=\gcd(p,q)$.
@@ -535,6 +535,22 @@ Tenemos entonces que $Ends(\Gamma(G,X))=\{[t^\infty],[t^{-\infty}]\}$. Además, 
 
 Obsérvese que $G\cong \Z\rtimes\Z/2\Z\cong D_\infty$.
 \end{ej}
+
+\begin{teorema}[Arzela-Ascoli]
+Sea $A$ un espacio métrico compacto, $B$ un espacio métrico separable y $f_n:B\to A$ una sucesión de funciones equicontinuas. Entonces existe una subsucesión que converge a una función continua $f:B\to A$.
+\end{teorema}
+
+\begin{coro}
+Si $\Gamma$ es un grafo localmente finito, toda sucesión $\{\rho_n\}$ de caminos geodésicos que tengan un vértice común $v$ y $l(p_n)\to\infty$ cuando $n\to\infty$ tiene una subsucesión que converge a un camino geodésico infinito. REVISAR ESTE ENUNCIADO CON LOS APUNTES
+\end{coro}
+
+\begin{prop}
+Si $G$ es finitamente generado, entonces $|Ends(G)|\in\{0,1,2,\infty\}$.
+\end{prop}
+\begin{dem}
+COPIAR
+\QED
+\end{dem}
 
 \section{Grupos finitamente presentados}
 \subsection{Grupos libres}
