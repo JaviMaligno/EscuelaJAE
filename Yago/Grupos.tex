@@ -548,7 +548,42 @@ Si $\Gamma$ es un grafo localmente finito, toda sucesión $\{\rho_n\}$ de camino
 Si $G$ es finitamente generado, entonces $|Ends(G)|\in\{0,1,2,\infty\}$.
 \end{prop}
 \begin{dem}
-COPIAR
+Supongamos que $\infty>|Ends(G)|>2$. Sea $X\subseteq G$ tal que $|X|<\infty$ y $G=\gene{X}$. Como $G\curvearrowright End(\Gamma(G,X))$ y es un conjunto finito, el núcleo de la acción $H$ es un subgrupo de índice finito. En particular, existe $r$ tal que $\bigcup_{h\in H}B(h,r)=G$. Todo 1-rayo es equivalente a un rayo geodésico por Arzela-Ascoli. Tomamos 3 1-rayos propios $\alpha=\{a_i\}, \beta=\{b_i\}, \gamma=\{c_i\}$ no equivalentes 2 a 2 y tal que $a_0=b_0=c_0=1_G$.
+
+DIBUJO
+
+Existe $R$ tal que $\{a_i\}_{i\geq R}$ y $\{b_i\}_{i\geq R}$ no pueden ser conectados por un 1-camino fuera de la bola $B(1_G,R)$. En particular, $d(a_i,b_i)>2R$. Como $\gamma$ es equivalente a $\alpha$ ni a $\beta$, para todo $c_l$ y para $i$ suficientemente grande existe $h_l\in H$ tal que $d(c_l,h_l)\leq k$ y tal que $h_l\alpha\sim \alpha$ y $h_l\beta\sim\beta$ y por tanto $h_l\alpha$ y $h_l\beta$ pasan por la bola $B(1_G,R)$. Entonces existe $i>2R$ y existe $h$ tal que $d(ha_i,hb_i)\leq 2R$.
+\QED
+\end{dem}
+
+\begin{ej}[grupo con infinitos finales]
+Sea $\F_2=\gene{a,b\mid}$ el grupo libre en 2 generadores.
+
+DIBUJO
+
+Obsérvese que de hecho la cantidad de finales es no numerables puesto que tiene la cardinalidad del conjunto de Cantor. 
+\end{ej}
+
+Terminamos la sección con un teorema.
+
+\begin{teorema}
+Las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+\item $G$ tiene un subgrupo cíclico infinito de índice finito.
+\item $G\sim_{QI}\Z$.
+\item $|Ends(G)|=2$.
+\end{enumerate}
+\end{teorema}
+\begin{dem}
+Solo falta $3\Rightarrow 1$. Fijamos un grafo de Cayley $\Gamma(G,X)$. Sean $\alpha$ y $\beta$ dos rayos geodésicos empezando en $v$ y tal que existe $\R\geq 0$ tal que $\alpha$ y $\beta$ están contenidos componentes conexas distintas  de $\Gamma(G,X)-B(v,R)$.
+
+DIBUJO
+
+Existe $H\leq G$ con $[G:H]\leq 2$ tal que $H$ fija esos finales.
+
+Existe $k$ tal que para todo $g\in G$ existe $h$ con $d(h,g)\leq k$. Tomamos $\CC=B(v,R)\cup$ componente de $\beta$. Sea $h\in H$ tal que $d(h,\beta(R+2k))\leq k$. Entonces $h\CC\subsetneq \CC$, luego $h^2\CC\subsetneq h\CC\subsetneq\CC$ etc. Con lo que el índice de $\gene{h}$ es infinito. REVISAR ESTO CON LOS APUNTES
+
+Ahora, $\Gamma-(B(v,R)\cup hB(v,R))$ tiene dos componentes conexas infinitas y un número finito de componentes conexas finitas. Sea $D$ la unión de las componentes conexas finitas y $B(v,R)$. Entonces $\bigcup_{h\in\gene{h}} hD=\Gamma(G,X)$, luego $\bigcup_{d\in D}\gene{h}d=G$, por lo que $\gene{h}$ tiene índice finito en $G$.
 \QED
 \end{dem}
 
