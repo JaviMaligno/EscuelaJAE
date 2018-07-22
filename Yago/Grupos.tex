@@ -589,6 +589,56 @@ Ahora, $\Gamma-(B(v,R)\cup hB(v,R))$ tiene dos componentes conexas infinitas y u
 
 \section{Grupos finitamente presentados}
 \subsection{Grupos libres}
+\begin{defi}
+Sea $X$ un conjunto, $G$ un grupo e $i:X\to L$ una función. Diremos que $(L,i)$ es \textbf{libre} en $X$ si para todo grupo $H$ y toda función $f:X\to H$ existe un único homomorfismo $\varphi:G\to H$ de modo que el siguiente diagrama conmuta
+\[
+\begin{tikzcd}
+X\arrow[r, "f"]\arrow[d,"i"'] & H\\
+L\arrow[ur, dashed, "\exists!\varphi"']
+\end{tikzcd}
+\]
+\end{defi}
+
+\begin{observacion}
+Sea $H=\gene{Y}$ un grupo. Sea $X$ un conjunto con $|X|>|Y|$ y $(L,i)$ el grupo libre en $X$. Como $|X|>|Y|$, podemos tomar $f:X\to H$ tal que $Y\subseteq f(X)$. Entonces existe $\varphi:L\to H$ homomorfismo sobreyectivo y tenemos que $H\cong L/\ker\varphi$.
+\end{observacion}
+
+\begin{defi}
+Una presentación de $H$ es un grupo libre $(L,i)$ y un subgrupo $N\trianglelefteq L$ tal que $L/N\cong H$. 
+\end{defi}
+
+\begin{prop}\
+\begin{enumerate}
+\item Si $(L_1,i_1)$ y $(L_2,i_2)$ son libres en $X$ entonces existe $\varphi$ de modo que el siguiente diagrama conmuta
+\[
+\begin{tikzcd}
+L_1\arrow[r, dashed,"\varphi"] & L_2\\
+X\arrow[u, "i_1"]\arrow[ur, "i_2"]&
+\end{tikzcd}
+\]
+\item Dado $(L,i)$ libre, $i$ es inyectiva. 
+\item Si $(L_1,i_1)$ es libre en $X_1$ y $(L_2,i_2)$ es libre en $X_2$ entonces $L_1\cong L_2\Leftrightarrow |X|=|Y|$ (se puede suponer que $|X|,|Y|<\infty$).
+\end{enumerate}
+\end{prop}
+\begin{dem}
+HACER
+\QED
+\end{dem}
+
+\begin{teorema}
+Dado un conjunto $X$, existe $(L,i)$ libre en $X$.
+\end{teorema}
+\begin{dem}
+Sea $X^{-1}$ un conjunto en biyección con $X$ mediante $x\mapsto x^{-1}$. Por abuso de notación a la inversa también la denotamos $x\mapsto x^{-1}$. Sea $(X\cup X^{-1})^*$ el monoide de palabras en $X\cup X^{-1}$ con la yuxtaposición. Decimos que $w=y_1\cdots y_n\in (X\cup X^{-1})^*$ es \textbf{reducida} si $\forall\ 1\leq i\leq n-1$, $y_i\neq y_{i+1}^{-1}$. Si $w$ no es reducida, entonces $w=y_1\cdots y_iy_i^{-1}y_{i+2}\cdots y_n$, se ha obtenido a través de una \textbf{reducción elemental} y ponemos $w\to_r w'$. 
+
+Dos palabras son equivalentes si están en la misma componente conexa del grafo con vértices $V\Gamma=(X\cup X^{-1})^*$ y aristas en las palabras relacionadas por reducciones elementales. 
+
+DIAGRAMA
+
+Entonces se tiene que $F(X)=(X\cup X^{-1})^*/\sim$ es un grupo libre en $X$ y existe una única palabra reducida en cada clase de equivalencia. PROBARLO 
+
+\QED
+\end{dem}
 \subsection{Transformaciones de Tietze}
 \subsection{El problema de la palabra}
 
