@@ -639,9 +639,49 @@ Entonces se tiene que $F(X)=(X\cup X^{-1})^*/\sim$ es un grupo libre en $X$ y ex
 
 \QED
 \end{dem}
-\subsection{Transformaciones de Tietze}
-\subsection{El problema de la palabra}
 
+Volvemos a las presentaciones. Dado $X$, el grupo libre en $X$ existe y es único salvo isomorfismo. Lo denotamos $\gene{X\mid\ }$. 
+
+Dado $R\subseteq G$, $\gene{R^G}$ denota el subgrupo generado por todos los $G$-conjugados de $R$, es decir, $$\bigcap_{N\triangleleft G, N\subseteq R} N$$
+Dado un conjunto $X$ y $R\subseteq\gene{X\mid\ }$ denotamos por $\gene{X\mid R}$ al grupo $\gene{X\mid\ }/\gene{R^{\gene{X\mid\ }}}$.
+
+Por lo visto anteriormente, para todo grupo $G$ existe un conjunto $X$ y $R\subseteq\gene{X\mid\ }$ tal que $\gene{X\mid R}\cong G$.
+\subsection{Transformaciones de Tietze}
+\begin{teorema}[Von Dyck]
+Sea $G=\gene{X\mid R}$, $H$ un grupo, $f:X\to H$ una función y $\varphi:\gene{X\mid\ }\to H$ el homomorfismo conocido. 
+\begin{enumerate}
+\item Si $\varphi(R)=\{	1_H\}$, entonces existe $\psi:G\to H$ tal que $\psi(x)=f(x)$.
+\item Si además $f(X)$ genera $H$, entonces $\psi$ es sobreyectiva.
+\end{enumerate}
+\end{teorema}
+
+Se conocen como \textbf{transformaciones de Tietze} los siguientes isomorfismos:
+\begin{enumerate}
+\item Si $s\in \gene{R^{\gene{X\mid\ }}}$, entonces $\gene{X\mid R}\cong\gene{X\mid R\cup\{s\}}$.
+\item Si $y\notin X$ y $u\in\gene{X\mid\ }$, entonces $\gene{X\mid R}\cong \gene{X\cup \{y\}\mid R\cup \{yu\}}$.
+\end{enumerate}
+
+\begin{teorema}
+Si $\gene{X\mid R}\cong\gene{X\mid R'}$ son presentaciones finitas, entonces se puede obtener una presentación de la otra mediante una sucesión finita de transformaciones de Tietze.
+\end{teorema}
+
+\subsection{El problema de la palabra}
+En 1910 Max Dehn propuso tres problemas algorítmicos para grupos finitamente presentados que sentaron las bases de la teoría combinatoria de grupos. 
+\begin{enumerate}
+\item El problema dela palabra. Dado $G=\gene{X\mid R}$, ¿existe un algoritmo con entrada $w\in (X\cup X^{-1})^*$ y que decida si $w=_G1_G$ o no?
+\item Problema de la conjugación. Dado $G=\gene{X\mid R}$, ¿existe un algoritmo con entrada $w,u\in (X\cup X^{-1})^*$ y que decida si existe $g\in G$ con $gw=_G ug$?
+\item Problema del isomorfismo. ¿Existe algoritmo con entradas $\gene{X\mid R}, \gene{Y\mid S}$ finitas y decida si $\gene{X\mid R}\cong \gene{Y\mid S}$?
+\end{enumerate}
+
+En los años 1950 Boone y Novikov construyen un grupo finitamente presentado con problema de la palabra irresoluble. A su vez, Adyan y Rabin prueban que no existe un algoritmo que decida si una presentación finita es el grupo trivial. En la década de 1970 se encuentra un grupo con problema de la palabra resoluble pero problema de la conjugación irresoluble. 
+
+Nos vamos a centrar en el problema de la palabra. Sea $G=\gene{X\mid R}$ finita y $w\in (X\cup X^{-1})^*$. Entonces $w=_G 1$ si y solo si $w\in \gene{R^{\gene{X\mid\ }}}$ si y solo si $w=\displaystyle\prod_{i=1}^M p_ir_i^{\varepsilon_i}p_i^{-1}$ en $\gene{X\mid\ }$, donde $r_i\in R, p_i\in\gene{X\mid\ }, \varepsilon_i=\pm 1$.
+
+Si $w=_G 1$, definimos $Area(w)=\min\{M\mid w=\prod_{i=1}^M p_ir_i^{\varepsilon_i}p_i^{-1}\}$ y $Dehn_{\gene{X\mid R}}(n)=\max\{Area(w)\mid l(w)\leq n, w=1_G\}$.
+
+\begin{ej}
+$\gene{x,y\mid xyx^{-1}y^{-1}}$ DIBUJO
+\end{ej}
 \section{Lenguas formales}
 \subsection{Autómatas finitos (Finite State Automata)}
 \subsection{Push-down Automata}
