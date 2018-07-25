@@ -753,9 +753,76 @@ MU LARGA
 \begin{coro}
 Tener problema de la palabra resoluble es un invariante por quasi-isometría entre grupos finitamente presentables. 
 \end{coro}
+
 \section{Lenguas formales}
+
+Hemos hablado repetidamente de palabras. Un conjunto $L\subseteq X^*$ se llama \textbf{lengua formal}. Las lenguas formales están clasificadas por la complejidad que tiene describirlas. Chomsky propuso la siguiente jerarquía:
+
+HACER TABLA CON LOS RECUADROS
+
+
 \subsection{Autómatas finitos (Finite State Automata)}
+
+Un autómata es una máquina que hace cálculos. En este caso nos interesan los autómatas más sencillos (los autómatas finitos o FSA) que en el fondo no son más que un grafo finito dirigido en el que las arista tienen etiquetas de un alfabeto $A$ y tenemos un vértice inicial $\square$ y vértices finales $\odot$.
+
+\begin{ej}
+$A=\{0,1\}$.
+HACER EL AUTÓMATA
+
+Asociado al autómata tenemos el conjunto $\mathcal{L}$ de las palabras que leemos empezando en $\square$ y acaban en $\odot$. En el ejemplo, $L$ está generado por la expresión regular $00\{0,1\}^*$.
+\end{ej}
+
+\begin{ej}
+$A=\{a,b,a^{-1},b^{-1}\}$. AUTÓMATA
+
+$\mathcal{L}=\{$ palabras reducidas en $A\}$.
+\end{ej}
+
+Dado un grupo $G$ y un conjunto de generadores $X$ finito, definimos la lengua $WP(G,X)=\{w\in (X\cup X^{-1})^*\mid w=_G 1\}$.
+
+\begin{lemma}[Anisimov]
+$WP(G,X)$ es regular si y solo si $G$ es finito.
+\end{lemma}
+\begin{proof}
+Supongamos que $G$ es finito. Entonces $\Gamma(G,X)$ es un grafo finito con etiquetas de $X$. Una $w\in (X\cup X^{-1})^*$ satisface que $w=_G1$ si y solo si $w$ es la etiqueta de un camino en $\Gamma(G,X)$ que empieza y acaba en $1_G$, lo que nos da el autómata finito.
+
+Supongamos que $G$ es infinito. Para todo $n\geq 1$ existe $w\in (X\cup X^{-1})^*$ tal que $l(w)\geq n$ y ninguna subpalabra de $w$ representa el elemento neutro. Supongamos que $WP(G,X)$ es regular y tomemos un autómata finito $M$ que reconoce $WP(G,X)$. Sea $n$ mayor que el número de estados de $M$. Entonces $w=uvu'$ con $M$ acabando en el mismo vértice al leer $u$ y $v$ (por el principio del palomar). Entonces $uu^{-1}=_G 1$ y $uvu^{-1}\neq_G 1$ (porque de lo contrario $v$ representaría al neutro), pero $M$ tiene que aceptar o rechazar ambas palabras. 
+\end{proof}
+
+\begin{observacion}
+Que $WP(G,X)$ sea regular se preserva por quasi-isometrías. ¿Es un accidente o es un fenómeno general? ¿Que sea $WP(G,X)$ context-free es invariante por quasi-isometrías?
+\end{observacion}
+
 \subsection{Push-down Automata}
+
+A nuestro FSA vamos a añadirle una memoria muy limitada. Tenemos un nuevo alfabeto $\Sigma$ y una pila. Podemos poner símbolos de $\Sigma$ de uno en uno en la pila y podemos quitarlo. Solo podemos leer el símbolo más alto en la pila y comprobar si la pila está vacía o no.
+
+En cada turno, la máquina opera dependiendo del estado del vértice en que se encuentra, lo que haya en lo alto de la pila y lo que lea de entrada (en un turno puede no leer). La máquina se puede mover a otro estado (o no) y borrar o añadir un símbolo a la pila (o dejarla igual).
+
+Formalmente, un push-down automata es una upla $M=(V,X,\Sigma, \delta, v_0, F)$, donde $V$ es un conjunto de estados, $X$ el alfabeto de entrada, $\Sigma$ el alfabeto de la pila, $v_0\in V$ un estado inicial, $F\subseteq V$ un conjunto de estados finales y $\delta:V\times (X\cup\{\varepsilon\})\times\Sigma^*\to V\times\Sigma^*$ es tal que $\delta(v,x,w)$ solo depende de la última letra de $w$. Esto es, $\delta(v,x,w)=(v',w')$, donde si $w=z_1\cdots z_n$ entonces $w'$ consiste en eliminar $z_n$ o en añadir un nuevo símbolo de $\Sigma$ a $w$ (o $w'=w$). 
+
+El autómata empieza en $(v_0,\varepsilon)$. Escribimos $M\vdash_w^* (v,\xi)$ si es posible que $M$ llegue al estado $(v,\xi)$ después de leer $w$. $\mathcal{L}(M)=\{w\in X^*\mid M\vdash_w^* (v,\varepsilon), v\in F\}$ donde $\varepsilon$ es la palabra vacía. $L$ es contex-free si y solo si $L=\mathcal{L}(M)$ para algún push-down automata. 
+
+\begin{ej}
+Sea $X=\{x_1,\dots, x_n\}$. Vemos que $WP(\gene{X\mid\ }, X)$ es aceptado por un push-down automata $M$ cuyo único vértice final es el incial. Al leer un símbolo $x_i^{\varepsilon_i}\in (X\cup X^{-1})^*$, sino es el inverso de la última letra en la pila, la añadimos a la pila. En caso contrario eliminamos el último símbolo de la pila. 
+\end{ej}
+
+\begin{ej}
+$L=\{a^mb^na^mb^n\mid m,n\in\N\}$ no es context-free. 
+\end{ej}
+
+\begin{lemma}
+Sea $G$ un grupo y $X$ e $Y$ dos conjuntos de generadores finitos. Entonces $WP(G,X)$ es context-free si y solo si $WP(G,Y)$ lo es. 
+\end{lemma}
+
+Podemos entonces escribir $WP(G)$ sin ambigüedad para referirnos a $WP(G,X)$ si estamos hablando de ser context-free. 
+
+\begin{lemma}
+Si $G$ es un grupo finitamente generado y virtualmente libre, entonces $WP(G)$ es context-free. 
+\end{lemma}
+\begin{proof}
+COPIAR
+\end{proof}
 
 \section{Miscelánea. Para saber más}
 
