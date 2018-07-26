@@ -821,8 +821,38 @@ Podemos entonces escribir $WP(G)$ sin ambigüedad para referirnos a $WP(G,X)$ si
 Si $G$ es un grupo finitamente generado y virtualmente libre, entonces $WP(G)$ es context-free. 
 \end{lemma}
 \begin{proof}
-COPIAR
+Sea $L\leq G$ libre de índice finito, de modo que $G=Lg_1\cup\cdots\cup Lg_n$. Sea $N=\bigcap_{i=1}^n g_i^{-1}Lg_i\trianglelefteq G$. Consideramos, para $a\in G$,
+\begin{gather*}
+a^{-1}g_i^{-1}Lg_ia=a^{-1}g_i^{-1}L^{-1}Lg_ia=(Lg_ia)^{-1}(Lg_ia)=(Lg_j)^{-1}(Lg_j)
+\end{gather*}
+Así que $\{Lg_1,\dots, Lg_n\}=\{Lg_1a,\dots, Lg_na\}$. Deducimos que $N$ tiene índice finito en $G$. En general, si $A$ y $B$ tienen índice finito, $G/A\times G/B$ es finito y $G$ actúa sobre él mediante $g(sA,tB)=(gsA,gtB)$. Se tiene además el estabilizador de la acción de $G$ es $A\cap B$, de donde se sigue que $[G:A\cap B]<\infty$\footnote{\url{https://en.wikipedia.org/wiki/Group_action\#Orbit-stabilizer_theorem_and_Burnside's_lemma}}.
+
+Como $G$ es finitamente generado y $Ntrianglelefteq G$ es de índice finito, $N$ es finitamente generado. Así que sea $N=\gene{y_1,\dots, y_n\mid\ }$ y $Q/N=\gene{q_1,\dots, q_t\mid q_iq_j=q_{ij}}$ (la presentación dada por la tabla de multiplicar). Consideramos la aplicación $\pi: G\to Q$ dada por $g\mapsto gN$ y $d_i\in G$ tal que $\pi(d_i)=q_i$. Así que 
+\begin{gather*}
+d_iy_id_i^{-1}=u_{ij}\in N\\
+d_id_j^{\varepsilon}=z_{i,\varepsilon,j}d_{ij}\in N
+\end{gather*}
+Entonces 
+\[
+\gene{y_1,\dots, y_n\mid d_iy_jd_i^{-1}=u_{ij}, d_id_j^{\varepsilon}=z_{i,\varepsilon,j}d_{ij}}
+\]
+es una presentación de $G$ ya que podemos usar las relaciones para transformar cualquier palabra a la forma $wd_i$ con $w\in (Y\cup Y^{-1})^*$ reducida. Esa palabra será la identidad si y solo si $\pi(d_i)=1$ y $w$ es vacía. 
+
+Podemos usar esta presentación para codificar $M$. La pila se hace cargo de recordar la parte libre y el grafo finito tiene vértices $\{d_1,\dots, d_k\}$. Si estamos en $(d_i,w)$ y leemos $x\in (Y\cup Y^{-1})^*$ operamos en $w$ como antes, $d_ix=ud_i$. Si leemos $d_j$ operamos con $d_id_j^{\varepsilon}=z_{i,\varepsilon,j}d_{ij}$.
 \end{proof}
+
+Existe una caracterización (entre las referencias de Yago) de context-free con la que es fácil probar que $WP(G,X)$ es context-free si y solo si $\Gamma(G,X)$ es quasi-isométrico a un árbol. 
+
+El siguiente teorema es esencialmente de Müller y Schupp. 
+
+\begin{teorema}
+Las siguientes afirmaciones son equivalentes.
+\begin{enumerate}
+\item $G$ es virtualmente libre.
+\item $G$ es context-free.
+\item $G$ es quasi-isométrico a un árbol.
+\end{enumerate}
+\end{teorema}
 
 \section{Miscelánea. Para saber más}
 
