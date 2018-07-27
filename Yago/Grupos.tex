@@ -127,23 +127,102 @@ $$
 \end{dem}
 
 \begin{ej}
-Vamos a cómo se interpreta la demostración anterior en un ejemplo concreto. Sea $G=(\Z/3\Z)^3$ y sean $x=(1,0,0)$, $y=(0,1,)$, $z=(0,0,1)$. Tenemos 
+Vamos a cómo se interpreta la demostración anterior en un ejemplo concreto. Sea $G=(\Z/3\Z)^3$ y sean $x=(1,0,0)$, $y=(0,1,0)$, $z=(0,0,1)$. Tenemos 
 \[
 \sigma_x\equiv (000,\ 100)(010,\ 110)(001,\ 101)(011,\ 111)
 \]
-expresada como producto de ciclos en los que los grupos de tres números se corresponden a su vez a ciclos. Análogamente se definirían $\sigma_y$ y $\sigma_z$. Podemos interpretar geométricamente estas aplicaciones como la acción que intercambia los vértices de un cubo como en la figura siguiente:
-DIBUJO
+expresada como producto de ciclos en los que los grupos de tres números se corresponden a su vez a ciclos. Análogamente se definirían $\sigma_y$ y $\sigma_z$. Podemos interpretar geométricamente estas aplicaciones como la acción que intercambia los vértices de un cubo como en la figura siguiente.
+
+\definecolor{qqffqq}{rgb}{0.,1.,0.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=0.9]
+\clip(-3.3233333333333337,-1) rectangle (15.843333333333337,6);
+\draw [->,line width=2.pt,color=qqqqff] (-0.23333333333333334,0.) -- (-0.22,3.993333333333332);
+\draw [->,line width=2.pt,color=qqqqff] (0.22,3.993333333333332) -- (0.24666666666666667,0.);
+\draw [->,line width=2.pt,color=qqqqff] (1.7533333333333334,0.9933333333333342) -- (1.7666666666666668,4.966666666666665);
+\draw [->,line width=2.pt,color=qqqqff] (2.2333333333333334,4.993333333333331) -- (2.22,1.0066666666666677);
+\draw [->,line width=2.pt,color=qqqqff] (5.78,0.98) -- (5.78,4.993333333333332);
+\draw [->,line width=2.pt,color=qqqqff] (6.233333333333333,4.993333333333331) -- (6.22,0.953333333333334);
+\draw [->,line width=2.pt,color=qqqqff] (3.78,0.) -- (3.7933333333333334,3.98);
+\draw [->,line width=2.pt,color=qqqqff] (4.206666666666667,3.9666666666666655) -- (4.22,0.);
+\draw [->,line width=2.pt,color=ffqqqq] (0.,0.23333333333333467) -- (4.006666666666667,0.23333333333333467);
+\draw [->,line width=2.pt,color=ffqqqq] (3.9933333333333336,-0.22) -- (0.,-0.23333333333333164);
+\draw [->,line width=2.pt,color=ffqqqq] (0.,4.22) -- (4.02,4.22);
+\draw [->,line width=2.pt,color=ffqqqq] (4.006666666666667,3.78) -- (0.,3.78);
+\draw [->,line width=2.pt,color=ffqqqq] (2.006666666666667,5.246666666666664) -- (6.046666666666667,5.233333333333331);
+\draw [->,line width=2.pt,color=ffqqqq] (6.006666666666667,4.78) -- (1.9933333333333332,4.766666666666665);
+\draw [->,line width=2.pt,color=ffqqqq] (2.006666666666667,1.233333333333334) -- (6.006666666666667,1.22);
+\draw [->,line width=2.pt,color=ffqqqq] (6.006666666666667,0.7666666666666676) -- (1.98,0.7266666666666677);
+\draw [->,line width=2.pt,color=qqffqq] (-0.22,4.193333333333332) -- (1.8066666666666669,5.22);
+\draw [->,line width=2.pt,color=qqffqq] (2.2067086083456586,4.767375554623516) -- (0.2466666666666666,3.78);
+\draw [->,line width=2.pt,color=qqffqq] (3.7533333333333334,4.22) -- (5.79329208873398,5.234169553062482);
+\draw [->,line width=2.pt,color=qqffqq] (6.232585411901391,4.766713139454669) -- (4.207428713466976,3.739957743574679);
+\draw [->,line width=2.pt,color=qqffqq] (3.7533333333333334,0.23333333333333467) -- (5.766536001451835,1.220800435550716);
+\draw [->,line width=2.pt,color=qqffqq] (6.246666666666667,0.74) -- (4.193333333333333,-0.22);
+\draw [->,line width=2.pt,color=qqffqq] (-0.2733333333333334,0.23333333333333467) -- (1.7541831353339714,1.2465743295234883);
+\draw [->,line width=2.pt,color=qqffqq] (2.2334407741586544,0.7291842902510252) -- (0.2467084349437716,-0.23250959899295187);
+\draw (-0.8,0.03) node[anchor=north west] {$000$};
+\draw (3.86,-0.05333333333333118) node[anchor=north west] {$100$};
+\draw (-0.79,4.43) node[anchor=north west] {$001$};
+\draw (1.3766666666666674,1.1966666666666672) node[anchor=north west] {$010$};
+\draw (1.61,5.78) node[anchor=north west] {$011$};
+\draw (6,5.396666666666662) node[anchor=north west] {$111$};
+\draw (6.1,1.2633333333333339) node[anchor=north west] {$110$};
+\draw [color=ffqqqq](2.01,0.25) node[anchor=north west] {$\sigma_x$};
+\draw [color=qqffqq](4.86,0.8466666666666677) node[anchor=north west] {$\sigma_y$};
+\draw [color=qqqqff](-0.35,2.4966666666666657) node[anchor=north west] {$\sigma_z$};
+\begin{scriptsize}
+\draw [fill=black] (0.,0.) circle (2.5pt);
+\draw [fill=black] (0.,4.) circle (2.5pt);
+\draw [fill=black] (4.,4.) circle (2.5pt);
+\draw [fill=black] (4.,0.) circle (2.5pt);
+\draw [fill=black] (2.,1.) circle (2.5pt);
+\draw [fill=black] (6.,1.) circle (2.5pt);
+\draw [fill=black] (2.,5.) circle (2.5pt);
+\draw [fill=black] (6.,5.) circle (2.5pt);
+\end{scriptsize}
+
+\end{tikzpicture}
 \end{ej}
 
 \begin{defi}
-Dado un grupo $G$ y un conjunto $X\subseteq G$ definimos el \textbf{grafo de Cayley} de $G$ respecto a $X$ como el grafo $\Gamma(G,X)$ con vértices $V(\Gamma)=G$ y aristas $E(\Gamma)=G\times X$, interpretadas como una arista entre $g$ y $gx$, habitualmente etiquetada con $x$. DIBUJO
+Dado un grupo $G$ y un conjunto $X\subseteq G$ definimos el \textbf{grafo de Cayley} de $G$ respecto a $X$ como el grafo $\Gamma(G,X)$ con vértices $V(\Gamma)=G$ y aristas $E(\Gamma)=G\times X$, interpretadas como una arista entre $g$ y $gx$, habitualmente etiquetada con $x$.
 \end{defi}
 
 \begin{observaciones}\
 \begin{enumerate}
 \item Por comodida hemos cambiado $g\xrightarrow{\sigma_x}gx^{-1}$ por $g\xrightarrow{x}gx$. Si hubiésemos hecho la prueba del teorema de Cayley con la acción por la derecha no habría sido necesario el inverso.
 \item $\Gamma(G,X)$ es conexo si y solo si $\gene{X}=G$.
-\item En cada arista de $\Gamma(G,X)$ entra y sale exactamente una arista por cada elemento de $G$. En particular $\Gamma(G,X)$ recubre el grafo con vértices $G$ y ciclos por cada elemento de $x$ en todos los vértices. DIBUJO
+\item En cada arista de $\Gamma(G,X)$ entra y sale exactamente una arista por cada elemento de $G$. En particular $\Gamma(G,X)$ recubre el grafo con vértices $G$ y ciclos por cada elemento de $x$ en todos los vértices. 
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-4,-2.3) rectangle (4.,2.3);
+\draw [-,line width=2.pt] (-4.,0.) -- (0.,0.);
+\draw [->,line width=2.pt] (-4.,0.) -- (-2.,0.);
+\draw [-,line width=2.pt] (0.,0.) -- (4.,0.);
+\draw [->,line width=2.pt] (0.,0.) -- (2.,0.);
+\draw [-,line width=2.pt] (-4.,2.) -- (0.,0.);
+\draw [->,line width=2.pt] (-4.,2.) -- (-2.,1.);
+\draw [-,line width=2.pt] (-4.,-2.) -- (0.,0.);
+\draw [->,line width=2.pt] (-4.,-2.) -- (-2.,-1.);
+\draw [-,line width=2.pt] (0.,0.) -- (4.,2.);
+\draw [->,line width=2.pt] (0.,0.) -- (2.,1.);
+\draw [-,line width=2.pt] (0.,0.) -- (4.,-2.);
+\draw [->,line width=2.pt] (0.,0.) -- (2.,-1.);
+\draw (-2.2,1.8) node[anchor=north west] {$x_1$};
+\draw (-3.4,0.66) node[anchor=north west] {$x_2$};
+\draw (-3.5,-0.62) node[anchor=north west] {$x_3$};
+\draw (1.44,1.8) node[anchor=north west] {$x_1$};
+\draw (2.52,0.64) node[anchor=north west] {$x_2$};
+\draw (2.7,-0.8) node[anchor=north west] {$x_3$};
+\draw (-0.2,0.) node[anchor=north west] {$g$};
+\begin{scriptsize}
+\draw [fill=black] (0.,0.) circle (3.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+En particular este grafo recubre el grafo con un vértice y un ciclos por cada $x\in X$.
 \item La acción de $G$ en $G=V(\Gamma)$ por la izquierda induce una acción de $G$ en $\Gamma(G,X)$ por automorfismos de grafos etiquetados
 \[
 g\cdot (a\xrightarrow{x}ax)=ga\xrightarrow{x}gax
@@ -152,7 +231,46 @@ g\cdot (a\xrightarrow{x}ax)=ga\xrightarrow{x}gax
 \end{observaciones}
 
 \begin{ej}
-$\Z^2=\gene{a,b\mid ab=ba}=\{a^nb^m\mid n,m\in\Z\}$. DIBUJO
+$\Z^2=\gene{a,b\mid ab=ba}=\{a^nb^m\mid n,m\in\Z\}$.
+ 
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.1,-0.1) rectangle (10,4.1);
+\draw [->,line width=2.pt,color=qqqqff] (-3.,0.) -- (-2.,0.);
+\draw [->,line width=2.pt,color=qqqqff] (-2.,0.) -- (-1.,0.);
+\draw [->,line width=2.pt,color=qqqqff] (-1.,0.) -- (0.,0.);
+\draw [->,line width=2.pt,color=qqqqff] (0.,0.) -- (1.,0.);
+\draw [->,line width=2.pt,color=qqqqff] (-3.,1.) -- (-2.,1.);
+\draw [->,line width=2.pt,color=qqqqff] (-2.,1.) -- (-1.,1.);
+\draw [->,line width=2.pt,color=qqqqff] (-1.,1.) -- (0.,1.);
+\draw [->,line width=2.pt,color=qqqqff] (0.,1.) -- (1.,1.);
+\draw [->,line width=2.pt,color=qqqqff] (-3.,2.) -- (-2.,2.);
+\draw [->,line width=2.pt,color=qqqqff] (-2.,2.) -- (-1.,2.);
+\draw [->,line width=2.pt,color=qqqqff] (-1.,2.) -- (0.,2.);
+\draw [->,line width=2.pt,color=qqqqff] (0.,2.) -- (1.,2.);
+\draw [->,line width=2.pt,color=qqqqff] (-3.,3.) -- (-2.,3.);
+\draw [->,line width=2.pt,color=qqqqff] (-2.,3.) -- (-1.,3.);
+\draw [->,line width=2.pt,color=qqqqff] (-1.,3.) -- (0.,3.);
+\draw [->,line width=2.pt,color=qqqqff] (0.,3.) -- (1.,3.);
+\draw [->,line width=2.pt,color=ffqqqq] (-3.,0.) -- (-3.,1.);
+\draw [->,line width=2.pt,color=ffqqqq] (-3.,1.) -- (-3.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (-3.,2.) -- (-3.,3.);
+\draw [->,line width=2.pt,color=ffqqqq] (-2.,0.) -- (-2.,1.);
+\draw [->,line width=2.pt,color=ffqqqq] (-2.,1.) -- (-2.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (-2.,2.) -- (-2.,3.);
+\draw [->,line width=2.pt,color=ffqqqq] (-1.,2.) -- (-1.,3.);
+\draw [->,line width=2.pt,color=ffqqqq] (-1.,0.) -- (-1.,1.);
+\draw [->,line width=2.pt,color=ffqqqq] (-1.,1.) -- (-1.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (0.,0.) -- (0.,1.);
+\draw [->,line width=2.pt,color=ffqqqq] (0.,1.) -- (0.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (0.,2.) -- (0.,3.);
+\draw [->,line width=2.pt,color=ffqqqq] (1.,0.) -- (1.,1.);
+\draw [->,line width=2.pt,color=ffqqqq] (1.,1.) -- (1.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (1.,2.) -- (1.,3.);
+\draw (1.56,2.35) node[anchor=north west] {$\sigma_a=\cdots(\dots,a,1,a^{-1},\dots)(\dots, ba,b,ba^{-1},\dots)\cdots$};
+\draw (1.54,1.63) node[anchor=north west] {$\sigma_b=\cdots(\dots,b,1,b^{-1},\dots)(\dots, ab,a,ab^{-1},\dots)\cdots$};
+\end{tikzpicture}
 \end{ej}
 
 \begin{defi}
