@@ -288,7 +288,26 @@ En particular, dado $p$ de $v_0$ a $v_n$ podemos definir el camino $p^{-1}\equiv
 Una palabra $w$ en $X\cup X^{-1}$ codifica un único camino $p$ en $\Gamma(G,X)$ (módulo vértice inicial) de longitud $l(p)$ igual a $l(w)$, la longitud de la palabra. 
 
 \begin{ej}
-En $\Z^2$ consideramos la palabra $w=ababa^{-1}ab^{-2}=_G aa$. DIBUJOS
+En $\Z^2$ consideramos la palabra $w=ababa^{-1}ab^{-2}=_G aa$. 
+
+\definecolor{qqffqq}{rgb}{0.,1.,0.}
+\definecolor{ffffqq}{rgb}{1.,1.,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,, xstep=1.0cm,ystep=1.0cm] (-1.3,-1.3) grid (3.3,3.3);
+\clip(-5.,-1.) rectangle (3,2);
+\draw [line width=3.6pt,color=ffffqq] (0.,0.)-- (2.,0.);
+\draw [line width=3.6pt,color=qqffqq] (0.,0.14)-- (1.01,0.13);
+\draw [line width=3.6pt,color=qqffqq] (1.01,0.13)-- (1.,1.);
+\draw [line width=3.6pt,color=qqffqq] (1.,1.)-- (2.,1.);
+\draw [line width=3.6pt,color=qqffqq] (2.,1.)-- (2.,2.);
+\draw [line width=3.6pt,color=qqffqq] (2.,2.)-- (1.,2.);
+\draw [line width=3.6pt,color=qqffqq] (1.,2.)-- (1.,2.17);
+\draw [line width=3.6pt,color=qqffqq] (1.,2.17)-- (2.13,2.17);
+\draw [line width=3.6pt,color=qqffqq] (2.13,2.17)-- (2.,0.);
+\draw [color=qqffqq](2.,0.8466666666666677) node[anchor=north west] {$w$};
+\draw [color=ffffqq](0.35,0) node[anchor=north west] {$aa$};
+\end{tikzpicture}
 
 Si dos palabras empiezan y acaban en los mismos vértices entonces describen una relación en el grupo. 
 \end{ej}
@@ -317,7 +336,7 @@ La aplicación $d_X$ es una métrica.
 La acción de $G \curvearrowright G$ por la izquierda preserva la métrica, esto es, para todo $a,g,h\in G$, $d_X(ag,ah)=d_X(g,h)$. En efecto, si $gx_1\cdots x_n=h$, entonces $agx_1\cdots x_n=ah$. En particular, $d_X(g,h)=d_X(1_G,g^{-1}h)$. Definimos pues, $|g|_X=d(1_G,g)$. 
 
 \begin{observacion}
-La métrica no es única, sino que depende de los generadores. DIBUJO
+La métrica no es única, sino que depende de los generadores. Si consideramos $(\Z,\{2,3\})$, entonces $d(0,1)=2$, ya que no se puede ir en un paso de 0 a 1 (no hay arista que los conecte). Pero si consideramos $(\Z,\{1,2\})$, entonces $d(0,1)=1$ porque ahora sí hay una arista. 
 \end{observacion}
 
 \begin{defi}
@@ -332,7 +351,7 @@ Diremos que $f$ es una \textbf{$(\lambda,c)$-quasi-isometría} si además para t
 \begin{enumerate}
 \item $\Z\hookrightarrow\R$ es un encaje $(1,0)$-quasi-isométrico y una $(1,1)$-quasi-isometría para la distancia usual.
 \item $f:\R\to\Z:x\mapsto\lfloor x\rfloor$ es una $(1,1)$-quasi-isometría.
-\item 
+\item $f:\Gamma(\Z,\{2,3\})\to \R: n\mapsto n$. Tenemos por un lado $|n|_{\{2,3\}}\leq n|1|_{\{2,3\}}=2n$. Por otro lado, $\frac{n}{3}\leq |n|_{\{2,3\}}$ (se alcanza para $n$ múltiplo de 3). Así que $f$ es una $(3,1)$-quasi-isometría. 
 \end{enumerate}
 \end{ejs}
 
@@ -350,8 +369,25 @@ d_B(b,f\circ g(b))\leq k \ \forall b\in B
 \end{align*}
 \end{enumerate}
 \end{prop}
-\begin{dem}
-HACER
+\begin{dem}\
+\begin{enumerate}
+\item Tenemos que $\frac{1}{\lambda_1}d_A(x,y)-c_1\leq d_B(f(x),f(y))\leq\lambda_1 d_A(x,y)+c_1$ y por otro lado $\frac{1}{\lambda_2}d_B(f(x),f(y))-c_2\leq d_C(g(f(x)),g(f(y)))\leq\lambda_2 d_A(f(x),f(y))+c_2$. Combinando estas desigualdades obtenemos
+\[
+\frac{1}{\lambda_1\lambda_2}d_A(x,y)-\left(\frac{c_1}{\lambda_2}+c_2\right)\leq d_C(g(f(x)),g(f(y)))\leq \lambda_1\lambda_2 d_A(x,y)+(\lambda_2 c_1+c_2).
+\]
+Así que $g\circ f$ es un $(\lambda_1\lambda_2, \lambda_2 c_1+c_2)$-encaje quasi-isométrico. Veamos ahora que es quasi-sobreyectiva. 
+
+Tenemos que $\forall c\in C\exists b\in B$ con $d_C(g(b),c)\leq c_2$ y $\forall b\in B\exists a\in A$ con $d_B(f(a),b)\leq c_1$ (en particular para el $b$ que existe para $c$). Tenemos por estas desigualdades y las anteriores 
+\[
+d_C(g(f(a)),g(b))\leq \lambda_2 d_B(f(x),y)+c_2\leq \lambda_2 c_1+c_2.
+\]
+Ahora, usando la desigualdad triangular
+\[
+d_C(g(f(a)),c)\leq d_C(g(f(a)),g(b))+d_C(g(b),c)\leq \lambda_2c_1 +2c_2,
+\]
+por lo que $g\circ f$ es una $(\lambda_1\lambda_2, \lambda_2c_1 +2c_2)$-quasi-isometría. 
+\item HACER 
+\end{enumerate}
 \QED
 \end{dem}
 
