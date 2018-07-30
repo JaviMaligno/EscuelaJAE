@@ -534,7 +534,23 @@ $\sigma_{(G,X)}(n)=\beta_{(G,X)}(n)-\beta_{(G,X)}(n-1)$
 2 & n>0
 \end{cases}$
 \item $G=\Z^2$, $X=\{(1,0),(0,1)\}$: $\beta(n)=1+2n(n+1)$, $\sigma(n)=4n$. 
-\item GRUPO DEL FAROLERO
+\item \underline{El grupo del farolero}: Consideramos el grupo $G=\Z/2\Z[t,t^{-1}]\rtimes\gene{t}$ donde el producto viene dado por $(p(t),t^m)(q(t),t^n)=(p(t)+t^mq(t),t^{m+n})$. Sea $X=\{a(t)=1, t\}$, siendo $a\in \Z/2\Z[t,t^{-1}]$ y $t\in \gene{t}$, que claramente genera el grupo. Supongamos que $p(t)=a_bt^b+a_{b+1}t^{b+1}+\cdots +a_ct^c$, $a_i\in\{0,1\}$. Podemos interpretar $(p(t),t^m)$ como una calle con farolas $i$ indexadas por $\Z$ encendidas si $a_i=1$ y un farolero en la posición $m$. 
+
+Veamos el efecto de multiplicar por un generador a la derecha. 
+\[
+(p(t), t^m)a=(p(t)+t^m,t^m),
+\]
+esto es, el farolero cambia el estado de la farola en su posición.
+\[
+(p(t), t^m)t^{\pm 1}=(p(t), t^{m\pm 1}),
+\]
+es decir, el farolero se mueve una posición a izquierda o derecha. Hagamos una estimación de la longitud:
+\[
+|(a_bt^b+a_{b+1}t^{b+1}+\cdots +a_ct^c,t^m)|_X\leq |b|+2|b-c|+|c-m|
+\]
+que proviene de que a lo sumo tenemos que ir hasta la posición $b$, y luego ir hasta $c$ cambiando el estado de las farolas, y después volver a la posición $m$. 
+
+Vemos que $\{g\in G\mid |g|_X\leq n\}$ contiene al conjunto $S_n=\{(p(t), 1)\mid b=0, c\leq \frac{n}{2}\}$, que tiene cardinal $2^{\frac{n}{2}}$, por lo que $\beta_{(G,X)}(n)\geq 2^{\frac{n}{2}}$ (exponencial).  
 \end{enumerate}
 \end{ejs}
 
@@ -543,7 +559,7 @@ $\beta(n)\leq (2|X|)^n$
 \end{observacion}
 
 \begin{defi}
-Diremos que $\alpha:\R_{\geq 0}\to\R_{\geq }$ es \textbf{de crecimiento} si es no decreciente. Si $\alpha_1$ y $\alpha_2$ son funciones de crecimiento, diremos que $\alpha_1$ \textbf{domina débilmente} a $\alpha_2$ ($\alpha_2\prec \alpha_1$) si existen $\lambda\geq 1$ y $c\geq 0$ tales que
+Diremos que $\alpha:\R_{\geq 0}\to\R_{\geq 0}$ es \textbf{de crecimiento} si es no decreciente. Si $\alpha_1$ y $\alpha_2$ son funciones de crecimiento, diremos que $\alpha_1$ \textbf{domina débilmente} a $\alpha_2$ ($\alpha_2\prec \alpha_1$) si existen $\lambda\geq 1$ y $c\geq 0$ tales que
 \[
 \alpha_2(n)\leq \lambda\alpha_1(\lambda n+c)+c, \forall n\in\R_{\geq 0}.
 \]
@@ -555,10 +571,11 @@ La relación $\sim$ es de equivalencia.
 \end{lemma}
 La demostración es trivial, así que se deja como ejercicio.
 
-\begin{ejs}\
+\begin{ejs}
+Se prueba fácilmente:
 \begin{enumerate}
-\item Sean $a,b\in\R_{\geq 0}$, entonces $\alpha_1(n)=n^a\prec n^n=\alpha_2(n)\Leftrightarrow a\leq b$ PROBARLO
-\item $e^{an}\sim a^{bn}$ PROBARLO
+\item Sean $a,b\in\R_{\geq 0}$, entonces $\alpha_1(n)=n^a\prec n^b=\alpha_2(n)\Leftrightarrow a\leq b$.
+\item $e^{an}\sim e^{bn}$.
 \end{enumerate}
 \end{ejs}
 
@@ -580,7 +597,7 @@ $\Z\not\sim_{QI}\Z^2$.
 Sea $G=\gene{X}$ con $X$ finito. Escribimos $\beta_G$ para denotar una función equivalente a $\beta_{(G,X)}$.
 
 \begin{defi}
-Diremos que $G$ es de crecimiento \textbf{exponencial} si $\beta_G\sim 2^n$ y que es de crecimiento \textbf{polinomial} si $\beta_G\prec cn^d$. En este segundo caso definimos $d(G)=\inf\{s\mid \exists c:\beta_{(G,X)}(n)\leq cn^s\}$. Por último, se dirá que $G$ es de crecimiento \textbf{subexponencial} o \textbf{intermedio} si no es exponencial ni polinomial. 
+Diremos que $G$ es de crecimiento \textbf{exponencial} si $\beta_G\sim 2^n$ y que es de crecimiento \textbf{polinomial} si $\beta_G\prec cn^d$. En este segundo caso definimos $d(G)=\inf\{s\mid \exists c:\beta_{(G,X)}(n)\prec cn^s\}$. Por último, se dirá que $G$ es de crecimiento \textbf{subexponencial} o \textbf{intermedio} si no es exponencial ni polinomial. 
 \end{defi}
 Grigorchuk probó en 1981 que para todo $0<\alpha_1<\alpha_2<1$ existe un grupo $G$ con $2^{n\alpha_1}\prec \beta_G\prec 2^{n\alpha_2}$, es decir, que existen grupos de crecimiento subexponencial. 
 
@@ -663,31 +680,87 @@ Hemos visto que $\Z\not\sim_{QI}\Z^2$ usando el crecimiento. Ahora usaremos otro
 Dado una grafo $\Gamma$ y $k\geq 1$:
 \begin{itemize}
 \item Un \textbf{$k$-camino} es una sucesión de vértices $\{v_i\}_{i=1}^n$ tal que $d_\Gamma(v_i,v_{i+1})\leq k$. En particular, los caminos son $1$-caminos.
-\item Un \textbf{$k$-rayo propio} es una sucesión infinita de vértices $\gamma=\{v_i\}_{i\in\N}$ tal que para todo $v\in \Gamma$ y para todo $r\geq 0$, existen $N_\gamma$, $v$ y $R$ tales que para todo $i\geq N_\gamma$, $v_i\notin B(v,R)$.  
+\item Un \textbf{$k$-rayo propio} es una sucesión infinita de vértices $\gamma=\{v_i\}_{i\in\N}$ tal que $d(v_i,v_{i+1})\leq k$ y para todo $v\in \Gamma$ y para todo $R\geq 0$, existen $N_\gamma$ y $v$ tales que para todo $i\geq N_\gamma$, $v_i\notin B(v,R)$.  
 \end{itemize}
-Dos $k$-rayos propios $\alpha=\{a_i\}_{i\in \N}$ y $\beta=\{b_i\}_{i\in\N}$ se dicen equivalentes si para todo $v\in\Gamma$ y para algún $k\geq 1$ existe un $k$-camino $\{v_i\}_{i=1}^n$ tal que $v_i\notin B(v,R)$, $v_0=a_j$ con $j\geq N_\alpha$ y $v_n=b_l$ con $l\geq N_\beta$. REVISAR ESTA DEFINICIÓN CON LOS APUNTES POR EL K
+Dos $k$-rayos propios $\alpha=\{a_i\}_{i\in \N}$ y $\beta=\{b_i\}_{i\in\N}$ se dicen equivalentes si para todo $v\in\Gamma$, para todo $R\geq 0$ existe un $k$-camino $\{v_i\}_{i=0}^n$ tal que $v_i\notin B(v,R)$, $v_0=a_j$ con $j\geq N_\alpha$ y $v_n=b_l$ con $l\geq N_\beta$.
 \end{defi}
-\begin{ejs}
-DIBUJOS
+\begin{ejs}\
+\begin{enumerate}
+\item Rayos equivalentes en $\Gamma\sim_{QI} \Z$.
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqffqq}{rgb}{0.,1.,0.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.3,-1) rectangle (6.7,3);
+\draw [line width=2.pt,domain=-4.3:18.7] plot(\x,{(--12.-0.*\x)/6.});
+\draw [line width=2.pt,domain=-4.3:18.7] plot(\x,{(-0.-0.*\x)/6.});
+\draw [line width=2.pt,color=ffqqqq,domain=-4.3:18.7] plot(\x,{(--4.0344-0.*\x)/2.46});
+\draw [line width=2.pt,color=qqffqq,domain=-4.3:18.7] plot(\x,{(--2.52-0.02*\x)/2.52});
+\draw [line width=2.pt,color=qqqqff] (2.52,0.98) circle (1.636704005005181cm);
+\draw [line width=2.pt,dash pattern=on 5pt off 5pt,color=qqqqff] (2.52,0.98)-- (3.54,2.26);
+\draw (-2.58,2.64) node[anchor=north west] {$\Gamma$};
+\draw [color=qqqqff](3.,1.72) node[anchor=north west] {$R$};
+\draw [color=ffqqqq](6,1.7) node[anchor=north west] {$\alpha$};
+\draw [color=qqffqq](6,1.) node[anchor=north west] {$\beta$};
+\end{tikzpicture}
+
+\item Rayos no equivalentes
+
+\definecolor{qqffqq}{rgb}{0.,1.,0.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.3,-1) rectangle (6.7,3);
+\draw [line width=2.pt,domain=-4.3:18.7] plot(\x,{(--12.-0.*\x)/6.});
+\draw [line width=2.pt,domain=-4.3:18.7] plot(\x,{(-0.-0.*\x)/6.});
+\draw (-2.58,2.64) node[anchor=north west] {$\Gamma$};
+\draw [color=ffqqqq](-3,1.7) node[anchor=north west] {$\alpha$};
+\draw [color=qqffqq](6,1.) node[anchor=north west] {$\beta$};
+\draw [line width=2.pt,color=ffqqqq,domain=-4.3:5.019999999999999] plot(\x,{(-9.8728-0.*\x)/-6.02});
+\draw [line width=2.pt,color=qqffqq,domain=-0.999811047427096:18.7] plot(\x,{(--8.999433142281287-0.07142407255778804*\x)/8.999433142281287});
+\end{tikzpicture}
+
+\item Rayos no equivalentes
+
+\definecolor{qqffqq}{rgb}{0.,1.,0.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.3,-4.) rectangle (6,4);
+\draw [line width=2.pt,domain=-4.3:0.0] plot(\x,{(-2.58-0.04*\x)/-2.58});
+\draw [line width=2.pt,domain=-4.3:0.0] plot(\x,{(-0.-0.*\x)/-3.});
+\draw [line width=2.pt,domain=0.0:18.7] plot(\x,{(--2.24--1.64*\x)/2.24});
+\draw [line width=2.pt,domain=1.18:18.7] plot(\x,{(-0.7832--2.6*\x)/4.08});
+\draw [line width=2.pt,domain=1.18:18.7] plot(\x,{(--4.3972-1.98*\x)/3.68});
+\draw [line width=2.pt,domain=0.0:18.7] plot(\x,{(-0.-2.16*\x)/4.04});
+\draw [line width=2.pt,color=ffqqqq,domain=-4.3:0.0] plot(\x,{(-2.8016-0.06*\x)/-4.12});
+\draw [line width=2.pt,color=ffqqqq,domain=0.0:18.7] plot(\x,{(--4.0664--3.84*\x)/5.98});
+\draw [line width=2.pt,color=qqffqq,domain=-4.3:0.0] plot(\x,{(-1.482-0.04*\x)/-3.9});
+\draw [line width=2.pt,color=qqffqq,domain=0.0:18.7] plot(\x,{(--1.596-2.18*\x)/4.2});
+\draw [color=qqffqq](0.74,0.64) node[anchor=north west] {$\beta$};
+\draw [color=ffqqqq](0.84,1.44) node[anchor=north west] {$\alpha$};
+\draw (-1.42,1.68) node[anchor=north west] {$\Gamma$};
+\end{tikzpicture}
+\item En $\R^2$ todos los $k$-rayos son equivalentes; están conectado por los "finales".
+\end{enumerate}
 \end{ejs}
 
 \begin{prop}
 La relación entre $k$-rayos propios de ser equivalentes es una relación de equivalencia.
 \end{prop}
 \begin{dem}
-DEMOSTRAR 
+Trivialmente todo $k$-rayo es equivalente a sí mismo. Si un $k$-rayo es equivalente a otro, basta tomar el camino inverso para conseguir la simetría. Para la transitividad basta concatenar caminos. 
 \QED
 \end{dem}
 
 \begin{observacion}
-Si $k\leq k'$ entonces todo $k$-rayo propio es un $k'$-rayo propio.  Si $\alpha$ y $\beta$ son $k$-rayos propios equivalentes, entonces también son equivalentes como $k'$-rayos propios. Así, tenemos que la aplicación $\{ k$-rayos propios$\}\longrightarrow\{k'$-rayos propios$\}$ es inyectiva y que $\{ k$-rayos propios$\}/\sim\longrightarrow\{k'$-rayos propios$\}/sim$ está bien definida.
+Si $k\leq k'$ entonces todo $k$-rayo propio es un $k'$-rayo propio.  Si $\alpha$ y $\beta$ son $k$-rayos propios equivalentes, entonces también son equivalentes como $k'$-rayos propios. Así, tenemos que la aplicación $\{ k$-rayos propios$\}\longrightarrow\{k'$-rayos propios$\}$ es inyectiva y que $\{ k$-rayos propios$\}/\sim\longrightarrow\{k'$-rayos propios$\}/\sim$ está bien definida.
 \end{observacion}
 
 \begin{prop}
-Si $k\leq k'$, entonces $\{ k$-rayos propios$\}/\sim\longrightarrow\{k'$-rayos propios$\}/sim$ es una biyección. 
+Si $k\leq k'$, entonces $\{ k$-rayos propios$\}/\sim\longrightarrow\{k'$-rayos propios$\}/\sim$ es una biyección. 
 \end{prop}
 \begin{dem}
-DEMOSTRAR
+Falta probar la sobreyectividad. Para ello basta subdividir el $k'$-rayo propio para dar lugar a un $k$-rayo propio. 
 \QED
 \end{dem}
 
@@ -701,7 +774,11 @@ Se definen los \textbf{finales} de un grafo $\Gamma$ como $Ends(\Gamma)=\{ k$-ra
 Si $f:\Gamma\to\Delta$ es una $(\lambda,c)$-quasi-isometría, entonces la aplicación $\{ k$-rayos propios en $\Gamma\}\longrightarrow\{(\lambda k+c)$-rayos propios en $\Delta\}$ dada por $\alpha=\{a_i\}\mapsto f(\alpha)=\{f(a_i)\}$ induce una biyección $Ends(\Gamma)\to Ends(\Delta)$. 
 \end{lemma}
 
-MIRAR SI ESTÁ LA DEMO EN LOS APUNTES Y SI NO INTENTARLA
+\begin{proof}
+HACER
+
+La inversa sera la quasi-inversa (recordemos que en realidad no importa el k). Si dos rayos están conectados se puede hacer f al camino que los conecta (o la quasi-inversa si tengo que hacerlo hacia atrás)
+\end{proof}
 
 \begin{coro}
 Si $G$ es finitamente generado, entonces el número de finales es independiente de los generadores y los denotaremos por $|Ends(G)|$.
