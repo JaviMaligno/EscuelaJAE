@@ -774,11 +774,12 @@ Se definen los \textbf{finales} de un grafo $\Gamma$ como $Ends(\Gamma)=\{ k$-ra
 Si $f:\Gamma\to\Delta$ es una $(\lambda,c)$-quasi-isometría, entonces la aplicación $\{ k$-rayos propios en $\Gamma\}\longrightarrow\{(\lambda k+c)$-rayos propios en $\Delta\}$ dada por $\alpha=\{a_i\}\mapsto f(\alpha)=\{f(a_i)\}$ induce una biyección $Ends(\Gamma)\to Ends(\Delta)$. 
 \end{lemma}
 
-\begin{proof}
-HACER
-
-La inversa sera la quasi-inversa (recordemos que en realidad no importa el k). Si dos rayos están conectados se puede hacer f al camino que los conecta (o la quasi-inversa si tengo que hacerlo hacia atrás)
-\end{proof}
+La demostración se deja como ejercicio.
+%\begin{proof}
+%HACER
+%
+%La inversa sera la quasi-inversa (recordemos que en realidad no importa el k). Si dos rayos están conectados se puede hacer f al camino que los conecta (o la quasi-inversa si tengo que hacerlo hacia atrás)
+%\end{proof}
 
 \begin{coro}
 Si $G$ es finitamente generado, entonces el número de finales es independiente de los generadores y los denotaremos por $|Ends(G)|$.
@@ -804,11 +805,51 @@ $|Ends(G)|\neq |Ends(H)|\Rightarrow G\not\sim_{QI} H$.
 
 \begin{ej}
 Sea $G=\{f:\Z\to\Z\mid f(x)=ax+b, a=\pm 1, b\in\Z\}=Isom(\Z)$. Podemos identificar $f$ con el par $(a,b)$, con lo que la composición tendría la forma $(a,b)\circ (a',b')=(aa',ab'+b)$. Se tiene que $G=\gene{(-1,0), (1,1)}=\gene{\color{blue}{r} ,\color{red}{t}}$, pues $(-1,b)=(-1,0)(1,1)^{-b}$ y $(1,b)=(1,1)^b$. 
-DIBUJO (REVISAR LAS FLECHAS)
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-5.203333333333335,-1) rectangle (5,3);
+\draw [->,line width=2.pt,color=ffqqqq] (0.,2.) -- (-2.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (-2.,2.) -- (-4.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (2.,2.) -- (0.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (4.,2.) -- (2.,2.);
+\draw [->,line width=2.pt,color=ffqqqq] (0.,0.) -- (2.,0.);
+\draw [->,line width=2.pt,color=ffqqqq] (2.,0.) -- (4.,0.);
+\draw [->,line width=2.pt,color=ffqqqq] (-4.,0.) -- (-2.,0.);
+\draw [->,line width=2.pt,color=ffqqqq] (-2.,0.) -- (0.,0.);
+\draw [line width=2.pt,color=qqqqff] (-2.,0.)-- (-2.,2.);
+\draw [line width=2.pt,color=qqqqff] (-4.,0.)-- (-4.,2.);
+\draw [line width=2.pt,color=qqqqff] (2.,0.)-- (2.,2.);
+\draw [line width=2.pt,color=qqqqff] (4.,0.)-- (4.,2.);
+\draw [line width=2.pt,color=qqqqff] (0.,0.)-- (0.,2.);
+\draw (-0.42,2.656666666666666) node[anchor=north west] {$(-1,0)$};
+\draw (-2.57,2.6733333333333325) node[anchor=north west] {$(-1,-1)$};
+\draw (-4.52,2.6733333333333325) node[anchor=north west] {$(-1,-2)$};
+\draw (1.4966666666666673,2.64) node[anchor=north west] {$(-1,1)$};
+\draw (3.53,2.64) node[anchor=north west] {$(-1,2)$};
+\draw (-4.453333333333334,0.056666666666668135) node[anchor=north west] {$(1,-2)$};
+\draw (-2.4533333333333336,0.02333333333333483) node[anchor=north west] {$(1,-1)$};
+\draw (-0.32,-0.01) node[anchor=north west] {$(1,0)$};
+\draw (1.68,0.056666666666668135) node[anchor=north west] {$(1,1)$};
+\draw (3.68,0.056666666666668135) node[anchor=north west] {$(1,2)$};
+\begin{scriptsize}
+\draw [fill=black] (0.,2.) circle (2.5pt);
+\draw [fill=black] (-2.,2.) circle (2.5pt);
+\draw [fill=black] (-4.,2.) circle (2.5pt);
+\draw [fill=black] (2.,2.) circle (2.5pt);
+\draw [fill=black] (4.,2.) circle (2.5pt);
+\draw [fill=black] (0.,0.) circle (2.5pt);
+\draw [fill=black] (2.,0.) circle (2.5pt);
+\draw [fill=black] (4.,0.) circle (2.5pt);
+\draw [fill=black] (-4.,0.) circle (2.5pt);
+\draw [fill=black] (-2.,0.) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
 
 Denotamos por $t^\infty$ al camino empezando en $(1,0)$ y siempre siguiendo aristas en orientación positiva. Análogamente definimos $t^{-\infty}$ con orientación negativa. 
 
-Tenemos entonces que $Ends(\Gamma(G,X))=\{[t^\infty],[t^{-\infty}]\}$. Además, REVISAR LA ACCIÓN
+Tenemos entonces que $Ends(\Gamma(G,X))=\{[t^\infty],[t^{-\infty}]\}$. Además, $r[t^\infty]=[t^{-\infty}]$ y $t[t^{-\infty}]=[t^\infty]$.
 
 Obsérvese que $G\cong \Z\rtimes\Z/2\Z\cong D_\infty$.
 \end{ej}
@@ -818,7 +859,7 @@ Sea $A$ un espacio métrico compacto, $B$ un espacio métrico separable y $f_n:B
 \end{teorema}
 
 \begin{coro}
-Si $\Gamma$ es un grafo localmente finito, toda sucesión $\{\rho_n\}$ de caminos geodésicos que tengan un vértice común $v$ y $l(p_n)\to\infty$ cuando $n\to\infty$ tiene una subsucesión que converge a un camino geodésico infinito. REVISAR ESTE ENUNCIADO CON LOS APUNTES
+Si $\Gamma$ es un grafo localmente finito, todo $k$-rayo propio es equivalente a un camino geodésico infinito.
 \end{coro}
 
 \begin{prop}
@@ -826,8 +867,9 @@ Si $G$ es finitamente generado, entonces $|Ends(G)|\in\{0,1,2,\infty\}$.
 \end{prop}
 \begin{dem}
 Supongamos que $\infty>|Ends(G)|>2$. Sea $X\subseteq G$ tal que $|X|<\infty$ y $G=\gene{X}$. Como $G\curvearrowright End(\Gamma(G,X))$ y es un conjunto finito, el núcleo de la acción $H$ es un subgrupo de índice finito. En particular, existe $r$ tal que $\bigcup_{h\in H}B(h,r)=G$. Todo 1-rayo es equivalente a un rayo geodésico por Arzela-Ascoli. Tomamos 3 1-rayos propios $\alpha=\{a_i\}, \beta=\{b_i\}, \gamma=\{c_i\}$ no equivalentes 2 a 2 y tal que $a_0=b_0=c_0=1_G$.
-
-DIBUJO
+\begin{figure}[h!]
+\includegraphics[scale=0.5]{dibu}
+\end{figure}
 
 Existe $R$ tal que $\{a_i\}_{i\geq R}$ y $\{b_i\}_{i\geq R}$ no pueden ser conectados por un 1-camino fuera de la bola $B(1_G,R)$. En particular, $d(a_i,b_i)>2R$. Como $\gamma$ es equivalente a $\alpha$ ni a $\beta$, para todo $c_l$ y para $i$ suficientemente grande existe $h_l\in H$ tal que $d(c_l,h_l)\leq k$ y tal que $h_l\alpha\sim \alpha$ y $h_l\beta\sim\beta$ y por tanto $h_l\alpha$ y $h_l\beta$ pasan por la bola $B(1_G,R)$. Entonces existe $i>2R$ y existe $h$ tal que $d(ha_i,hb_i)\leq 2R$.
 \QED
@@ -836,8 +878,9 @@ Existe $R$ tal que $\{a_i\}_{i\geq R}$ y $\{b_i\}_{i\geq R}$ no pueden ser conec
 \begin{ej}[grupo con infinitos finales]
 Sea $\F_2=\gene{a,b\mid}$ el grupo libre en 2 generadores.
 
-DIBUJO
-
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{cover}
+\end{figure}
 Obsérvese que de hecho la cantidad de finales es no numerables puesto que tiene la cardinalidad del conjunto de Cantor. 
 \end{ej}
 
@@ -852,13 +895,27 @@ Las siguientes afirmaciones son equivalentes:
 \end{enumerate}
 \end{teorema}
 \begin{dem}
-Solo falta $3\Rightarrow 1$. Fijamos un grafo de Cayley $\Gamma(G,X)$. Sean $\alpha$ y $\beta$ dos rayos geodésicos empezando en $v$ y tal que existe $\R\geq 0$ tal que $\alpha$ y $\beta$ están contenidos componentes conexas distintas  de $\Gamma(G,X)-B(v,R)$.
+Solo falta $3\Rightarrow 1$. Fijamos un grafo de Cayley $\Gamma(G,X)$. Sean $\alpha$ y $\beta$ dos rayos geodésicos empezando en $v$ y tal que existe $R\geq 0$ tal que $\alpha$ y $\beta$ están contenidos componentes conexas distintas  de $\Gamma(G,X)-B(v,R)$.
 
-DIBUJO
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-5.,-0.5) rectangle (5,2.5);
+\draw [line width=2.pt,domain=-8.88:14.12] plot(\x,{(--6.-0.*\x)/3.});
+\draw [line width=2.pt,domain=-8.88:14.12] plot(\x,{(-0.-0.*\x)/3.});
+\draw [line width=2.pt,dash pattern=on 5pt off 5pt] (0.,1.) circle (1.4cm);
+\draw [line width=2.pt,color=ffqqqq,domain=0.0:14.120000000000001] plot(\x,{(--4.-0.*\x)/4.});
+\draw [line width=2.pt,color=qqqqff,domain=-8.88:0.0] plot(\x,{(-3.58-0.02*\x)/-3.58});
+\draw [line width=2.pt,dash pattern=on 5pt off 5pt] (0.,1.)-- (0.9797958971132712,2.);
+\draw (0.02,2.08) node[anchor=north west] {$R$};
+\begin{scriptsize}
+\draw (0.,1.) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
 
 Existe $H\leq G$ con $[G:H]\leq 2$ tal que $H$ fija esos finales.
 
-Existe $k$ tal que para todo $g\in G$ existe $h$ con $d(h,g)\leq k$. Tomamos $\CC=B(v,R)\cup$ componente de $\beta$. Sea $h\in H$ tal que $d(h,\beta(R+2k))\leq k$. Entonces $h\CC\subsetneq \CC$, luego $h^2\CC\subsetneq h\CC\subsetneq\CC$ etc. Con lo que el índice de $\gene{h}$ es infinito. REVISAR ESTO CON LOS APUNTES
+Existe $k$ tal que para todo $g\in G$ existe $h$ con $d(h,g)\leq k$. Tomamos $\CC=B(v,R)\cup$ componente de $\beta$. Sea $h\in H$ tal que $d(h,\beta(R+2k))\leq k$. Entonces $h\CC\subsetneq \CC$, luego $h^2\CC\subsetneq h\CC\subsetneq\CC$ etc. Con lo que el orden de $h$ es infinito. Falta ver que el índice de $\gene{h}$ es finito. 
 
 Ahora, $\Gamma-(B(v,R)\cup hB(v,R))$ tiene dos componentes conexas infinitas y un número finito de componentes conexas finitas. Sea $D$ la unión de las componentes conexas finitas y $B(v,R)$. Entonces $\bigcup_{h\in\gene{h}} hD=\Gamma(G,X)$, luego $\bigcup_{d\in D}\gene{h}d=G$, por lo que $\gene{h}$ tiene índice finito en $G$.
 \QED
@@ -867,7 +924,7 @@ Ahora, $\Gamma-(B(v,R)\cup hB(v,R))$ tiene dos componentes conexas infinitas y u
 \section{Grupos finitamente presentados}
 \subsection{Grupos libres}
 \begin{defi}
-Sea $X$ un conjunto, $G$ un grupo e $i:X\to L$ una función. Diremos que $(L,i)$ es \textbf{libre} en $X$ si para todo grupo $H$ y toda función $f:X\to H$ existe un único homomorfismo $\varphi:G\to H$ de modo que el siguiente diagrama conmuta
+Sea $X$ un conjunto, $L$ un grupo e $i:X\to L$ una función. Diremos que $(L,i)$ es \textbf{libre} en $X$ si para todo grupo $H$ y toda función $f:X\to H$ existe un único homomorfismo $\varphi:L\to H$ de modo que el siguiente diagrama conmuta
 \[
 \begin{tikzcd}
 X\arrow[r, "f"]\arrow[d,"i"'] & H\\
@@ -876,7 +933,7 @@ L\arrow[ur, dashed, "\exists!\varphi"']
 \]
 \end{defi}
 
-\begin{observacion}
+\begin{observacion}\label{4.2}
 Sea $H=\gene{Y}$ un grupo. Sea $X$ un conjunto con $|X|>|Y|$ y $(L,i)$ el grupo libre en $X$. Como $|X|>|Y|$, podemos tomar $f:X\to H$ tal que $Y\subseteq f(X)$. Entonces existe $\varphi:L\to H$ homomorfismo sobreyectivo y tenemos que $H\cong L/\ker\varphi$.
 \end{observacion}
 
@@ -897,8 +954,28 @@ X\arrow[u, "i_1"]\arrow[ur, "i_2"]&
 \item Si $(L_1,i_1)$ es libre en $X_1$ y $(L_2,i_2)$ es libre en $X_2$ entonces $L_1\cong L_2\Leftrightarrow |X|=|Y|$ (se puede suponer que $|X|,|Y|<\infty$).
 \end{enumerate}
 \end{prop}
-\begin{dem}
-HACER
+\begin{dem}\
+\begin{enumerate}
+\item Basta considerar $H=L_2$ y $f=i_2$ en la definición de que $(L_1,i_1)$ sea libre en $X$. 
+\item Basta considerar $H=\gene{X}$ y $f$ la inclusión natural de $X$ en $H$. Como $j$ es inyectivo, también lo es $\varphi\circ i$, de donde se deduce la inyectividad de $i$.
+\item Supongamos que $L_1\cong L_2$. Tenemos entonces el siguiente diagrama
+\[
+\begin{tikzcd}
+L_1\arrow[r, "\varphi", "\cong"'] & L_2\\
+X\arrow[u, "i_1"] & Y\arrow[u, "i_2"]
+\end{tikzcd}
+\]
+Con lo que $\varphi$ es en particular una biyección entre $i_1(X)$ e $i_2(Y)$, por lo que, gracias al primer apartado, necesariamente $|X|=|Y|$.
+
+Supongamos ahora que $|X|=|Y|$, por lo que existe una biyección $g$ entre ambos conjuntos. Consideramos $f=i_2\circ g$, con lo que obtenemos el diagrama
+\[
+\begin{tikzcd}
+L_1\arrow[r, dashed, "\varphi"] & L_2\\
+X\arrow[u, "i_1"]\arrow[r,"g"] & Y\arrow[u, "i_2"]
+\end{tikzcd}
+\]
+Como $f$ es inyectiva por composición, se deduce que $\varphi$ debe ser inyectiva, y por la observación \ref{4.2} tenemos las sobreyectividad.
+\end{enumerate}
 \QED
 \end{dem}
 
