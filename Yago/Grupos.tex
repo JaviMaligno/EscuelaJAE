@@ -987,9 +987,14 @@ Sea $X^{-1}$ un conjunto en biyección con $X$ mediante $x\mapsto x^{-1}$. Por a
 
 Dos palabras son equivalentes si están en la misma componente conexa del grafo con vértices $V\Gamma=(X\cup X^{-1})^*$ y aristas en las palabras relacionadas por reducciones elementales. 
 
-DIAGRAMA
+\[
+\begin{tikzcd}
+zxx^{-}z\arrow[d] & zxx^{-1}y^{-1}y\arrow[l]\arrow[r] &zzy^{-1}y\arrow[lld]\\
+zz 
+\end{tikzcd}
+\]
 
-Entonces se tiene que $F(X)=(X\cup X^{-1})^*/\sim$ es un grupo libre en $X$ y existe una única palabra reducida en cada clase de equivalencia. PROBARLO 
+Entonces se tiene que $F(X)=(X\cup X^{-1})^*/\sim$ es un grupo libre en $X$ y existe una única palabra reducida en cada clase de equivalencia. La segunda afirmación es clara así que vamos a probar la primera. Consideramos $i:X\to F(X)$ la aplicación que envía cada elemento a su clase de equivalencia (de hecho son palabras reducidas). Sea $H$ un grupo y $f:X\to H$ una función. Definimos $\varphi:F(X)\to G$ a partir de las palabras reducidas como $x_{i_1})^{\varepsilon_1}\cdots x_{i_n}^{\varepsilon_n}\mapsto f(x_{i_1})^{\varepsilon_1}\cdots f(x_{i_n})^{\varepsilon_n}$. Cualquier homomorfismo de $F(X)\to G$ que haga que el diagrama conmute debe cumplir esa definición luego es único. Se puede ver con más detalle esta demostración en \url{https://www.math.unl.edu/~mbrittenham2/classwk/990s08/public/myasnikov.1.free.groups.pdf}
 
 \QED
 \end{dem}
@@ -1034,7 +1039,11 @@ Nos vamos a centrar en el problema de la palabra. Sea $G=\gene{X\mid R}$ finita 
 Si $w=_G 1$, definimos $Area(w)=\min\{M\mid w=\prod_{i=1}^M p_ir_i^{\varepsilon_i}p_i^{-1}\}$ y $Dehn_{\gene{X\mid R}}(n)=\max\{Area(w)\mid l(w)\leq n, w=1_G\}$.
 
 \begin{ej}
-$\gene{x,y\mid xyx^{-1}y^{-1}}$ DIBUJO
+$\gene{x,y\mid r=xyx^{-1}y^{-1}}$. Sea $w=y^4x^2y^{-1}x^{-2}y^{-3}$. Entonces
+\[
+w=(y^4ry^{-4})(y^{4}x^2rx^{-2}y^{-4})(y^{3}x^2rx^{-2}y^{-3})(y^3ry^{-3})
+\]
+PREGUNTAR A MENESES PORQUE NO ENTIENDO NADA
 \end{ej}
 
 \begin{ej}
@@ -1059,9 +1068,8 @@ Se puede demostrar que $Dehn_{BS(1,2)}(n)\sim 2^n$.
 \begin{lemma}
 Dadas dos presentaciones finitas $\gene{X\mid R}\cong \gene{Y\mid S}$, sus funciones de Dehn son equivalentes.
 \end{lemma}
-\begin{proof}
-IDEA: DEMOSTRARLO PARA TRANSFORMACIONES DE TIETZE. SI NO ME SALE PUES DIGO LA IDEA Y YA.
-\end{proof}
+
+La idea de la demostración de este lema es probarlo para transformaciones de Tietze. 
 
 Sea $\gene{X\mid R}$ una presentación finita. Un \textbf{diagrama de Van Kampen}\footnote{\url{https://en.wikipedia.org/wiki/Van_Kampen_diagram}} con frontera $w$ es un grafo plano conexo con aristas orientadas con etiquetas en $X$, y en cada región interior las etiquetas son palabras de $R^{\pm 1}$ (empezando desde el vértice adecuado). Además existe un punto base en la frontera tal que la etiqueta de la frontera leída desde el punto base es $w$. 
 
@@ -1076,7 +1084,9 @@ Dada $\gene{X\mid R}$ finita
 \begin{observacion}
 Dado un diagrama de Van Kampen para $w$ podemos encontrar los $p_i$, los $r_i$ y $M$ tal que $w=\prod_{i=1}^M p_i r_i^{\varepsilon_i} p_i^{-1}$.
 
-DIBUJO
+\begin{figure}[h!]
+\includegraphics[scale=0.6]{palabra}
+\end{figure}
 
 En particular, $l(p_i)\leq l(\max_{r\in R} l(r))+l(w)$.
 \end{observacion}
@@ -1089,9 +1099,6 @@ Sean $G,H$ finitamente generados y quasi-isométricos. Si $G$ es finitamente pre
 Si $G$ es finitamente presentado y $H\leq G$ de índice finito, entonces $H$ tiene presentación finita.
 \end{coro}
 
-\textbf{Idea de la demostración}
-COPIAR
-
 \begin{defi}
 Una función $f:\N\to\N$ es \textbf{recursiva} si existe un algoritmo (máquina de Turing) con entrada $n$ y con salida $f(n)$. 
 \end{defi}
@@ -1099,10 +1106,7 @@ Una función $f:\N\to\N$ es \textbf{recursiva} si existe un algoritmo (máquina 
 \begin{teorema}
 $Dehn_{\gene{X\mid R}}\leq f(n)$ con $f$ recursiva si y solo si $\gene{X\mid R}$ tiene problema de la palabra resoluble. 
 \end{teorema}
-\begin{dem}
-MU LARGA
-\QED
-\end{dem}
+
 
 \begin{coro}
 Tener problema de la palabra resoluble es un invariante por quasi-isometría entre grupos finitamente presentables. 
