@@ -1116,7 +1116,33 @@ Tener problema de la palabra resoluble es un invariante por quasi-isometría ent
 
 Hemos hablado repetidamente de palabras. Un conjunto $L\subseteq X^*$ se llama \textbf{lengua formal}. Las lenguas formales están clasificadas por la complejidad que tiene describirlas. Chomsky propuso la siguiente jerarquía:
 
-HACER TABLA CON LOS RECUADROS
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{ffqqff}{rgb}{1.,0.,1.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.1,-0.1) rectangle (18.1,4.1);
+\draw[line width=2.pt,color=ffqqqq] (0.,0.) -- (0.,1.) -- (6.,1.) -- (6.,0.) -- cycle;
+\draw[line width=2.pt,color=ffqqff] (0.,0.) -- (-1.,0.) -- (-1.,2.) -- (7.,2.) -- (7.,0.) -- cycle;
+\draw[line width=2.pt,color=qqqqff] (-1.,0.) -- (-2.,0.) -- (-2.,3.) -- (8.,3.) -- (8.,0.) -- cycle;
+\draw (0.1,0.75) node[anchor=north west] {Regular - Finite State Automata};
+%\draw [line width=2.pt,color=ffqqqq] (0.,0.)-- (0.,1.);
+%\draw [line width=2.pt,color=ffqqqq] (0.,1.)-- (4.,1.);
+%\draw [line width=2.pt,color=ffqqqq] (4.,1.)-- (4.,0.);
+%\draw [line width=2.pt,color=ffqqqq] (4.,0.)-- (0.,0.);
+%\draw [line width=2.pt,color=ffqqff] (0.,0.)-- (-1.,0.);
+%\draw [line width=2.pt,color=ffqqff] (-1.,0.)-- (-1.,2.);
+%\draw [line width=2.pt,color=ffqqff] (-1.,2.)-- (5.,2.);
+%\draw [line width=2.pt,color=ffqqff] (5.,2.)-- (5.,0.);
+%\draw [line width=2.pt,color=ffqqff] (5.,0.)-- (0.,0.);
+\draw (-0.2,1.7) node[anchor=north west] {Context-free - push-down automata};
+%\draw [line width=2.pt,color=qqqqff] (-1.,0.)-- (-2.,0.);
+%\draw [line width=2.pt,color=qqqqff] (-2.,0.)-- (-2.,3.);
+%\draw [line width=2.pt,color=qqqqff] (-2.,3.)-- (6.,3.);
+%\draw [line width=2.pt,color=qqqqff] (6.,3.)-- (6.,0.);
+%\draw [line width=2.pt,color=qqqqff] (6.,0.)-- (-1.,0.);
+\draw (-1.25,2.74) node[anchor=north west] {Recursivamente enumerable - Máquina de Turing};
+\draw (1.08,3.72) node[anchor=north west] {Lengua - Máquina};
+\end{tikzpicture}
 
 
 \subsection{Autómatas finitos (Finite State Automata)}
@@ -1125,13 +1151,79 @@ Un autómata es una máquina que hace cálculos. En este caso nos interesan los 
 
 \begin{ej}
 $A=\{0,1\}$.
-HACER EL AUTÓMATA
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.055,-1.9993749999999952) rectangle (13.91375,2.7975);
+\draw[line width=2.pt] (0.,0.) -- (0.,1.) -- (-1.,1.) -- (-1.,0.) -- cycle;
+\draw [line width=2.pt] (0.,0.)-- (0.,1.);
+\draw [line width=2.pt] (0.,1.)-- (-1.,1.);
+\draw [line width=2.pt] (-1.,1.)-- (-1.,0.);
+\draw [line width=2.pt] (-1.,0.)-- (0.,0.);
+\draw [->,line width=2.pt] (0.,0.5) -- (2.02,0.52);
+\draw [line width=2.pt] (2.66,0.54) circle (0.640312423743285cm);
+\draw [->,line width=2.pt] (3.3003124237432853,0.54) -- (4.94,0.54);
+\draw [line width=2.pt] (5.6,0.52) circle (0.6603029607687664cm);
+\draw [line width=2.pt] (5.6,0.52) circle (0.32249030993194133cm);
+\draw [shift={(5.84,1.5)},line width=2.pt]  plot[domain=-1.2019796152205329:3.7626746558478077,variable=\t]({1.*0.5068227168871041*cos(\t r)+0.*0.5068227168871041*sin(\t r)},{0.*0.5068227168871041*cos(\t r)+1.*0.5068227168871041*sin(\t r)});
+\draw [shift={(6.34,-0.26)},line width=2.pt]  plot[domain=-3.4294755808554855:1.849130089903287,variable=\t]({1.*0.5478963864751486*cos(\t r)+0.*0.5478963864751486*sin(\t r)},{0.*0.5478963864751486*cos(\t r)+1.*0.5478963864751486*sin(\t r)});
+\draw [->,line width=2.pt] (5.367236715213333,1.317341458150606) -- (5.456760176421417,1.164579206103622);
+\draw [->,line width=2.pt] (6.405279235842623,0.28399363202185424) -- (6.1974544680222685,0.23884495622481466);
+\draw (0.76,1.11) node[anchor=north west] {$0$};
+\draw (3.6,1.235) node[anchor=north west] {$0$};
+\draw (5.72625,2.5475) node[anchor=north west] {$1$};
+\draw (6.8,0.4225) node[anchor=north west] {$0$};
+\end{tikzpicture}
 
 Asociado al autómata tenemos el conjunto $\mathcal{L}$ de las palabras que leemos empezando en $\square$ y acaban en $\odot$. En el ejemplo, $L$ está generado por la expresión regular $00\{0,1\}^*$.
 \end{ej}
 
 \begin{ej}
-$A=\{a,b,a^{-1},b^{-1}\}$. AUTÓMATA
+$A=\{a,b,a^{-1},b^{-1}\}$. 
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.3,-4.) rectangle (18.7,4.);
+\draw[line width=2.pt] (1.,0.) -- (1.,1.) -- (0.,1.) -- (0.,0.) -- cycle;
+\draw [line width=2.pt] (1.,0.)-- (1.,1.);
+\draw [line width=2.pt] (1.,1.)-- (0.,1.);
+\draw [line width=2.pt] (0.,1.)-- (0.,0.);
+\draw [line width=2.pt] (0.,0.)-- (1.,0.);
+\draw [->,line width=2.pt] (0.48,1.) -- (0.5,2.);
+\draw [->,line width=2.pt] (1.,0.52) -- (2.02,0.54);
+\draw [->,line width=2.pt] (0.,0.52) -- (-1.02,0.48);
+\draw [->,line width=2.pt] (0.52,0.) -- (0.52,-1.06);
+\draw [line width=2.pt] (0.54,-1.58) circle (0.5203844732503075cm);
+\draw [line width=2.pt] (0.52,2.58) circle (0.5803447251418764cm);
+\draw [line width=2.pt] (2.6,0.54) circle (0.58cm);
+\draw [line width=2.pt] (-1.58,0.5) circle (0.560357029044876cm);
+\draw [line width=2.pt] (0.52,2.58) circle (0.3805259518088088cm);
+\draw [line width=2.pt] (2.6,0.54) circle (0.36221540552549664cm);
+\draw [line width=2.pt] (-1.58,0.5) circle (0.4019950248448356cm);
+\draw [line width=2.pt] (0.54,-1.58) circle (0.360555127546399cm);
+\draw [->,line width=2.pt] (-1.3062076678040349,0.9889148789213662) -- (0.,2.322318025465498);
+\draw [->,line width=2.pt] (2.2552531845713926,1.0064221620504687) -- (0.9971549014733057,2.2496619912877116);
+\draw [->,line width=2.pt] (-1.3270177871865296,0.) -- (0.03515290608413513,-1.7062117734789661);
+\draw [->,line width=2.pt] (2.388339895114832,0.) -- (1.048833194192552,-1.6890356844698324);
+\draw [shift={(3.3,1.12)},line width=2.pt]  plot[domain=-1.9508989222070579:3.4633432079864352,variable=\t]({1.*0.414509879115845*cos(\t r)+0.*0.414509879115845*sin(\t r)},{0.*0.414509879115845*cos(\t r)+1.*0.414509879115845*sin(\t r)});
+\draw [shift={(1.22,3.34)},line width=2.pt]  plot[domain=-1.874571316370396:3.6272147468872618,variable=\t]({1.*0.5568886620589937*cos(\t r)+0.*0.5568886620589937*sin(\t r)},{0.*0.5568886620589937*cos(\t r)+1.*0.5568886620589937*sin(\t r)});
+\draw [shift={(-2.58,0.84)},line width=2.pt]  plot[domain=-0.06271442235095126:5.521828293242994,variable=\t]({1.*0.5320441419076678*cos(\t r)+0.*0.5320441419076678*sin(\t r)},{0.*0.5320441419076678*cos(\t r)+1.*0.5320441419076678*sin(\t r)});
+\draw [shift={(0.58,-2.44)},line width=2.pt]  plot[domain=-4.077787307888048:0.9761836803465909,variable=\t]({1.*0.509746478061798*cos(\t r)+0.*0.509746478061798*sin(\t r)},{0.*0.509746478061798*cos(\t r)+1.*0.509746478061798*sin(\t r)});
+\draw [->,line width=2.pt] (1.7459795574366983,3.1570505887176705) -- (1.4073019261260458,2.815554606847072);
+\draw [->,line width=2.pt] (3.7140407110208256,1.1002837756656747) -- (3.4853744534096496,0.7492510931807002);
+\draw [->,line width=2.pt] (0.6753797379996441,-2.9407436244981318) -- (1.0494598126424535,-2.638617613041038);
+\draw [->,line width=2.pt] (-3.077188725053523,1.0294052285918185) -- (-3.069025728784655,0.6304175448065761);
+\draw (-3.6,0.6) node[anchor=north west] {$a^{-1}$};
+\draw (3.98,1.4) node[anchor=north west] {$a$};
+\draw (0.24,4.) node[anchor=north west] {$b$};
+\draw (0.06,-2.78) node[anchor=north west] {$b^{-1}$};
+\draw (1.96,-0.46) node[anchor=north west] {$b^{-1}$};
+\draw (-1.2,-0.82) node[anchor=north west] {$b^{-1}$};
+\draw (-0.96,2.12) node[anchor=north west] {$b$};
+\draw (1.86,2.06) node[anchor=north west] {$b$};
+\draw (0.72,1.78) node[anchor=north west] {$b$};
+\draw (0.7,-0.1) node[anchor=north west] {$b^{-1}$};
+\draw (1.44,0.48) node[anchor=north west] {$a$};
+\draw (-0.8,0.36) node[anchor=north west] {$a^{-1}$};
+\end{tikzpicture}
 
 $\mathcal{L}=\{$ palabras reducidas en $A\}$.
 \end{ej}
@@ -1216,11 +1308,14 @@ Las siguientes afirmaciones son equivalentes.
 Hemos visto que $Dehn_G\sim n$ es un invariante por quasi-isometrías. Los grupos con esta propiedad se llama \textbf{grupos hiperbólicos}.
 \begin{teorema}
 Sea $G$ un grupo y $X$ un conjunto finito de generadores. $Dehn_G\sim n\Leftrightarrow \exists\ \delta>0$ tal que en $\Gamma(G,X)$ todo triángulo geodésico es $\delta$-delgado. 
-\end{teorema}
+\end{teorema}\
 
-DIBUJO DE WIKIPEDIA \url{https://en.wikipedia.org/wiki/Hyperbolic_group} Y QUIZÁ ALGUNA DE LAS EXPLICACIONES DE QUE NO DEPENDE DE LOS GENERADORES
+\begin{figure}[h!]
+\includegraphics[scale=0.8]{delgado}
+\caption{Triángulo $\delta$-delgado.}
+\end{figure}
 
-El concepto de $\delta$-hiperbólico es muy útil y en los últimos años se han llevado las ideas al límite (grupos relativamente hiperbólicos, grupos jerárquicamente hiperbólicos, grupos acíclicamente hiperbólicos...)
+El concepto de $\delta$-hiperbólico es muy útil y en los últimos años se han llevado las ideas al límite (grupos relativamente hiperbólicos, grupos jerárquicamente hiperbólicos, grupos acíclicamente hiperbólicos...). Este concepto no depende del conjunto de generadores elegido.
 
 Un teorema importante de Brady y Bridson afirma que el conjunto $\{\alpha\mid Dehn_G\sim n^{\alpha}\}$ es denso en $[2,\infty)$. Gromov probó que de hecho si $Dehn_G$ es sublineal, entonces debe ser lineal. 
 
