@@ -56,7 +56,19 @@ y sea $Id:(\Z,d)\to(\Z,d')$. Demostrar que
 \end{enumerate}
 \end{ejercicio}
 \begin{solucion}
-
+Ambos apartados se deducen del siguiente desarrollo. Partamos de que 
+\[
+\frac{1}{\lambda}|x-y|-c\leq |x-y|+\log(|x-y|)\leq \lambda|x-y|+c
+\]
+Entonces, por un lado
+\[
+\log(|x-y|)\leq (\lambda-1)|x-y|+c
+\]
+lo cual es elementalmente cierto, y por otro
+\[
+c\leq \left(\frac{1}{\lambda}-1\right)|x-y|-log(|x-y|)
+\]
+Que como $\frac{1}{\lambda}-1<0$ y el logaritmo es menor que su argumento, sabemos que tal $c$ existe. Sin embargo, para $\lambda=1$, tendríamos $\log(|x-y|)\leq c$, lo cual no es posible. 
 \end{solucion}
 
 \newpage
