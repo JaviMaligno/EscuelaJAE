@@ -162,13 +162,62 @@ Sea $C_t$ la unión de las curvas $\Sigma_t\cap P_{ij}$ y $C=\bigcup_t C_t$. La 
 Existe una función (de Hatcher) $\lambda:\pi_0(C)\to (0,1)$ inyectiva y monónota decreciente, es decir, $c_t>c'_t$ implica $\lambda(c_t)<\lambda(c'_t)$.
 \end{prop}
 \begin{dem}
-CON LOS DIBUJOS DE LOS CÍRCULOS ALGUNOS METIDOS EN OTROS HACER EL GRAFO Y DEFINIR PARA UN T FIJO LA FUNCION COGIENDO INTERVALOS PARA CADA NIVEL, YA QUE HAY UNA CANTIDAD FINITA. COMO TAMBIÉN HAY UNA CANTIDAD FINITA DE BOLAS Y PARA LOS DE UNA MISMA BOLA LOS GRAFOS SON IGUALES Y SOLO CAMBIAN AL CAMBIAR LA BOLA PORQUE LOS PLANOS SON DISTINTOS ENTONCES SIGUE HABIENDO UNA CANTIDAD FINITA Y SE PUEDE APAÑAR
+Para cada $t$ fijo podemos asociar un grafo a los $c_t$ como en la siguiente figura.
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3,1) rectangle (9,6);
+\draw [rotate around={1.1457628381751033:(0.,3.7)},line width=2.pt] (0.,3.7) ellipse (2.974204220404773cm and 2.2009749532135885cm);
+\draw [line width=2.pt] (-2.,3.66) circle (0.6811754546370558cm);
+\draw [line width=2.pt] (0.66,3.98) circle (1.3613228860193307cm);
+\draw [line width=2.pt] (0.66,3.98) circle (0.6276941930590085cm);
+\draw [line width=2.pt] (7.04,5.6)-- (5.7,4.12);
+\draw [line width=2.pt] (7.04,5.6)-- (8.32,4.04);
+\draw [line width=2.pt] (8.32,4.04)-- (8.32,2.54);
+\begin{scriptsize}
+\draw [fill=black] (7.04,5.6) circle (2.5pt);
+\draw [fill=black] (5.7,4.12) circle (2.5pt);
+\draw [fill=black] (8.32,4.04) circle (2.5pt);
+\draw [fill=black] (8.32,2.54) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+El grafo se mantiene isomorfo en toda la bola $B_i\ni t$, teniendo siempre una cantidad finita de vértices, y como hay una cantidad finita de bolas, podemos construir la función asignando valores del intervalo $(0,1)$ a los vértices.
 \QED
 \end{dem}
 \subsection{Partición de la unidad}
-Elegimos $\varepsilon>0$ tal que para $c_t\neq c'_t$ se tiene $|\lambda(c_t)-\lambda(c'_t)|>2\varepsilon$, y $\delta>0$ tal que dos planos $P_{ij}$ distan de al menos $2\delta$ y que $\Sigma_t$ sea vertical en un $\delta$-entorno de $P_{ij}$. Sean $\Gamma_i=\{(t,\lambda(c_t))\in B_i\times (0,1)\}$ y $\widetilde{\Gamma}_i$ un $\varepsilon$-entorno de $\Gamma_i$. Para cada $i$, se define $T_i\cong S^{k-1}\times[0,1]\subset S^k\times[0,1]$ como como un anillo que une $\partial B_i\times\{1\}$ con $\partial B'_i\times\{0\}$, siendo $B'_i$ bolas abiertas contenidas en las $B_i$ y que recubren $S^k$. Cada $\widetilde{\Gamma}_i\cap T_i$ es una unión de subanillos cuyas proyecciones sobre $S^k$ denotamos $Z_{il}$. Denotamos $E_i$ a $\widetilde{\Gamma}_i$ truncado por $B'_i$, unión de bandas tal como muestra la siguiente figura
+Elegimos $\varepsilon>0$ tal que para $c_t\neq c'_t$ se tiene $|\lambda(c_t)-\lambda(c'_t)|>2\varepsilon$, y $\delta>0$ tal que dos planos $P_{ij}$ distan de al menos $2\delta$ y que $\Sigma_t$ sea vertical en un $\delta$-entorno de $P_{ij}$. Sean $\Gamma_i=\{(t,\lambda(c_t))\in B_i\times (0,1)\}$ y $\widetilde{\Gamma}_i$ un $\varepsilon$-entorno de $\Gamma_i$. Para cada $i$, se define $T_i\cong S^{k-1}\times[0,1]\subset S^k\times[0,1]$ como como un anillo que une $\partial B_i\times\{1\}$ con $\partial B'_i\times\{0\}$, siendo $B'_i$ bolas abiertas contenidas en las $B_i$ y que recubren $S^k$. Cada $\widetilde{\Gamma}_i\cap T_i$ es una unión de subanillos cuyas proyecciones sobre $S^k$ denotamos $Z_{il}$. Denotamos $E_i$ a $\widetilde{\Gamma}_i$ truncado por $B'_i$, unión de bandas tal como muestra la siguiente figura.
 
-HACER EL DIBUJO ROTADO EN LA IZQUIERDA Bi CON B'i DENTRO, RECORDAR QUE HE DEFINIDO LAMBDA DE MODO QUE ES CONSTANTE Y POR ESO SALEN LÍNEAS VERTICALES. QUIZÁ INCLUIR til EN EL DIBUJO
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{uququq}{rgb}{0.25098039215686274,0.25098039215686274,0.25098039215686274}
+\begin{center}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-1,-0.1) rectangle (6,5.5);
+\draw[line width=2.pt,color=uququq,fill=uququq,fill opacity=0.10000000149011612] (2.,5.) -- (2.36,5.) -- (2.34,0.) -- (2.,0.) -- cycle;
+\draw [line width=2.pt] (0.,0.)-- (0.,5.);
+\draw [line width=2.pt] (0.,5.)-- (5.,5.);
+\draw [line width=2.pt] (5.,5.)-- (5.,0.);
+\draw [line width=2.pt] (5.,0.)-- (0.,0.);
+\draw [line width=2.pt] (0.,3.72)-- (5.,5.);
+\draw [line width=2.pt] (0.,1.)-- (5.,0.);
+\draw [line width=2.pt] (2.,5.)-- (2.,0.);
+\draw [line width=2.pt] (2.36,5.)-- (2.34,0.);
+\draw [line width=2.pt,color=uququq] (2.,5.)-- (2.36,5.);
+\draw [line width=2.pt,color=uququq] (2.36,5.)-- (2.34,0.);
+\draw [line width=2.pt,color=uququq] (2.34,0.)-- (2.,0.);
+\draw [line width=2.pt,color=uququq] (2.,0.)-- (2.,5.);
+\draw [line width=2.pt,dash pattern=on 4pt off 4pt] (2.,4.232)-- (0.,4.128125);
+\draw [line width=2.pt,dash pattern=on 4pt off 4pt] (2.357293868921776,4.323467230443974)-- (0.,4.3);
+\draw [line width=2.8pt,,color=ffqqqq] (0.,4.3)-- (0.,4.128125);
+\draw [line width=2.8pt,,color=qqqqff] (0.,3.72)-- (0.,1.);
+\draw [color=qqqqff](-0.7,2.8156250000000003) node[anchor=north west] {$B_i'$};
+\draw [color=ffqqqq](-0.7,4.534375) node[anchor=north west] {$Z_{il}$};
+\draw (-0.7,5.08125) node[anchor=north west] {$B_i$};
+\draw [line width=2.pt,dotted] (2.1568749999999994,5.)-- (2.1725,0.);
+\draw (1.9,5.628125) node[anchor=north west] {$\tilde{\Gamma}_i$};
+\end{tikzpicture}
+\end{center}
 
 Podemos decir que $E=\bigcup E_i$ juega el papel de una partición de la unidad, pues $\partial E$ induce una partición de $t\times [0,1]$ variando continuamente con $t$. Sea $X_i$ la proyección sobre $S^k$ de $\Gamma_i\cap T_i$; $X_i=\bigcup X_{il}$, donde $X_{il}$ es el alma de $Z_{il}\cong X_{il}\times [-1,1]$. La coordenada transversal $t_{il}$ crece en el sentido que va de $B'_i$ a $B_i$. 
 
@@ -177,23 +226,36 @@ Nótese que, para $i$ fijo, los $Z_{il}$ son disjuntos dos a dos por el $\vareps
 \subsection{Cirugía}
 Para cada $t$ fijo, construimos los objetos $\Sigma_{tu}$. Los valores $\lambda(c_t)$ se ordenan en $u^1=\lambda(c_t^1)>u^2=\lambda(c_t^2)>\cdots$. Sea $\Delta(c_t)$ el disco horizontal bordeado por $c_t$. Para $u>u^1$, $\Sigma_{tu}=\Sigma_t$. Para $u=u^1$, $\Sigma_{tu}=\Sigma_t\cup \Delta(c_t^1)$ (aparición de un disco de cirugía). Si $u\in[u^1, u^1-\varepsilon]$, ejecutamos la cirugía: $\Delta(c_t^1)$ es reemplazado por dos discos $\Delta^+$ y $\Delta^-$ que se separan progresivamente, uno hacia arriba y otro hacia abajo hasta una distancia de $\Delta(c_t^1)$ igual a $\lambda(c_t)\cdot\delta$; al mismo tiempo retiramos el anillo vertical entre $\partial\Delta^+$ y $\partial\Delta^-$. Después de esto no añadimos ninguna cirugía hasta $u=u^2$ y repetimos. 
 
-PONER POR AQUÍ EL DIBUJO DE HATCHER Y ALOMEJOR TAMBIÉN EL DE BOURBAKI
+\begin{figure}[h!]
+\includegraphics[scale=0.6]{cirugia}
+\end{figure}
 
 Hay una manera de describir $\Sigma_{tu}$ de modo único como unión de esferas que tienen solamente un disco horizontal en común dos a dos. Cada una de ellas es un \emph{factor} y sus discos horizontales se llaman \emph{caras}. Una esfera que es unión de superficies elementales con discos horizontales se dice \emph{primitiva}. Cada componente de $\Sigma_{t0}$ es una esfera primitiva a la que se le han añadido discos de cirugía. Si $\Delta$ es una cara común a dos factores $\Sigma_1$ y $\Sigma_2$, se dice que $\Delta$ es una cara \emph{suma} si $\overline{\Sigma}_1$ y $\overline{\Sigma}_2$ son bolas que intersecan solo en $\Delta$, o \emph{diferencia} si hay una relación de inclusión entre estas bolas. 
 
-PONER EL DIBUJO 
+\begin{figure}[h!]
+\includegraphics[scale=0.6]{suma}
+\caption{Diferencia y suma respectivamente.}
+\end{figure}
 
 \section{Contornos}
 
  Si $\Sigma\subset\R^3$ es una esfera encerrando una bola cerrada $\overline{\Sigma}$. Definimos su \emph{contorno} como $C(\Sigma)$, el espacio cociente $\overline{\Sigma}/\sim$ de la relación $x\sim y$ si hay un segmento vertical contenido en $\overline{\Sigma}$ uniendo $x$ e $y$. En otras palabras, $C(\Sigma)$ es el espacio de hojas de la foliación de $\overline{\Sigma}$ mediante líneas verticales. La aplicación cociente se denotará $C:\overline{\Sigma}\to C(\Sigma)$. Nótese que $C$ restringida a $\Sigma$ es sobreyectiva. 
  
- EJEMPLO 5.1 DE HATCHER
+
+Vemos en la figura \ref{contorno} una esfera primitiva, cuyo contorno es un disco con una ``lengua''.
+
+
  
- Motivados por esta construcción damos las siguientes definiciones.
- 
+
+Motivados por esta construcción damos las siguientes definiciones.
  \begin{defi}
  Sean $n$ funciones de clase $C^1$, $f_1,\dots, f_n:[0,1]\to\R$ nulas en el borde y verificando que si $f_i(x)=f_j(x)$ para algún $x\in [0,1]$ entonces $f_i'(x)=f_j'(x)$. La figura formada por sus grafos se llamará \emph{bloque de bigones}. Un \emph{sistema de bigones} es una unión finita de bloques disjuntos. Para $n=2$, la adherencia de la unión de las componentes acotadas se llama una \emph{lengua}. 
  \end{defi}
+ 
+ \begin{figure}[h!]
+\includegraphics[scale=0.5]{contorno}
+\caption{Contorno de una esfera primitiva.}\label{contorno}
+\end{figure}
 
 \begin{defi}\label{lenguas}
 Una \emph{estructura de lenguas} $\mathcal{L}$ es una superficie con borde $L$, dotada de una proyección $\pi:L\to\R^2$, un disco inicial $D_0$ y una colección finita de lenguas $T_1,\dots, T_n$ sobre $L$ con las condiciones siguientes:
@@ -207,11 +269,13 @@ Una \emph{estructura de lenguas} $\mathcal{L}$ es una superficie con borde $L$, 
 
 Una lengua no tiene por qué ser conexa, por ello podemos hablar de \emph{subdivisión} de una estructura de lenguas, en la que se eligen como lenguas distintas algunas de las componentes de una lengua existente. 
 
-\begin{teorema}
-Si $\Sigma$ es una esfera primitiva, el contorno $C(\Sigma)$ admite una estructura de lenguas. PONER LA REFERENCIA (ES LA PROPOSICIÓN 5.1)
+\begin{teorema}(\cite[3.3]{Bo})
+Si $\Sigma$ es una esfera primitiva, el contorno $C(\Sigma)$ admite una estructura de lenguas. 
 \end{teorema}
 
-DIBUJO 3.1 DE BOURBAKI
+\begin{figure}[h!]
+\includegraphics[scale=0.6]{contour}
+\end{figure}
 
 \begin{nota}\
 \begin{enumerate}
@@ -222,7 +286,7 @@ DIBUJO 3.1 DE BOURBAKI
 
 Sea $\Sigma$ una esfera primitiva y $\Delta_1,\dots, \Delta_n$ una colección de discos de cirugía en planos horizontales distintos, con $int(\Delta_i)\cap\Sigma=\emptyset$. Tenemos $\Sigma\cup\Delta_1\cup\cdots\cup\Delta_n$ como unión de factores $\Sigma_0\cup\cdots\cup \Sigma_n$ con $\Delta_k$ cara de $\Sigma_k$ para $k\geq 1$. Suponemos que $\Sigma_0$ es \emph{grande}, esto es, que $\pi(\Sigma_0)\cap\partial\Sigma$ contiene un arco. Para una familia $\Sigma_t$ pedimos que $\pi(\Sigma_{0t})\cap\partial\Sigma_t$ contenga localmente arcos que varíen suavemente con $t$.
 
-\begin{teorema}[de compatibilidad]PONER REFERENCIA (ESTÁ EN BOURBAKI) 
+\begin{teorema}(de compatibilidad, \cite[Proposición 5.2]{Ha})
 Existe una estructura de lenguas $\mathcal{L}$ (resp. $\mathcal{L}_i$) sobre $C(\Sigma)$ (resp. $\Sigma_i$) verificando las condiciones siguientes:
 \begin{enumerate}
 \item Para $k\geq 1$, $C(\Delta_k)$ es el disco inicial de $\mathcal{L}_k$. El disco inicial $D_0$ de $\mathcal{L}_0$ es también disco inicial de $\mathcal{L}$.
@@ -231,9 +295,20 @@ Existe una estructura de lenguas $\mathcal{L}$ (resp. $\mathcal{L}_i$) sobre $C(
 \end{enumerate}
 \end{teorema}
 
-En presencia de un parámetro el enunciado es el mismo salvo que el factor inicial $\Sigma_{0t}$ no puede ser seguido continuamente en general. Por ejemplo si tomamos como factor inicial uno tal que la proyección tenga la forma de la FIGURA DE LA LENGUA QUE SOBRE SALE y hacemos que varíe hasta que deje de sobresalir. Para arreglarlo cambiamos de factor a lo largo de una subvariedad $V$ de codimensión 1 del espacio de parámetros; a un lado el punto crítico elegimos $\Sigma_{0t}=\Sigma'_t$ y al otro lado elegimos $\Sigma_{0t}=\Sigma''_t$. Se verifica que $\Sigma'_t$ y $\Sigma''_t$ tienen una cara común de tipo suma $\Delta_t$. Si para $t\in V$ tomamos $C(\Delta_t)$ como disco inicial de $\mathcal{L}$, entonces el teorema de compatibilidad se preserva en presencia de un parámetro. 
+En presencia de un parámetro el enunciado es el mismo salvo que el factor inicial $\Sigma_{0t}$ no puede ser seguido continuamente en general. Por ejemplo si tomamos como factor inicial uno tal que la proyección tenga la forma de la figura siguiente y hacemos que varíe hasta que la lengua deje de sobresalir.
 
-Antes de seguir avanzando enunciamos un hecho esencial: una familia de esferas primitivas es homótopa a cero dentro del espacio de todas las esferas. Esto será establecido en la siguiente sección gracias a la estructura de contorno. En cierta forma, el problema se vuelve 2-dimensional y admite solución gracias al ``pequeño teorema de Smale'' REFERENCIA: $Diff(D^2\ rel\ \partial D^2)$ es contráctil. Finalmente, el teorema en dimensión 3 aparece como consecuencia del teorema en dimensión 2. 
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.3,-1.2) rectangle (18.7,3.3);
+\draw [rotate around={0.:(2.5,1.)},line width=2.pt] (2.5,1.) ellipse (2.5645005658970774cm and 2.080063256847356cm);
+\draw [line width=2.pt,] (3.,2.)-- (3.,0.6);
+\draw [line width=2.pt,] (3.,2.)-- (5.,2.);
+\draw [line width=2.pt,] (3.,0.6)-- (5.015599314732565,0.5957315454220427);
+\draw [shift={(5.007799657366283,1.2978657727110212)},line width=2.pt]  plot[domain=-1.559688284679515:1.5819043689102783,variable=\t]({1.*0.7021775471956665*cos(\t r)+0.*0.7021775471956665*sin(\t r)},{0.*0.7021775471956665*cos(\t r)+1.*0.7021775471956665*sin(\t r)});
+\end{tikzpicture}
+
+ Para arreglarlo cambiamos de factor a lo largo de una subvariedad $V$ de codimensión 1 del espacio de parámetros; a un lado el punto crítico elegimos $\Sigma_{0t}=\Sigma'_t$ y al otro lado elegimos $\Sigma_{0t}=\Sigma''_t$. Se verifica que $\Sigma'_t$ y $\Sigma''_t$ tienen una cara común de tipo suma $\Delta_t$. Si para $t\in V$ tomamos $C(\Delta_t)$ como disco inicial de $\mathcal{L}$, entonces el teorema de compatibilidad se preserva en presencia de un parámetro. 
+
+Antes de seguir avanzando enunciamos un hecho esencial: una familia de esferas primitivas es homótopa a cero dentro del espacio de todas las esferas. Esto será establecido en la siguiente sección gracias a la estructura de contorno. En cierta forma, el problema se vuelve 2-dimensional y admite solución gracias al ``pequeño teorema de Smale'' \cite[Proposición 4.2]{Bo} $Diff(D^2\ rel\ \partial D^2)$ es contráctil. Finalmente, el teorema en dimensión 3 aparece como consecuencia del teorema en dimensión 2. 
 \section{Aplastamientos}
 
 \begin{defi}
@@ -270,9 +345,24 @@ Por tanto, nos reducimos a dos casos: o bien una sola lengua $T=T_i-C_{s_{i+1}}$
 \item $\Sigma'_s$ no tiene tangentes verticales en puntos que se proyecten sobre $int(T)$. 
 \item $C(\Sigma'_s)=C(\Sigma)$. 
 \end{enumerate}
-FIGURA 1.6 DE HATCHER PARA CONSEGUIR a)
+Para conseguir a) seguimos la siguiente figura:
 
-Para conseguir b), sea $V$ el conjunto de puntos de $\Sigma$ que tienen plano tangente vertical y se proyectan a los puntos de $int(T)$. Sea $V_+$ (resp. $V_-$) el subconjunto de puntos donde una línea vertical hacia arriba (resp. abajo) pasa del interior de $\Sigma$ al exterior, como en la figura FIGURA 6.2 DE HATCHER INDICANDO QUE LOS VECTORES ESOS SON EL CAMPO V. Nótese que $V_+$ y $V_-$ son disjuntos y cerrados relativos en $C^{1-}(int(T))$. Así que podemos encontrar un campo de vectores suave $v$ en $\R^3$ tal que:
+\vspace{0.5cm}
+
+
+
+
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{(a)}
+\end{figure}
+Para conseguir b), sea $V$ el conjunto de puntos de $\Sigma$ que tienen plano tangente vertical y se proyectan a los puntos de $int(T)$. Sea $V_+$ (resp. $V_-$) el subconjunto de puntos donde una línea vertical hacia arriba (resp. abajo) pasa del interior de $\Sigma$ al exterior, como en la figura.
+
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{vectores}
+\end{figure}
+
+
+ Nótese que $V_+$ y $V_-$ son disjuntos y cerrados relativos en $C^{1-}(int(T))$. Así que podemos encontrar un campo de vectores suave $v$ en $\R^3$ tal que:
 \begin{enumerate}[i)]
 \item $v|_{\Sigma}$ es no nulo solamente en $C^{-1}(int(T))$.
 \item $v|_{\Sigma}$ es ortogonal a $\Sigma$, apuntando al interior cuando no es nulo. 
@@ -284,7 +374,7 @@ El aplastamiento de deseado $\Sigma_s$ se obtiene definiento $\overline{\Sigma}_
 \QED
 \end{dem}
 
-El resultado anterior también es válido en presencia de un parámetro CASO GENERAL REFERENCIA (BOURBAKI LA TIENE), luego combinándolo con el pequeño teorema de Smale, asociamos a $\Sigma$, para una estructura de lenguas fija $\mathcal{L}$ sobre $C(\Sigma)$, un conjunto contráctil de caminos monótonos (en el sentido de la proposición \ref{monotono}) $\mathcal{C}(\Sigma,\mathcal{L})$, relacionando $\Sigma$ con una esfera estándar. Esto prueba que cualquier familia de esferas primitivas es contráctil en el espacio de todas las esferas (pues admiten una estructura de lenguas). 
+El resultado anterior también es válido en presencia de un parámetro \cite[Lema 6.1]{Ha}, luego combinándolo con el pequeño teorema de Smale, asociamos a $\Sigma$, para una estructura de lenguas fija $\mathcal{L}$ sobre $C(\Sigma)$, un conjunto contráctil de caminos monótonos (en el sentido de la proposición \ref{monotono}) $\mathcal{C}(\Sigma,\mathcal{L})$, relacionando $\Sigma$ con una esfera estándar. Esto prueba que cualquier familia de esferas primitivas es contráctil en el espacio de todas las esferas (pues admiten una estructura de lenguas). 
 
 Si $\mathcal{L}'$ es una subdivisión de $\mathcal{L}$, entonces $\mathcal{C}(\Sigma,\mathcal{L}')\subset\mathcal{C}(\Sigma,\mathcal{L})$ como retracto de deformación, ya que ambos términos son contráctiles. 
 
@@ -299,7 +389,7 @@ A todo camino $\gamma\in\mathcal{C}(\Sigma_1,\mathcal{L}_1,\Delta)$ se le puede 
 
 \subsection{Compatibilidad con la diferencia}
 
-Ahora, $\overline{\Sigma}_0$ contiene a $\overline{\Sigma}_1$ y a $\overline{\Sigma}=adh(\overline{\Sigma}_0-\overline{\Sigma}_1)$. El aplastamiento de $C(\Sigma_1)$ no tiene en general el efecto de aplasta $C(\Sigma)$, sino que pueden surgir más lenguas. Incluso puede ocurrir que $C(\Sigma)$ no tenga una estructura de lenguas REFERENCIA DE HATCHER COMO BOURBAKI. Para una subdivisión adecuada $\LL_1'$ de $\LL_1$ se demuestra los iguiente REFERENCIA DE HATCHER COMO BOURBAKI: sea $\Delta'=adh(\Sigma_1-\Delta)$ y sea $\{\Delta'(s)\}\in\CC(\Sigma_1,\LL_1',\Delta)$. Nótese que $\Sigma(s)=(\Sigma-\Delta')\cup\Delta'(s)$. Entonces $C(\Sigma(s))$ posee una estructura de lenguas. MIRAR LA PRUEBA EN HATCHER A VER SI SE PUEDE Por tanto podemos obtener:
+Ahora, $\overline{\Sigma}_0$ contiene a $\overline{\Sigma}_1$ y a $\overline{\Sigma}=adh(\overline{\Sigma}_0-\overline{\Sigma}_1)$. El aplastamiento de $C(\Sigma_1)$ no tiene en general el efecto de aplasta $C(\Sigma)$, sino que pueden surgir más lenguas. Incluso puede ocurrir que $C(\Sigma)$ no tenga una estructura de lenguas \cite[Sección 7]{Ha}. Para una subdivisión adecuada $\LL_1'$ de $\LL_1$ se demuestra los iguiente \cite[Secciones 10 y 11]{Ha} sea $\Delta'=adh(\Sigma_1-\Delta)$ y sea $\{\Delta'(s)\}\in\CC(\Sigma_1,\LL_1',\Delta)$. Nótese que $\Sigma(s)=(\Sigma-\Delta')\cup\Delta'(s)$. Entonces $C(\Sigma(s))$ posee una estructura de lenguas. MIRAR LA PRUEBA EN HATCHER A VER SI SE PUEDE Por tanto podemos obtener:
   \begin{prop}
   A todo camino $\gamma\in\CC(\Sigma_1,\LL_1,\Delta)$ se le puede asociar una deformación de $\CC(\Sigma,\LL)$ hasta un retracto de deformación de $\CC(\Sigma_0,\LL_0)$. 
   \end{prop}
@@ -314,6 +404,12 @@ En presencia de un parámetro, $\LL_1'$ no puede ser seguido de forma continua e
 
 
 \section{Prueba de la conjetura de Smale}
+
+\addcontentsline{toc}{chapter}{Bibliografía}
+\begin{thebibliography}{}
+\bibitem{Ha}
+\bibitem{Bo}
+\end{thebibliography}
 
 
 
