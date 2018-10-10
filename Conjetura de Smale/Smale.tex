@@ -88,7 +88,8 @@
 %\date{Curso 2016/2017}
 %\maketitle
 
-\author{Javier Aguilar Martín }
+\author{Javier Aguilar Martín\\ Bajo la tutoría de Francisco Presas Mata}
+
 \date{\today}
 \title{La conjetura de Smale:\\ $Diff(S^3)\simeq O(4)$}
 
@@ -184,7 +185,7 @@ Para cada $t$ fijo podemos asociar un grafo a los $c_t$ como en la siguiente fig
 El grafo se mantiene isomorfo en toda la bola $B_i\ni t$, teniendo siempre una cantidad finita de vértices, y como hay una cantidad finita de bolas, podemos construir la función asignando valores del intervalo $(0,1)$ a los vértices.
 \QED
 \end{dem}
-\subsection{Partición de la unidad}
+\subsection{Partición de la unidad}\label{2.4}
 Elegimos $\varepsilon>0$ tal que para $c_t\neq c'_t$ se tiene $|\lambda(c_t)-\lambda(c'_t)|>2\varepsilon$, y $\delta>0$ tal que dos planos $P_{ij}$ distan de al menos $2\delta$ y que $\Sigma_t$ sea vertical en un $\delta$-entorno de $P_{ij}$. Sean $\Gamma_i=\{(t,\lambda(c_t))\in B_i\times (0,1)\}$ y $\widetilde{\Gamma}_i$ un $\varepsilon$-entorno de $\Gamma_i$. Para cada $i$, se define $T_i\cong S^{k-1}\times[0,1]\subset S^k\times[0,1]$ como como un anillo que une $\partial B_i\times\{1\}$ con $\partial B'_i\times\{0\}$, siendo $B'_i$ bolas abiertas contenidas en las $B_i$ y que recubren $S^k$. Cada $\widetilde{\Gamma}_i\cap T_i$ es una unión de subanillos cuyas proyecciones sobre $S^k$ denotamos $Z_{il}$. Denotamos $E_i$ a $\widetilde{\Gamma}_i$ truncado por $B'_i$, unión de bandas tal como muestra la siguiente figura.
 
 \definecolor{qqqqff}{rgb}{0.,0.,1.}
@@ -286,7 +287,7 @@ Si $\Sigma$ es una esfera primitiva, el contorno $C(\Sigma)$ admite una estructu
 
 Sea $\Sigma$ una esfera primitiva y $\Delta_1,\dots, \Delta_n$ una colección de discos de cirugía en planos horizontales distintos, con $int(\Delta_i)\cap\Sigma=\emptyset$. Tenemos $\Sigma\cup\Delta_1\cup\cdots\cup\Delta_n$ como unión de factores $\Sigma_0\cup\cdots\cup \Sigma_n$ con $\Delta_k$ cara de $\Sigma_k$ para $k\geq 1$. Suponemos que $\Sigma_0$ es \emph{grande}, esto es, que $\pi(\Sigma_0)\cap\partial\Sigma$ contiene un arco. Para una familia $\Sigma_t$ pedimos que $\pi(\Sigma_{0t})\cap\partial\Sigma_t$ contenga localmente arcos que varíen suavemente con $t$.
 
-\begin{teorema}(de compatibilidad, \cite[Proposición 5.2]{Ha})
+\begin{teorema}(de compatibilidad, \cite[Proposición 5.2]{Ha})\label{3.5}
 Existe una estructura de lenguas $\mathcal{L}$ (resp. $\mathcal{L}_i$) sobre $C(\Sigma)$ (resp. $\Sigma_i$) verificando las condiciones siguientes:
 \begin{enumerate}
 \item Para $k\geq 1$, $C(\Delta_k)$ es el disco inicial de $\mathcal{L}_k$. El disco inicial $D_0$ de $\mathcal{L}_0$ es también disco inicial de $\mathcal{L}$.
@@ -309,7 +310,7 @@ En presencia de un parámetro el enunciado es el mismo salvo que el factor inici
  Para arreglarlo cambiamos de factor a lo largo de una subvariedad $V$ de codimensión 1 del espacio de parámetros; a un lado el punto crítico elegimos $\Sigma_{0t}=\Sigma'_t$ y al otro lado elegimos $\Sigma_{0t}=\Sigma''_t$. Se verifica que $\Sigma'_t$ y $\Sigma''_t$ tienen una cara común de tipo suma $\Delta_t$. Si para $t\in V$ tomamos $C(\Delta_t)$ como disco inicial de $\mathcal{L}$, entonces el teorema de compatibilidad se preserva en presencia de un parámetro. 
 
 Antes de seguir avanzando enunciamos un hecho esencial: una familia de esferas primitivas es homótopa a cero dentro del espacio de todas las esferas. Esto será establecido en la siguiente sección gracias a la estructura de contorno. En cierta forma, el problema se vuelve 2-dimensional y admite solución gracias al ``pequeño teorema de Smale'' \cite[Proposición 4.2]{Bo} $Diff(D^2\ rel\ \partial D^2)$ es contráctil. Finalmente, el teorema en dimensión 3 aparece como consecuencia del teorema en dimensión 2. 
-\section{Aplastamientos}
+\section{Aplastamientos}\label{4}
 
 \begin{defi}
 Dada una familia de superficies $L_s$, $s\in [0,1]$, con una estructura de lenguas $\mathcal{L}_s$ verificando:
@@ -336,6 +337,7 @@ Si $\Sigma$ es una 2-esfera cuyo contorno admite una estructura de lenguas, ento
 \end{enumerate} 
 Además, dado el aplastamiento, el conjunto de caminos $\{\Sigma_s\}$ es contráctil. 
 \end{prop}
+
 \begin{dem}
 Denotamos $C=C(\Sigma)$. Sean $T_1,\dots, T_n$ lenguas de $C$ pegadas en el orden de escritura, y sea $D$ el disco inicial de $C$. A partir del aplastamiento $C_s$ definimos una familia de discos con lenguas $C(s_0,\dots, s_n)\subset C$, para $0\leq s_0\leq\cdots\leq s_n\leq 1$, con las condiciones $C(s_0,\dots, s_n)\cap T_i=C_{s_i}\cap T_i$ y $C(s_0,\dots, s_n)\cap D=C_{s_0}\cap D$. Vemos $C(0,\dots, 0,s_i,s_{i+1},\dots, s_n)$ para $s_i\in[0,s_{i+1}]$ como un aplastamiento de $C(0,\dots, 0,s_{i+1},\dots, s_n)$. Si asumimos inductivamente que hemos construido una familia $\Sigma(0,\dots, 0, s_{i+1},\dots, s_n)$ con contorno igual a $C(0,\dots, 0,s_{i+1},\dots, s_n)$, será suficiente elevar el aplastamiento $C(0,\dots, 0,s_i,s_{i+1},\dots, s_n)$ a una isotopía de aplastamientos $\Sigma(0,\dots, 0, s_i, s_{i+1},\dots, s_n)$. Para el aplastamiento buscado, $\Sigma_s=\Sigma(s,\dots, s)$. 
 
@@ -409,16 +411,43 @@ La continuidad de la que se trata es en el sentido $C^1$ de Hausdorff: si $\Delt
 
 En un factor inicial elegido en una componente de $\Sigma_{t0}$ existe un orden parcial natural entre sus caras $\Delta_1,\dots, \Delta_n$: $\Delta_j>\Delta_i$ si todo camino de $\Sigma_{t0}$ que tenga a $\Delta_j$ como factor inicial corta $\Delta_i$.
 
-\subsection{Conclusión}
+Consideremos uno de los cubos $C$ descritos en \ref{2.4} cuya alma $X$ se reduce a un punto $t_0$ común a $k$ $X_{il}$. Elegimos un factor inicial $\Sigma_{in}$ de una componente de $\Sigma$ de $\Sigma_{t_0 0}$; las caras son denotadas $\Delta_1,\dots, \Delta_k$ con $\Delta_j>\Delta_i\Rightarrow j>i$. Las coordenadas transversales de $C$, $t_1,\dots, t_k$, y los otros factores $\Sigma_1,\dots, \Sigma_k$ les corresponden.
 
+Elegimos para $\Sigma_{in}$ un camino monótono de esferas $\Sigma_{in}(s)$ en $\mathcal{C}(\Sigma_{in},-)$; para $\Sigma_i$ un camino monótono de discos $\Delta_i(s)$ en $\CC(\Sigma_i,-,\Delta_i)$, con $\Delta_i(0)=\Delta_i$. Las estructuras de lenguas a poner en el lugar de $-$ deben satisfacer el principio de compatibilidad. Definimos entonces $\Sigma(0,\dots,0,t_k)$, $t_k\geq 0$, obtenido a partir de $\Sigma$ al reemplazar $\Delta_k$ por $\Delta_k(t_k)$. El factor correspondiente $\Sigma_k(0,\dots,0,t_k)$ está dotado de un camino $\Delta_k(s)$ obtenido al cortar el precedente al valor $t_k$. Si $\Sigma_i$ es otro factor que tiene a $\Delta_k$ como cara, $\Sigma_i(0,\dots,0,t_k)$ se encuentra equipado de discos (o de esferas si $\Sigma_i=\Sigma_{in}$) por aplicación del principio de compatibilidad. Los otros factores se mantienen intactos. 
+
+Construimos $\Sigma(0,\dots,0,t_{k-1},t_k)$ a partir de $\Sigma(0,\dots,0,t_k)$ haciendo la misma construcción con el factor $\Sigma_{k-1}(0,\dots,0,t_k)$. La figura \ref{construccion} da un ejemplo para $k=2$; nótese que dos factores pueden encontrarse más allá de en una cara común.
+
+\begin{figure}[h!]
+\includegraphics[scale=0.8]{construccion}
+\caption{Ejemplo con $k=2$.}\label{construccion}
+\end{figure}
+
+Esta construcción no depende de la numeración de las caras siempre siempre que esta respete el orden. Por otra parte, se extiende al caso en el que algunas de las coordenadas son negativas: $\Sigma$ se desconecta pero la numeración de las caras respeta el orden en cada trozo; además, si la cirugía tiene lugar a lo largo de $\Delta_i$, $\Sigma_i$ se convierte en factor inicial de su componente con un camino de esferas $\Delta_i(s)=\Delta_i(s)\cup\Delta$. 
+
+Consideremos ahora un cubo $C'$ cuya alma $X'$ es un segmento; para $t\in X'$, sea $\Sigma_t$ una componente de $\Sigma_{t0}$ seguida continuamente. Para $t\in\partial X'$, $t$ pertenece a un cubo $C$ del tipo estudiado anteriormente y $\Sigma_t$ es una componente de $\Sigma(0,\dots, 0,\pm 1,0,\dots, 0)$. En particular, para $t\in\partial X'$, $\Sigma_{in,t}$ está dado. Hagámos la hipótesis, falsa en general, de que $\Sigma_{in,t}$ puede ser seguido continuamente para todo $t\in X'$. Podemos ahora, como antes, fijar la numeración de las caras $\Delta_{1,t},\dots, \Delta_{k-1,t}$ y coordenadas transversales $t_1,\dots, t_{k-1}$ de $C'$. Queremos construir $\Sigma(t_1,\dots, t_{k-1})$ por el mismo procedimiento de antes haciendo elecciones en $t$ de caminos monótonos de esferas y de discos. Pero para $t\in\partial X'$ $\Sigma(t_1,\dots, t_{k-1})$ ya está construido; tras las proposiciones de compatibilidad, esto quiere decir que estas elecciones han sido ya hechas para $t\in \partial X'$. ¿Por qué no hay obstrucción para prolongar estas elecciones a $X'$? Porque, en virtud de los resultados enunciados en \ref{4}, cada elección se ha hecho en un conjunto contráctil. Este hecho tiene fondo las fibraciones de Serre \cite{Se}.
+
+Procedemos para los otros cubos de la misma forma, por inducción sobre la dimensión del alma. Nos queda tratar los cambios de factor incial para conseguir una aproximación continua de $\Sigma_{t0}$.
+
+Usando la notación de \ref{3.5}, el disco suma $\Delta_t$, cara común a $\Sigma'_t$ y $\Sigma''_t$ existe para $t\in X$; además para $t\in X\cap V$, $\Delta_t$ es objeto inicial, siendo $V$ una subvariedad de codimensión 1. Sean $x,v$ las coordenadas transversales respectivamente a $X$ y a $V$. La figura \ref{esferas} esquematiza la construcción hecha en un entorno $X\cap V$. El punto marcado indica el elegido como objeto incial. 
+
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{esferas}
+\end{figure}
+
+No hay pérdida de generalidad al suponer $\Delta_t$ es disco inicial de $\Sigma'_t$ y $\Sigma''_t$ para todo $t\in\{x=0, -1\leq v\leq 1\}$. Por lo tanto, tenemos caminos monótonos de discos $\{\Delta'_t(s)\}$ (respectivamente $\Delta''_t(s)$) rellenando $\overline{\Sigma'}_t$ (respectivamente $\overline{\Sigma''}_t$). Los discos utilizados sobre el esquema para limitar el factor auxiliar $\Sigma_{aux}$ son tomados de estas familias. Además, $\Sigma_{aux}$ está naturalmente equipado de un camino monótono de esferas. Remarcar que esta construcción no interactúa con ninguna otra: el cambio de factor inicial no puede hacer intervenir a la vez dos discos suma distintos. 
+
+\subsection{Conclusión}
+Hemos construido $\Sigma_{t0}^c$, aproximación continua de $\Sigma_{t0}$ coincidente con $\Sigma_{t0}$ fuera de las subvariedades $Z_{il}$.
+
+Aunque las caras ya no sean siempre discos horizontales, la noción de factor inicial se mantiene clara. Tenemos, para cada componente de $\Sigma_{t0}^c$, un factor inicial dotado de un camino monótono de esferas que lo relaciona con una esfera estándar. A los otros factores se les relaciona un factor preferido (un camino de $\Sigma_{t0}^c$ que una este factor inicial de su componente pasa por esta cara) y es rellenado por un camino monótono de discos que lleve a esta cara preferida. En este último caso, el camino monótono del factor respectivo es obtenido al truncar un camino que existe sobre todo entorno del espacio de parámetros y que fuera ha servido para construir la degeneración de dicho factor.  
 
 \section{Prueba de la conjetura de Smale}
 
 \addcontentsline{toc}{chapter}{Bibliografía}
 \begin{thebibliography}{}
-\bibitem{Ha}
-\bibitem{Bo}
-\bibitem{Se} https://pdfs.semanticscholar.org/e737/a4f8b93242910c050c2faf761236dcf60f64.pdf
+\bibitem{Ha} Allen E. Hatcher, \emph{A proof of the Smale Conjecture $Diff(S^3)\simeq O(4)$}. Annals of Mathematics, 117 (1983) 553-607
+\bibitem{Bo} François Laudenbach, \emph{Les 2-sphères de $\R^3$ vues par A. Hatcher et la conjecture de Smale $Diff(S^3)\sim O(4)$}. Séminaire Bourbaki, 1983-1984, exp nº629, p. 279-293. \url{http://www.numdam.org/item/?id=SB_1983-1984__26__279_0}
+\bibitem{Se} Stephen A. Mitchell. \emph{Notes on Serre fibrations}. August 2001. \url{https://pdfs.semanticscholar.org/e737/a4f8b93242910c050c2faf761236dcf60f64.pdf}
 \end{thebibliography}
 
 
