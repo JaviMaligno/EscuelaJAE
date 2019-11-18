@@ -441,9 +441,46 @@ Hemos construido $\Sigma_{t0}^c$, aproximación continua de $\Sigma_{t0}$ coinci
 
 Aunque las caras ya no sean siempre discos horizontales, la noción de factor inicial se mantiene clara. Tenemos, para cada componente de $\Sigma_{t0}^c$, un factor inicial dotado de un camino monótono de esferas que lo relaciona con una esfera estándar. A los otros factores se les relaciona un factor preferido (un camino de $\Sigma_{t0}^c$ que una este factor inicial de su componente pasa por esta cara) y es rellenado por un camino monótono de discos que lleve a esta cara preferida. En este último caso, el camino monótono del factor respectivo es obtenido al truncar un camino que existe sobre todo entorno del espacio de parámetros y que fuera ha servido para construir la degeneración de dicho factor.  
 
+
+
 \section{Prueba de la conjetura de Smale}
 
-\addcontentsline{toc}{chapter}{Bibliografía}
+Nos proponemos construir una aproximación continua $\Sigma_{tu}^c$ de $\Sigma_{tu}$, prolongando la familia $\Sigma_{t0}^c$ construida en la sección anterior y tal que $\Sigma_{t1}^c=\Sigma_{t1}=\Sigma_t$. Además, cada factor de $\Sigma_{tu}^c$ será dotado de un camino monótono de esferas o de discos, continuamente en $(t,u)$. En particular, $\Sigma_t$ tendrá asociado un camino $\Sigma_t(s)$ uniendo $\Sigma_t$ a una esfera estándar; así la conjetura de Smale será demostrada. 
+
+
+Sea $u^0$ el nivel más bajo de la función de Hatcher. Ponemos $\Sigma_{tu}^c=\Sigma_{t0}^c$ para $u\in [0,u^0-\varepsilon]$. A continuación vamos a construir $\Sigma_{tu}^c$ para $u\in [u^0-\varepsilon, u^0+\varepsilon]$. Se procederá de manera similar para los demás valores de la función de Hatcher.
+
+Denotemos $\Delta_t^0$ el disco de cirugía tal que $u^0=\lambda(\partial \Delta^0_t)$. Denotemos asímismo $\Gamma^0=\{(t,u^0) \mid u^0=\lambda(\partial \Delta^0_t)\}$, donde $t$ está limitado por una componente $\widetilde{E}^0$ un cierto $E_i$ tal como se definieron en \ref{2.4}. Sea $\widetilde{Z}^0$ el borde oblicuo de $\widetilde{E}^0$ y $Z^0$ su proyección en $S^k$. Sea $t^0$ su coordenada transversal y $X^0$ el alma de $Z^0$ que es también proyección de $\partial\Gamma^0$. En definitiva, $B^0$ es la bola de $S^k$ bordeada por $X^0$ para $t^0<0$. Para $t\in B^0$, cuando $u$ crece de $u^0-\varepsilon$ a $u^0$, dos componentes $\Sigma'_{tu}$ y $\Sigma''_{tu}$ de $\Sigma_{tu}$ se pegan a lo largo de $\Delta^0_t$ por las caras respectivas $\Delta'_{tu}$ y $\Delta''_{tu}$. Denotamos $F(\Delta'_{tu})$ al factor de $\Sigma'_{tu}$ que contiene a $\Delta'_t$ y análogamente $F(\Delta''_{tu})$. En definitiva, $\Delta'_t$ y $\Delta''_t$ son también caras de $\Sigma_{tu}^c$. 
+
+Como ya no estamos en el dominio de esferas primitivas, la noción de factor inicial ya no se refiere a una propiedad del contorno. En lugar de un factor inicial obtenemos un \emph{factor maximal} de entre los factores de una misma componente (maximal en el sentido de que no está incluida en la bola que bordea a otro factor); los factores grandes de $\Sigma_{t0}$ tienen esta propiedad. Evidentemente, el cambio de factor inicial no se puede hacer más que a través de un disco suma, que juega el papel de objeto inicial. En cuanto un objeto inicial es objeto inicial es obtenido para una componente de $\Sigma_{tu}$, cada factor no inicial está dotado de una cara preferida. 
+
+Para $u=u^0-\varepsilon$ y $t\in B^0$, si un factor de $\Sigma'_{tu}$ rodea a $\Sigma''_{tu}$, entonces $F(\Delta''_{tu})$ es maximal entre los factores de $\Sigma''_{tu}$ y $\Delta'_{tu}$ no es la cara preferida de $F(\Delta'_{tu})$. Esta configuración será de $D'$; cambiando los roles de $\Sigma'$ y $\Sigma''$ será de tipo $D''$. Se puede saltar del tipo $D'$ al tipo $D''$, pero demostraremos que no se puede hacer a la inversa.
+
+Para $u=u^0-\varepsilon$, cada componente de $\Sigma_{tu}^c$ está dotado de un objeto inicial (factor o disco horizontal). Hacemos la hipótesis siguiente para todo $t\in B^0$:
+
+$(\ast)$ Si $\Sigma_{tu}$ está en la configuración $D'$, $\Delta''_{tu}$ es objeto inicial de $\Sigma''^c_{tu}$; hipótesis análoga para $D''$.
+
+Si la hipótesis $(\ast)$ no se verifica, es fácil modificar la familia $\Sigma^c_{tu}$, $t\in S^k$, $u\in (0,u^0-\varepsilon]$ para conducir el factor inicial al lugar deseado. Esto se hace por medio de las operaciones descritas en la sección anterior: el nuevo $\Sigma_{tu}^c$ difiere del antiguo por la presencia de algunos factores auxiliares para $u\in (0,u^0-\varepsilon)$. 
+
+Vamos a construir entonces $\Sigma_{tu}$ para $u\in[u^0-\varepsilon, u^0+\varepsilon]$ bajo la hipótesis $(\ast)$. Comenzamos por tomar $t\in B^0$. Digamos que la configuración es de tipo $D'$. De $u^0-\varepsilon$ a $u^0$, dos caras se pegan; más allá, si $t\in B^0\cap Z^0$, este movimiento es estacionario mientras $u$ no está en $\widetilde{E}^0$. En $\Sigma_{tu^0}^c$, el factor $F''_{tu^0}$, indicado en la figura \ref{designe}, admite a $\Delta^0_t$ como cara y es rellenado por un camino monótono de discos. 
+
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{designe}
+\caption{Evolución del factor $F''_{tu}$.}\label{designe}
+\end{figure}
+
+Este camino es utilizado para crear las degeneraciones de este factor en el intervalo $[u^0,u^0+\varepsilon]$. Para $u>u^0$, el factor $F''_{tu}$ está relleno por el mismo camino de discos, convenientemente cortado. 
+
+En cuanto a los factores adyacentes, estos son deformados por la extensión de isotopía, así como los caminos monótonos de los que están equipados. La construcción es análoga para el tipo $D''$. 
+
+Si $t\in Z^0-B^0$, para $u=u^0-\varepsilon$ el factor $F''_{tu}$ está ya parcialmente degenerado; $t=(x,t^0)$, $x\in X^0$, $t^0>0$ es la degeneración dada por un camino de discos que rellene $F''_{tu}$ o $t=(x,0)$. El mismo camino de discos sirve para conseguir la degeneración cuando $u$ crece de $u^0-\varepsilon$ a $u^0+\varepsilon$, siendo el movimiento estacionario mientras $u$ no está en $\widetilde{E}^0$, en particular para $u<u^0$. Así $\Sigma_{tu}^c$ es constante en $u$ si $t\in \partial(Z^0-B^0)$. Para $t\notin Z^0\cup B^0$, tomamos también $\Sigma_{tu}^c$ constante en $u$. Esto consigue la construcción de $\Sigma_{tu}^c$ para $u=u^0+\varepsilon$ con las mismas propiedades que $\Sigma_{t0}^c$.
+
+\begin{nota}
+Para $u=u^0+\varepsilon$, no se puede construir $\Sigma_{tu}^c$ a partir de $\Sigma_{tu}$ utilizando los contornos de sus factores, ya que estos no son primitivos. Sin embargo sí lo podemos hacer para $u=u^0-\varepsilon$. 
+\end{nota}
+
+\phantomsection
+\addcontentsline{toc}{section}{Referencias}
 \begin{thebibliography}{}
 \bibitem{Ha} Allen E. Hatcher, \emph{A proof of the Smale Conjecture $Diff(S^3)\simeq O(4)$}. Annals of Mathematics, 117 (1983) 553-607
 \bibitem{Bo} François Laudenbach, \emph{Les 2-sphères de $\R^3$ vues par A. Hatcher et la conjecture de Smale $Diff(S^3)\sim O(4)$}. Séminaire Bourbaki, 1983-1984, exp nº629, p. 279-293. \url{http://www.numdam.org/item/?id=SB_1983-1984__26__279_0}
